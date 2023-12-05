@@ -61,9 +61,11 @@
                 <div>
                     <h2>결제수단</h2>
                 </div>
-
+                <!-- 결제수단 -->
                 <div class="payarea">
+                    <!-- 결제정보 -->
                     <div class="payment">
+                        <!-- 결제방법 -->
                         <div class="paymethod">
                             <span class="method">
                                 <label><input type="radio" name="payment" value="bankbook">무통장 입금</label>
@@ -78,29 +80,158 @@
                                 <label><input type="radio" name="payment" value="phone">휴대폰결제</label>
                             </span>
                         </div>
+                        <!-- 결제방법 선택시 메뉴 -->
                         <div class="selectmethod">
+                            <!-- 무통장입금 -->
                             <table>
+                                <caption>무통장 입금</caption>
+                                <tbody>
+                                    <tr>
+                                        <th>입금자명</th>
+                                        <td>
+                                            <input type="text" id="pname" name="pname" placeholder size="15" maxlength="20">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>입금은행</th>
+                                        <td>
+                                            <select name="bankaccount" id="bankaccount">
+                                                <option value="-1">::: 선택해주세요 :::</option>
+                                                <option value="kh2주식회사 000-000-0000">kh2주식회사 000-000-0000</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- 무통장입금, 카드,휴대폰 -->
+                            <div id="payinfo">
+                                <p class="help">소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.</p>
+                            </div>
+                            <!-- 카카오페이 -->
+                            <div id="kakaoinfo">
+                                <p class="help">휴대폰에 설치된 카카오톡 앱에서 비밀번호 입력만으로 빠르고 안전하게 결제가 가능한 서비스 입니다.</p>
+                                <p class="help">
+                                    "안드로이드의 경우 구글 플레이, 아이폰의 경우 앱 스토어에서 카카오톡 앱 설치 한 후,"
+                                    <br>
+                                    " 최초 1회 카드 및 계좌 정보를 등록하셔야 사용 가능합니다."
+                                </p>
+                                <p class="help">
+                                    인터넷 익스플로어의 경우 8이상에서만 결제 가능합니다.
+                                </p>
+                                <p class="help">
+                                    BC카드 중 신한, 하나, 국민카드는 결제가 불가능합니다.
+                                </p>
+                            </div>
+                        </div>
 
+                        <!-- 증명서류 발급 -->
+                        <div class="agree">
+                            <table>
+                                <caption>증명서류 발급</caption>
+                                <tbody class="receipt">
+                                    <tr id="cashreceipt">
+                                        <th>현금영수증 신청</th>
+                                        <td>
+                                            <div class="cashmethod">
+                                                <input type="radio" id="cashreceipt_regist1" name="cashreceipt_regist">
+                                                <label for="cashreceipt_regist1">현금영수증 신청</label>
+                                                <input type="radio" id="cashreceipt_regist2" name="cashreceipt_regist">
+                                                <label for="cashreceipt_regist2">신청안함</label>
+                                            </div>
+                                            <div class="cashreceipt_area">
+                                                <table>
+                                                    <caption>현금영수증 발급 정보 입력</caption>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <td>
+                                                                <input type="radio" id="cashreceipt_type1" name="cashreceipt_type">
+                                                                <label for="cashreceipt_type1">개인</label>
+                                                                <input type="radio" id="cashreceipt_type2" name="cashreceipt_type">
+                                                                <label for="cashreceipt_type1">사업자</label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="moblie" id="mobile_area">
+                                                            <th>핸드폰 번호</th>
+                                                            <input type="text" name="cashreceipt_mobile" id="cashreceipt_mobile1" maxlength="3" placeholder="010" readonly>
+                                                            <input type="text" name="cashreceipt_mobile" id="cashreceipt_mobile2" maxlength="4">
+                                                            <input type="text" name="cashreceipt_mobile" id="cashreceipt_mobile3" maxlength="4">
+                                                        </tr>
+                                                        <tr class="regno" id="rengo_area">
+                                                            <th>사업자 번호</th>
+                                                            <td>
+                                                                <input type="text" name="regno_no" id="regno_no">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <!-- 청약철회 방침 -->
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>청약철회방침</th>
+                                                            <td>
+                                                                <!-- 청약철회방침 내용박스 -->
+                                                                <div class="textArea">
+                                                                    <textarea name="terms" id="terms" maxlength="250" cols="70" readonly></textarea>
+                                                                </div>
+                                                                <!-- 청약철회방침 동의 -->
+                                                                <p>
+                                                                    <input type="checkbox" id="agree_box" name="agree_box">
+                                                                    <label for="agree_box"></label>
+                                                                    <label for="agree_box">
+                                                                        <strong>동의함</strong>
+                                                                    </label>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
-                        <div class="cancel_agree">
-                            <span>청약철회방침</span>
-                            <textarea name="cancel_law" id="cancel_law" cols="30" rows="10" readonly>내용</textarea>
-                            <button class="cancel_btn">전체보기</button>
-                            <p class="agree_box"><input type="checkbox" name="">동의함</p>
+                    </div>
+                    <!-- 최종결제금액 -->
+                    <div id="total">
+                        <!-- 결제방법 -->
+                        <h4>
+                            <!-- 선택했을때 strong 내용만 변경-->
+                            <strong id="current_pay">무통장 입금</strong>
+                            <span>최종결제 금액</span>
+                        </h4>
+                        <!-- 최종결제금액 -->
+                        <p class="price">
+                            <span></span>
+                            <input type="text" id="total_price" name="total_price" size="10" readonly>
+                            <span>원</span>
+                        </p>
+                        <!-- 결제확인박스 -->
+                        <p class="payAgree">
+                            <input type="checkbox" id="check_purchase" name="check_purchase">
+                            <label for="check_purchase">결제정보를 확인하였으며, 구매진행에 동의합니다.</label>
+                        </p>
+                        <!-- 결제하기 버튼 -->
+                        <div class="purchase_btn">
+                            <a href="">
+                                <!-- 이미지 클릭하면 구매하기 링크 -->
+                                <img src="" alt="결제하기">
+                            </a>
                         </div>
                     </div>
-                    
                 </div>
-                <div class="final_payment">
-                    <p><b>카드결제</b> 최종결제금액</p>
-                    <h4>원</h4>
-                    <button>결제하기</button>
-                    <p>총 적립예정금액</p>
-                    <p>상품별 적립금</p>
-                    <p>회원 적립금</p>
-                    <p>쿠폰 적립금</p>
+                <!-- 무이자 할부 -->
+                <div id="interest_free">
+                    <h3>무이자 할부 이용안내</h3>
+                    <div id="inner_free">
+                        <ul>
+                            <li>무이자 할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자 할부가 적용되지 않습니다.</li>
+                            <li>무이자 할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.</li>
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
 
         </div>

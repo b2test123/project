@@ -113,47 +113,18 @@ a:hover {
 
 /* 결제 수단 */
 #title h2{
-    display: inline-block;
     margin-top: 20px;
     margin-left: 100px;
 }
 #title .payarea{
     display: inline-block;
+    height: 170px;
 }
 #title .paymethod{
     width: 600px;
     border: 2px solid #ccc;
-    margin-top: 10px;
     margin-left: 100px;
-    padding: 5px;
     display: flex;
-}
-#title .cancel_agree{
-    width: 600px;
-    height: 170px;
-    margin-left: 100px;
-    border: 2px solid #ccc;
-}
-#title .cancel_agree p{
-    margin-left: 30px;
-}
-#title .cancel_agree span{
-    margin-left: 30px;
-}
-#title #cancel_law{
-    width: 260px;
-    height: 60px;
-    resize: none;
-    overflow-y: auto;
-}
-#title .cancel_btn{
-    padding: 20px;
-}
-#title .final_payment{
-    border: 2px solid #ccc;
-    display: inline-block;
-    width: 200px;
-    height: 200px;
 }
 
 /* #bottom */
