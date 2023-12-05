@@ -125,15 +125,15 @@
                     <a href=""><img class="main-prod-pic" src="img/main-pic.jpg" alt=""></a>
                 </div>
                 <div class="main-pic-button">  <!-- 버튼 클릭으로 메인 사진 선택 -->
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="pic1" onclick="selectPic(0)"></button>
+                    <button class="pic2" onclick="selectPic(1)"></button>
+                    <button class="pic3" onclick="selectPic(2)"></button>
+                    <button class="pic4" onclick="selectPic(3)"></button>
+                    <button class="pic5" onclick="selectPic(4)"></button>
                 </div>
                 <div class="main-pic-arrowBtn">
-                    <button class="left"><img src="img/left.png" alt="왼쪽"></button>
-                    <button class="right"><img src="img/right.png" alt="오른쪽"></button>
+                    <button class="left" onclick="beforeSlide()"><img src="img/left.png" alt="왼쪽"></button>
+                    <button class="right" onclick="nextSlide()"><img src="img/right.png" alt="오른쪽"></button>
                 </div>
 
                 <div class="board">
@@ -245,4 +245,5 @@
         </footer>
     </div>
 </body>
+<script src="main_script.js"></script>
 </html>
