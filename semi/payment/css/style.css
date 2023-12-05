@@ -1,0 +1,118 @@
+/* 공통 스타일 */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: #fefeee;
+}
+#container {
+    width: 1300px;
+    height: 100%;
+}
+.top .logo-pic{
+    float: left;
+}
+.top li{
+    list-style: none;
+}
+.top li a{
+    text-decoration: none;
+    color: #444;
+}
+h2{
+    /* display: inline-block; */
+    float: left;
+}
+.title{
+    margin-left: 400px;
+    margin-top: 30px;
+}
+
+/* 배송지 스타일 */
+#address {
+    clear: both;
+}
+#address h2{
+    width: 600px;
+    margin-top: 40px;
+    margin-left: 200px;
+    padding: 5px;
+    border: 2px solid #ccc;
+}
+#address .adr_btn1{
+    font-size: 0.8em;
+    float: right;
+}
+#address .adr_btn2, .adr_btn3{
+    float: right;
+}
+#address .addr2{
+    width: 600px;
+    margin-left: 200px;
+    padding: 5px;
+    border: 2px solid #444;
+    clear: both;
+}
+#address ul li{
+    list-style: none;
+    padding: 5px 0;
+}
+
+/* 주문자 */
+#order{
+    margin-top: 20px;
+    margin-left: 200px;
+}
+#order h2{
+    width: 600px;
+    border: 2px solid #ccc;
+    padding: 5px;
+}
+#order .ord_name, .ord_btn{
+    line-height: 1.5;
+    float: right;
+    font-size: 0.6em;
+    margin: 0 5px;
+}
+
+/* 주문 상품 */
+#products{
+    clear: both;
+    margin-top: 80px;
+    margin-left: 200px;
+}
+#products h2{
+    clear: both;
+    width: 600px;
+    border: 2px solid #ccc;
+}
+#products .product_img{
+    clear: both;
+}
+
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 120px;
+    clear: both;
+    margin-top: 30px;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-info {
+    text-align: center;
+    border-top: 2px solid #000;
+}
+
+.span-list {
+    margin: 20px;
+}
+
+.span-list span {
+    line-height: 2;
+    font-size: 0.8rem;
+}
