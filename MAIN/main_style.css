@@ -95,14 +95,41 @@ a:hover {
     display: inline-block;
     padding: 9px 20px;
     height: 40px;
+    position: relative;
 }
 
+.sub_menu {
+    width: 300px;
+    position: absolute;
+    border-radius: 10px;
+    background: #ffe;
+    z-index: 10;
+    top: 40px;
+    left: 0;
+    font-size: 0.9rem;
+    display: none;
+}
+.sub_menu li {
+    display: block;
+    text-align: left;
+}
 
+.tbm-list li:hover ul{
+    display: block;
+}
+
+.sub_menu li:hover {
+    background: #ffa;
+}
 
 
 /* #mid */
 
 /* .mid-top */
+#mid .mid-top {
+    position: relative;
+}
+
 .main-prod-show {
     width: 100%;
 }
@@ -110,7 +137,6 @@ a:hover {
 .main-prod-pic {
     width: 100%;
     height: 600px;
-    position: relative;
     display: block;
     padding: 15px 150px;
     background-color: #fff;
@@ -118,14 +144,13 @@ a:hover {
 
 .main-pic-button {
     position: absolute;
-    bottom: 150px;
-    left: 860px;
+    bottom: 350px;
+    left: 550px;
 }
 
 .main-pic-button button{
-    display: none;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border: 1px solid #999;
     border-radius: 50%;
     margin: 0 5px;
