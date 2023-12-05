@@ -25,6 +25,10 @@ a:hover {
     cursor: pointer;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 
 /* #top */
 #top {
@@ -156,6 +160,28 @@ a:hover {
     margin: 0 5px;
     cursor: pointer;
 }
+
+.main-pic-arrowBtn img {
+    width: 100px;
+    height: 150px;
+    opacity: 10%;
+}
+
+.main-pic-arrowBtn button {
+    position: absolute;
+    background: none;
+    border: none;
+}
+.main-pic-arrowBtn .left {
+    top: 200px;
+    left: 150px;
+}
+.main-pic-arrowBtn .right {
+    top: 200px;
+    right: 150px;
+}
+
+
 
 /* board */
 .board {
