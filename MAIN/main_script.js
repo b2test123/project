@@ -12,8 +12,6 @@ function showSlide() {
     if(picIdx == mainPic.length){
         picIdx = 0;
     }
-    
-    
     setTimeout(showSlide, 3000);
 }
 
