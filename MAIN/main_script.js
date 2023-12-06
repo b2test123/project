@@ -33,10 +33,10 @@ function nextSlide() {
 
 function beforeSlide() {
     mainProdPic.src = mainPic[picIdx];
-    picIdx--;
     if(picIdx == 0){
-        picIdx = mainPic.length-1;
+        picIdx = mainPic.length;
     }
+    picIdx--;
     updateButtonStyles();
 }
 
