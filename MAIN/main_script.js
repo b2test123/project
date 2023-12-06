@@ -3,8 +3,14 @@ let picIdx = 0;
 let mainProdPic = document.querySelector(".main-prod-pic");
 let selPic = [".pic1", ".pic2", ".pic3", ".pic4", ".pic5"];
 
+
+updateButtonStyles();
 showSlide();
 
+function updateButtonStyles() {
+    document.querySelector(selPic[picIdx]).style.background="#000";
+    document.querySelectorAll('.main-pic-button button:not(' + selPic[picIdx] + ')').forEach(button => {button.style.background = "#fff"});
+}
 
 function showSlide() {
     mainProdPic.src = mainPic[picIdx];
@@ -13,6 +19,7 @@ function showSlide() {
         picIdx = 0;
     }
     setTimeout(showSlide, 3000);
+    updateButtonStyles();
 }
 
 function nextSlide() {
@@ -21,6 +28,7 @@ function nextSlide() {
     if(picIdx == mainPic.length){
         picIdx = 0;
     }
+    updateButtonStyles();
 }
 
 function beforeSlide() {
@@ -29,8 +37,13 @@ function beforeSlide() {
     if(picIdx == 0){
         picIdx = mainPic.length-1;
     }
+    updateButtonStyles();
 }
 
 function selectPic(i) {
     mainProdPic.src = mainPic[i];
+    picIdx = i;
+    updateButtonStyles();
 }
+
+
