@@ -8,8 +8,8 @@ updateButtonStyles();
 showSlide();
 
 function updateButtonStyles() {
-    document.querySelector(selPic[picIdx]).style.background="#000";
-    document.querySelectorAll('.main-pic-button button:not(' + selPic[picIdx] + ')').forEach(button => {button.style.background = "#fff"});
+    document.querySelector(selPic[picIdx]).style.background="#aa4";
+    document.querySelectorAll('.main-pic-button button:not(' + selPic[picIdx] + ')').forEach(button => {button.style.background = "#ffc"});
 }
 
 function showSlide() {
