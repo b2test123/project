@@ -102,6 +102,10 @@ button:hover {
     position: relative;
 }
 
+.tbm-list li:hover {
+    background: #cc1;
+}
+
 .sub_menu {
     width: 300px;
     position: absolute;
@@ -160,23 +164,36 @@ button:hover {
     margin: 0 5px;
     cursor: pointer;
     background: #fff;
+    box-shadow: 2px 2px 12px #aaa,
+                -2px -2px 12px #fff;
+}
+
+.main-pic-button button:active {
+    box-shadow: inset 4px 4px 12px #aaa,
+                inset -4px -4px 12px #fff;
 }
 
 .main-pic-arrowBtn img {
     width: 100px;
     height: 150px;
-    opacity: 10%;
 }
 
 .main-pic-arrowBtn button {
+    opacity: 10%;
     position: absolute;
     background: none;
     border: none;
 }
+
+.main-pic-arrowBtn button:active {
+    opacity: 50%;
+}
+
 .main-pic-arrowBtn .left {
     top: 200px;
     left: 50px;
 }
+
 .main-pic-arrowBtn .right {
     top: 200px;
     right: 50px;
