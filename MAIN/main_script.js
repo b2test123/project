@@ -5,7 +5,6 @@ let selPic = [".pic1", ".pic2", ".pic3", ".pic4", ".pic5"];
 
 
 updateButtonStyles();
-showSlide();
 
 function updateButtonStyles() {
     document.querySelector(selPic[picIdx]).style.background="#aa4";
