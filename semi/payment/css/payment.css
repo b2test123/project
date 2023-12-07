@@ -113,18 +113,69 @@ a:hover {
 
 /* 결제 수단 */
 #title h2{
-    margin-top: 20px;
-    margin-left: 100px;
+    margin: 20px 0 20px 100px;
 }
 #title .payarea{
     display: inline-block;
-    height: 170px;
 }
 #title .paymethod{
-    width: 600px;
-    border: 2px solid #ccc;
-    margin-left: 100px;
+    width: 900px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: 5px;
     display: flex;
+}
+#title .selectmethod{
+    width: 900px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: 5px;
+}
+.selectmethod table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+}
+.agree{
+    width: 900px;
+    border: 2px solid #ccc;
+    margin-left: 5px;
+}
+.agree tbody{
+    display: table-row-group;
+    vertical-align: middle;
+}
+.agree tbody tr{
+    display: table-row;
+    vertical-align: inherit;
+}
+.payarea .agree > table > tbody > tr > th{
+    width: 200px;
+    padding: 20px 0;
+    font-weight: bold;
+    text-align: left;
+}
+#total{
+    width: 330px;
+    height: 439px;
+    border: 1px solid #ccc;
+    float: right;
+    margin-right: 5px;
+}
+#total .price{
+    float: right;
+}
+#total .payAgree{
+    clear: both;
+    margin-bottom: 15px;
+}
+#total .payAgree label{
+    margin-left: 5px;
+}
+caption{
+    display: none;
 }
 
 /* #bottom */

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문/결제하기</title>
-    <link rel="stylesheet" href="/payment/css/payment.css">
+    <link rel="stylesheet" href="css/payment.css">
 
 </head>
 <body>
@@ -68,7 +68,7 @@
                         <!-- 결제방법 -->
                         <div class="paymethod">
                             <span class="method">
-                                <label><input type="radio" name="payment" value="bankbook">무통장 입금</label>
+                                <label><input type="radio" name="payment" value="bankbook" checked>무통장 입금</label>
                             </span>
                             <span class="method">
                                 <label><input type="radio" name="payment" value="card">카드 결제</label>        
@@ -135,7 +135,7 @@
                                             <div class="cashmethod">
                                                 <input type="radio" id="cashreceipt_regist1" name="cashreceipt_regist">
                                                 <label for="cashreceipt_regist1">현금영수증 신청</label>
-                                                <input type="radio" id="cashreceipt_regist2" name="cashreceipt_regist">
+                                                <input type="radio" id="cashreceipt_regist2" name="cashreceipt_regist" checked>
                                                 <label for="cashreceipt_regist2">신청안함</label>
                                             </div>
                                             <div class="cashreceipt_area">
@@ -145,7 +145,7 @@
                                                         <tr>
                                                             <th>구분</th>
                                                             <td>
-                                                                <input type="radio" id="cashreceipt_type1" name="cashreceipt_type">
+                                                                <input type="radio" id="cashreceipt_type1" name="cashreceipt_type" checked>
                                                                 <label for="cashreceipt_type1">개인</label>
                                                                 <input type="radio" id="cashreceipt_type2" name="cashreceipt_type">
                                                                 <label for="cashreceipt_type1">사업자</label>
@@ -192,32 +192,32 @@
                             </table>
                         </div>
                     </div>
+                </div>
+                <!-- 최종결제금액 -->
+                <div id="total">
+                    <!-- 결제방법 -->
+                    <h4>
+                        <!-- 선택했을때 strong 내용만 변경-->
+                        <strong id="current_pay">무통장 입금</strong>
+                        <span>최종결제 금액</span>
+                    </h4>
                     <!-- 최종결제금액 -->
-                    <div id="total">
-                        <!-- 결제방법 -->
-                        <h4>
-                            <!-- 선택했을때 strong 내용만 변경-->
-                            <strong id="current_pay">무통장 입금</strong>
-                            <span>최종결제 금액</span>
-                        </h4>
-                        <!-- 최종결제금액 -->
-                        <p class="price">
-                            <span></span>
-                            <input type="text" id="total_price" name="total_price" size="10" readonly>
-                            <span>원</span>
-                        </p>
-                        <!-- 결제확인박스 -->
-                        <p class="payAgree">
-                            <input type="checkbox" id="check_purchase" name="check_purchase">
-                            <label for="check_purchase">결제정보를 확인하였으며, 구매진행에 동의합니다.</label>
-                        </p>
-                        <!-- 결제하기 버튼 -->
-                        <div class="purchase_btn">
-                            <a href="">
-                                <!-- 이미지 클릭하면 구매하기 링크 -->
-                                <img src="" alt="결제하기">
-                            </a>
-                        </div>
+                    <p class="price">
+                        <span></span>
+                        <input type="text" id="total_price" name="total_price" size="20" readonly>
+                        <span>원</span>
+                    </p>
+                    <!-- 결제확인박스 -->
+                    <p class="payAgree">
+                        <input type="checkbox" id="check_purchase" name="check_purchase">
+                        <label for="check_purchase">결제정보를 확인하였으며, 구매진행에 동의합니다.</label>
+                    </p>
+                    <!-- 결제하기 버튼 -->
+                    <div class="purchase_btn">
+                        <a href="">
+                            <!-- 이미지 클릭하면 구매하기 링크 -->
+                            <img src="" alt="결제하기">
+                        </a>
                     </div>
                 </div>
                 <!-- 무이자 할부 -->
