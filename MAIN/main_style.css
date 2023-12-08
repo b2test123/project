@@ -169,9 +169,13 @@ button:active {
 .main-prod-pic {
     width: 100%;
     height: 600px;
-    display: block;
     padding: 15px 150px;
     background-color: #fff;
+    display: none;
+}
+
+#main-prod-pic1 {
+    display: block;
 }
 
 .main-pic-button {
