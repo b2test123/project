@@ -9,7 +9,7 @@
 </head>
 <body>
   <script>
-       location.href="loginpage.do";
+       location.href="buyend.do";
    </script>
 </body>
 </html>
