@@ -1,7 +1,7 @@
 
 /* 공통 스타일 */
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -42,7 +42,9 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: center;
     background-color: #fff;
+    border-bottom: 2px solid #ededed;
 }
 
 .mini-shortcut {
@@ -51,6 +53,7 @@ button:hover {
 
 .ms-list li{
     padding: 5px;
+    float: left;
     font-size: 0.8rem;
 }
 
@@ -77,18 +80,28 @@ button:hover {
     width: 100%;
     height: 200px;
     padding: 20px;
+    text-align: center;
 }
 
-.logo-pic {
-    width: 100%;
+.top-mid a {
+    width: 1100px;
+    height: 160px;
+}
+
+.top-mid a img {
+    width: 200px;
     height: 160px;
 }
 
 /* .top-btm */
 .top-btm {
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: #ffa;
+}
+
+.top-btm-menu {
+    width: 1100px;
 }
 
 .top-btm-menu .tbm-list{
