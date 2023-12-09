@@ -1,15 +1,15 @@
 
 /* 공통 스타일 */
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
 
 #container {
-    width: 1800px;
+    width: 100%;
     height: 100%;
-    background-color: #fefeee;
+    background-color: #fff;
 }
 
 li {
@@ -28,7 +28,6 @@ a:hover {
 button:hover {
     cursor: pointer;
 }
-
 
 /* #top */
 #top {
