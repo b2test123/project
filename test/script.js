@@ -76,12 +76,12 @@ function addtbMenu(){
     addUl.className = "tbm-list";
 
     let itemsList = [
-        {title: "강이지 먹거리", link: "Dfood", items: ["사료", "간식", "영양제"]},
-        {title: "강이지 용품", link: "Dthings", items: ["집", "장난감", "밥그릇", "옷", "산책용품"]},
-        {title: "고양이 먹거리", link: "Cfood", items: ["사료", "간식", "영양제"]},
-        {title: "고양이 용품", link: "Cthings", items: ["집", "장난감", "밥그릇", "옷", "방콕용품"]},
-        {title: "햄스터 먹거리", link: "Hfood", items: ["사료", "간식", "영양제"]},
-        {title: "햄스터 용품", link: "Hthings", items: ["집", "장난감", "밥그릇", "챗바퀴", "이갈이"]},
+        {title: "강이지 먹거리", link: "Dfood", items: ["사료", "간식", "영양제"], subLinks: ["/dfood.do", "/dsnack.do", "/dhealth.do"]},
+        {title: "강이지 용품", link: "Dthings", items: ["집", "장난감", "밥그릇", "옷", "산책용품"], subLinks: ["/dhouse.do", "/dplay.do", "/dbowl.do", "/dcloth.do", "/doutdoor.do"]},
+        {title: "고양이 먹거리", link: "Cfood", items: ["사료", "간식", "영양제"], subLinks: ["/cfood.do", "/csnack.do", "/chealth.do"]},
+        {title: "고양이 용품", link: "Cthings", items: ["집", "장난감", "밥그릇", "옷", "방콕용품"], subLinks: ["/chouse.do", "/cplay.do", "/cbowl.do", "/ccloth.do", "/cindoor.do"]},
+        {title: "햄스터 먹거리", link: "Hfood", items: ["사료", "간식", "영양제"], subLinks: ["/hfood.do", "/hsnack.do", "/hhealth.do"]},
+        {title: "햄스터 용품", link: "Hthings", items: ["집", "장난감", "밥그릇", "챗바퀴", "이갈이"], subLinks: ["/hhouse.do", "/hplay.do", "/hbowl.do", "/hwheel.do", "/htooth.do"]},
         {title: "이벤트 상품", link: "eventproduct", items: ["기간 할인 상품", "신상품 할인 이벤트", "시즌 한정 상품"]}
     ]
 
@@ -95,16 +95,19 @@ function addtbMenu(){
         let subMenuUl = document.createElement("ul");
         subMenuUl.className = "sub_menu"
 
-        menu.items.forEach(function(item){
+        menu.items.forEach(function(item, index){
             let addSubLi = document.createElement("li");
             let addSubA = document.createElement("a");
             
-            addSubA.href = "#";
             addSubA.textContent = item;
-
+            if (menu.subLinks && menu.subLinks[index]) {
+                addSubA.href = menu.subLinks[index];
+            }
+            
             subMenuUl.appendChild(addSubLi);
             addSubLi.appendChild(addSubA);
         })
+        
         addLi.appendChild(addA);
         addLi.appendChild(subMenuUl);
         addUl.appendChild(addLi);
