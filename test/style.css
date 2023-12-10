@@ -113,7 +113,7 @@ button:hover {
   align-items: center;
 }
 
-.tbm-list-li {
+.tbm-list-li, .view-all-menu {
   display: flex;
   align-items: center;
   height: 50px;

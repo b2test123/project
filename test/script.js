@@ -78,7 +78,7 @@ function addtbMenu(){
     let allMenuAddLi = document.createElement("li");
     let allMenuAddA = document.createElement("a");
     let addIcon = document.createElement("i");
-    allMenuAddLi.className = "tbm-list-li";
+    allMenuAddLi.className = "view-all-menu";
     addIcon.className = "fa-solid fa-bars";
     allMenuAddA.textContent = "전체 메뉴 "
     allMenuAddA.href = "/allmenu.do"
@@ -86,6 +86,8 @@ function addtbMenu(){
     allMenuAddLi.appendChild(allMenuAddA);
     addUl.appendChild(allMenuAddLi);
     topBottomMenu.appendChild(addUl);
+
+    let AllMenu = document.querySelector(".view-all-menu");
 
     let itemsList = [
         {title: "강이지 먹거리", link: "/Dfood.do", items: ["사료", "간식", "영양제"], subLinks: ["/dfood.do", "/dsnack.do", "/dhealth.do"]},
@@ -124,4 +126,33 @@ function addtbMenu(){
         addUl.appendChild(addLi);
     })
     topBottomMenu.appendChild(addUl);
+
+    function viewAllMenu(){
+        let addDiv = document.createElement("div");
+        addDiv.className = "sub_all_menu";
+        itemsList.forEach(function(menu){
+            let addUl = document.createElement("ul");
+            let addA = document.createElement("a");
+            addA.textContent = menu.title;
+            addA.href = menu.link;
+            addUl.appendChild(addA);
+    
+            menu.items.forEach(function(item, index){
+                let addSubLi = document.createElement("li");
+                let addSubA = document.createElement("a");
+                
+                addSubA.textContent = item;
+                if (menu.subLinks && menu.subLinks[index]) {
+                    addSubA.href = menu.subLinks[index];
+                }
+                
+                addSubLi.appendChild(addSubA);
+                addUl.appendChild(addSubLi);
+            })
+            addDiv.appendChild(addUl);
+            AllMenu.appendChild(addDiv);
+        })
+    }
+    viewAllMenu();
+
 }
