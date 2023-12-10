@@ -131,5 +131,5 @@ function addtbMenu(){
         addUl.appendChild(addLi);
     })
     topBottomMenu.appendChild(addUl);
-    addLi.appendChild(subMenuAll);
+    // addLi.appendChild(subMenuAll);
 }
