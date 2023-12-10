@@ -29,7 +29,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* #top */
+/* top */
 #top {
     width: 100%;
     height: 300px;
@@ -111,6 +111,65 @@ button:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.tbm-list-li {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.top-btm-menu .tbm-list li {
+    position: relative;
+}
+
+.top-btm-menu .tbm-list li:hover ul{
+    display: block;
+}
+
+.sub_all_menu {
+    width: 1100px;
+    height: 200px;
+    padding: 5px;
+    position: absolute;
+    background: #edfed6;
+    z-index: 10;
+    top: 50px;
+    left: -20px;
+    display: none;
+}
+
+.sub_all_menu ul {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 3;
+}
+
+.sub_all_menu ul li {
+    font-weight: normal;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.top-btm-menu .tbm-list li:hover .sub_all_menu{
+    display: flex;
+}
+
+.sub_menu {
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    background: #edfed6;
+    z-index: 10;
+    top: 50px;
+    left: -10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: none;
+}
+.sub_menu li {
+    display: block;
+    text-align: left;
 }
 
 
