@@ -101,8 +101,6 @@ function addtbMenu(){
     // allMenuAddLi.appendChild(allMenuAddA);
     // allMenuAddA.appendChild(addIcon);
 
-
-
     itemsList.forEach(function(menu){
         let addLi = document.createElement("li");
         let addA = document.createElement("a");
@@ -127,7 +125,7 @@ function addtbMenu(){
             subMenuUl.appendChild(addSubLi);
             addSubLi.appendChild(addSubA);
         })
-        addLi.appendChild(subMenuAll);
+        // addLi.appendChild(subMenuAll);
         addLi.appendChild(addA);
         addLi.appendChild(subMenuUl);
         addUl.appendChild(addLi);
