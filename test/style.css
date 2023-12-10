@@ -1,3 +1,4 @@
+
 /* 공통 스타일 */
 * {
   margin: 0 auto;
@@ -6,9 +7,9 @@
 }
 
 #container {
-  width: 1300px;
+  width: 100%;
   height: 100%;
-  background-color: #fefeee;
+  background-color: #fff;
 }
 
 li {
@@ -24,38 +25,49 @@ a:hover {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+}
 
-/* #top */
+/* top */
 #top {
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
 
 /* .top-top */
 .top-top {
   width: 100%;
-  height: 30px;
-  border-bottom: 1px solid #ddd;
-  padding: 0 40px;
-  background-color: #000;
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 2px solid #ededed;
+}
+
+.tt-box {
+  width: 1100px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .mini-shortcut {
-  float: left;
+  margin-left: 50px;
 }
 
 .ms-list li{
-  float: left;
   padding: 5px;
+  float: left;
   font-size: 0.8rem;
 }
 
 .ms-list li a{
-  color: #fff;
+  color: #878787;
 }
 
 .top-top-menu {
-  float: right;
+  margin-right: 50px;
 }
 
 .ttm-list li {
@@ -65,182 +77,97 @@ a:hover {
 }
 
 .ttm-list li a{
-  color: #fff;
+  color: #878787;
 }
 
 /* .top-mid */
 .top-mid {
   width: 100%;
-  height: 180px;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
 }
 
-.logo-pic {
-  width: 100%;
-  height: 180px;
+.top-mid a {
+  width: 1100px;
+  height: 160px;
+}
+
+.top-mid a img {
+  width: 200px;
+  height: 160px;
 }
 
 /* .top-btm */
 .top-btm {
   width: 100%;
-  height: 40px;
-  background-color: #ffa;
+  height: 50px;
+  background-color: #edfed6;
 }
 
 .top-btm-menu .tbm-list{
-  text-align: center;
+  width: 1100px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.tbm-list li {
-  display: inline-block;
-  padding: 9px 20px;
-  height: 40px;
+.tbm-list-li {
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
-
-
-
-/* #mid */
-#mid {
-  background-color: #fff;
-  margin: 30px;
-  margin-bottom: 0;
-  min-height: 450px;
-}
-/*.mid h3 {
-  text-align: center;
-  background-color: #ffa;
-}*/
-.mid-top h2{
-  min-height: 30px;
-  margin: 40px 0 20px;
-  text-align: center;
-}
-.mid-mid .benefit{
-  position: relative;
-  height: 83px;
-  margin: 20px 0;
-  padding: 10px 0 10px 160px;
-  border: 5px solid #ffa;
-  line-height: 1.5;
-  color: #353535;
-}
-.mid-mid .benefit h3{
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 73px;
-  width: 160px;
-  font-size: 14px;
-  line-height: 73px;
-  text-align: center;
-}
-.mid-mid .benefit .info{
-  padding-left: 15px;
-  border: 0 0 0 15px;
-  font-size: 12px;
-}
-.mid-mid .benefit .info li{
-  float: left;
-  margin-right: 40px;
-}
-.mileage{
-  margin-top: 6px;
-  padding-top: 10px;
-}
-.orderinfo li{
-  border-top: 1px solid #ffa;
-  font-size: 12px;
-  background-color: #ffc;
-  padding: 10px 0 10px 20px;
-  color: #f76560;
-}
-
-
-.mid-mid{
+.top-btm-menu .tbm-list li {
   position: relative;
 }
 
-.orderlist .ordertitle{
+.top-btm-menu .tbm-list li:hover ul{
   display: block;
-  background: #fff;
-  width: 100%; 
-  height: 40px;
-  margin: 0;
-  padding: 5px 0 5px 10px;
 }
-.ordertitle h3{
+
+.sub_all_menu {
+  width: 1100px;
+  height: 200px;
+  padding: 5px;
   position: absolute;
-  left: 100px;
+  background: #edfed6;
+  z-index: 10;
+  top: 50px;
+  left: -20px;
+  display: none;
 }
-.ordertitle a{
+
+.sub_all_menu ul {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 3;
+}
+
+.sub_all_menu ul li {
+  font-weight: normal;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.top-btm-menu .tbm-list li:hover .sub_all_menu{
+  display: flex;
+}
+
+.sub_menu {
+  width: 300px;
+  padding: 10px;
   position: absolute;
-  right: 100px;
+  background: #edfed6;
+  z-index: 10;
+  top: 50px;
+  left: -10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: none;
 }
-
-.typelist table {
-  margin-top: 30px;
-}
-
-
-/* #bottom */
-#bottom {
-  width: 80%;
-  height: 170px;
-  border-top: 1px solid #ccc;
-}
-
-#bottom div {
-  float: left;
-}
-
-#bottom div h3 {
-  margin: 10px 0 15px 10px;
-}
-
-#bottom div p {
-  font-size: 0.8rem;
-  line-height: 2;
-}
-
-.cst-center {
-  padding-right: 230px;
-}
-
-.bank-info {
-  padding-right: 230px;
-}
-
-.btm-icon {
-  padding-right: 0;
-}
-
-.btm-icon-list li{
-  float: left;
-  padding : 10px;
-  margin: 30px 0px;
-}
-
-
-/* footer */
-#footer {
-  width: 100%;
-  height: 120px;
-  clear: both;
-  margin-top: 30px;
-  background-color: #000;
-  color: #fff;
-}
-
-.footer-info {
-  text-align: center;
-  border-top: 2px solid #000;
-}
-
-.span-list {
-  margin: 20px;
-}
-
-.span-list span {
-  line-height: 2;
-  font-size: 0.8rem;
+.sub_menu li {
+  display: block;
+  text-align: left;
 }
