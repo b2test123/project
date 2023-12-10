@@ -85,6 +85,24 @@ function addtbMenu(){
         {title: "이벤트 상품", link: "eventproduct", items: ["기간 할인 상품", "신상품 할인 이벤트", "시즌 한정 상품"]}
     ]
 
+
+
+    // let subMenuAll = document.createElement("ul");
+    // subMenuAll.className = "sub_all_menu";
+
+    // let addIcon = document.createElement("i");
+    // addIcon.className = "fa-solid fa-bars";
+
+    // let allMenuAddLi = document.createElement("li");
+    // let allMenuAddA = document.createElement("a");
+    
+    // allMenuAddA.href="/allmenu.do"
+    // subMenuAll.appendChild(allMenuAddLi);
+    // allMenuAddLi.appendChild(allMenuAddA);
+    // allMenuAddA.appendChild(addIcon);
+
+
+
     itemsList.forEach(function(menu){
         let addLi = document.createElement("li");
         let addA = document.createElement("a");
@@ -93,7 +111,9 @@ function addtbMenu(){
         addA.href = menu.link;
 
         let subMenuUl = document.createElement("ul");
-        subMenuUl.className = "sub_menu"
+        subMenuUl.className = "sub_menu";
+
+        
 
         menu.items.forEach(function(item, index){
             let addSubLi = document.createElement("li");
@@ -107,10 +127,11 @@ function addtbMenu(){
             subMenuUl.appendChild(addSubLi);
             addSubLi.appendChild(addSubA);
         })
-        
+        addLi.appendChild(subMenuAll);
         addLi.appendChild(addA);
         addLi.appendChild(subMenuUl);
         addUl.appendChild(addLi);
     })
     topBottomMenu.appendChild(addUl);
+    addLi.appendChild(subMenuAll);
 }
