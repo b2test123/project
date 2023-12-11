@@ -11,6 +11,8 @@ addMsShortcut();
 addTtmMenu();
 addtbMenu();
 
+moveNav();
+
 function addMsShortcut(){
     let addUl = document.createElement("ul");
     addUl.className = "ms-list";
@@ -155,4 +157,26 @@ function addtbMenu(){
     }
     viewAllMenu();
 
+}
+
+
+
+
+
+
+function moveNav(){
+    document.addEventListener('scroll', onScroll, {passive:true});
+    let top = document.querySelector("#top");
+    let height = top.clientHeight;
+    function onScroll(){
+        let scrollPosition = pageYOffset;
+        let nav = document.querySelector(".top-btm");
+        let navFixed = document.querySelector(".top-btm_fixed");
+        if (height <= scrollPosition){
+            nav.className = "top-btm_fixed";
+          }
+        else {
+            navFixed.className = "top-btm";
+          }
+    }
 }
