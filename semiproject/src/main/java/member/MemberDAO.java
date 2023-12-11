@@ -17,7 +17,7 @@ public class MemberDAO {
 	  
 	 
 	  try {
-		  String sql = "insert into spmember(id, passwd, name, email, phone, zip_code, address, detailAddress) "
+		  String sql = "insert into member(id, passwd, name, email, phone, zip_code, address, detailAddress) "
 		  		+ "values(?, ?, ?, ? , ? , ? , ? , ? )" ; 
 		pstmt =conn.prepareStatement(sql);
 		pstmt.setString(1, m.getId());
