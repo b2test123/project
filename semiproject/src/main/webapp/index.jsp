@@ -9,7 +9,7 @@
 </head>
 <body>
   <script>
-       location.href="buyend.do";
+       location.href="join.do";
    </script>
 </body>
 </html>

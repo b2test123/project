@@ -17,18 +17,18 @@ public class MemberDAO {
 	  
 	 
 	  try {
-		  String sql = "insert into member(id, passwd, name, email, phone, zip_code, address,detailAddress) "
-		  		+ "values(?, ?, ?, ? , ? , ? , ? , ? , ?)" ; 
+		  String sql = "insert into spmember(id, passwd, name, email, phone, zip_code, address, detailAddress) "
+		  		+ "values(?, ?, ?, ? , ? , ? , ? , ? )" ; 
 		pstmt =conn.prepareStatement(sql);
 		pstmt.setString(1, m.getId());
 		pstmt.setString(2, m.getPasswd());
 		pstmt.setString(3, m.getName());
 		pstmt.setString(4, m.getEmail());
 		pstmt.setString(5, m.getPhone());
-		pstmt.setTimestamp(6, m.getJoinDate());
-		pstmt.setString(7, m.getZip_code());	
-		pstmt.setString(8, m.getAddress());
-		pstmt.setString(9, m.getDetailAddress());
+		
+		pstmt.setString(6, m.getZip_code());	
+		pstmt.setString(7, m.getAddress());
+		pstmt.setString(8, m.getDetailAddress());
 		
 		
 		pstmt.executeUpdate();
