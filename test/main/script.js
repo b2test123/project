@@ -167,21 +167,19 @@ function moveNav(){
     function onScroll(){
         let scrollPosition = pageYOffset;
 
-        let topNav = document.querySelector(".top-btm");
-        let navFixed = document.querySelector(".top-btm_fixed");
+        let topNav = document.querySelector("#top-btm");
         let lSideNav = document.querySelector("#scroll_left");
         let rSideNav = document.querySelector("#scroll_right");
         let lNavBtn = document.querySelector("#left_scroll_btn")
-
         if (height <= scrollPosition){
-            topNav.className = "top-btm_fixed";
+            topNav.classList.add('top-btm_fixed');
             lSideNav.classList.add('fixed');
             rSideNav.classList.add('fixed');
             lNavBtn.classList.add('fixed_btn');
             lNavBtn.classList.remove('fix_btn');
           }
         else {
-            navFixed.className = "top-btm";
+            topNav.classList.remove('top-btm_fixed');
             lSideNav.classList.remove('fixed');
             rSideNav.classList.remove('fixed');
             lNavBtn.classList.remove('fixed_btn');

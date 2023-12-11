@@ -1,4 +1,3 @@
-
 /* 공통 스타일 */
 * {
   margin: 0 auto;
@@ -56,13 +55,13 @@ button:hover {
   margin-left: 50px;
 }
 
-.ms-list li{
+.ms-list li {
   padding: 5px;
   float: left;
   font-size: 0.8rem;
 }
 
-.ms-list li a{
+.ms-list li a {
   color: #878787;
 }
 
@@ -76,7 +75,7 @@ button:hover {
   font-size: 0.8rem;
 }
 
-.ttm-list li a{
+.ttm-list li a {
   color: #878787;
 }
 
@@ -94,18 +93,27 @@ button:hover {
 }
 
 .top-mid a img {
-  width: 200px;
+  width: 250px;
   height: 160px;
 }
 
 /* .top-btm */
-.top-btm {
+#top-btm {
   width: 100%;
   height: 50px;
   background-color: #edfed6;
 }
 
-.top-btm-menu .tbm-list{
+.top-btm_fixed {
+  width: 100%;
+  height: 50px;
+  background-color: #edfed6;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
+.top-btm-menu .tbm-list {
   width: 1100px;
   height: 50px;
   display: flex;
@@ -113,7 +121,8 @@ button:hover {
   align-items: center;
 }
 
-.tbm-list-li, .view-all-menu {
+.tbm-list-li,
+.view-all-menu {
   display: flex;
   align-items: center;
   height: 50px;
@@ -123,17 +132,17 @@ button:hover {
   position: relative;
 }
 
-.top-btm-menu .tbm-list li:hover ul{
+.top-btm-menu .tbm-list li:hover ul {
   display: block;
 }
 
 .sub_all_menu {
+  z-index: 10;
   width: 1100px;
   height: 200px;
   padding: 5px;
   position: absolute;
   background: #edfed6;
-  z-index: 10;
   top: 50px;
   left: -20px;
   display: none;
@@ -151,7 +160,7 @@ button:hover {
   line-height: 1.5;
 }
 
-.top-btm-menu .tbm-list li:hover .sub_all_menu{
+.top-btm-menu .tbm-list li:hover .sub_all_menu {
   display: flex;
 }
 
@@ -167,6 +176,7 @@ button:hover {
   line-height: 1.5;
   display: none;
 }
+
 .sub_menu li {
   display: block;
   text-align: left;
@@ -176,7 +186,8 @@ button:hover {
 #sideNav {
   padding-top: 20px;
   width: 100%;
-  height: 1500px;
+  position: absolute;
+  z-index: 10;
 }
 
 .lr_nav {
@@ -184,11 +195,11 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  background-color: #fff;
 
 }
 
-#scroll_left, #scroll_right{
+#scroll_left,
+#scroll_right {
   margin: 0;
 }
 
@@ -197,14 +208,14 @@ button:hover {
   top: 70px;
 }
 
-#scroll_left{
+#scroll_left {
   border: 1px solid #ccc;
   width: 200px;
   height: 900px;
-
 }
 
-#ad1, #ad2 {
+#ad1,
+#ad2 {
   position: absolute;
 }
 
@@ -213,18 +224,18 @@ button:hover {
   height: 900px;
 }
 
-
-
-#left_scroll_btn{
+#left_scroll_btn {
   width: 50px;
   height: 50px;
   background: #000;
   left: 200px;
   position: absolute;
 }
+
 .fix_btn {
   top: 720px;
 }
+
 .fixed_btn {
   top: 400px;
 }
@@ -234,9 +245,14 @@ button:hover {
   border: 1px solid #ccc;
   right: 0;
   width: 150px;
+  height: 703px;
 }
 
-.right_banner, .quick_btn_cart, .scroll_right_cont, .go_QnA, .go_review {
+.right_banner,
+.quick_btn_cart,
+.scroll_right_cont,
+.go_QnA,
+.go_review {
   width: 150px;
   height: 50px;
   display: flex;
@@ -267,7 +283,8 @@ button:hover {
   background: #000;
 }
 
-.go_QnA, .go_review {
+.go_QnA,
+.go_review {
   border-top: 1px dotted #ccc;
   background: #fff;
 }
