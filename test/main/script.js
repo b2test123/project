@@ -159,24 +159,33 @@ function addtbMenu(){
 
 }
 
-
-
-
-
-
 function moveNav(){
     document.addEventListener('scroll', onScroll, {passive:true});
     let top = document.querySelector("#top");
     let height = top.clientHeight;
+
     function onScroll(){
         let scrollPosition = pageYOffset;
-        let nav = document.querySelector(".top-btm");
+
+        let topNav = document.querySelector(".top-btm");
         let navFixed = document.querySelector(".top-btm_fixed");
+        let lSideNav = document.querySelector("#scroll_left");
+        let rSideNav = document.querySelector("#scroll_right");
+        let lNavBtn = document.querySelector("#left_scroll_btn")
+
         if (height <= scrollPosition){
-            nav.className = "top-btm_fixed";
+            topNav.className = "top-btm_fixed";
+            lSideNav.classList.add('fixed');
+            rSideNav.classList.add('fixed');
+            lNavBtn.classList.add('fixed_btn');
+            lNavBtn.classList.remove('fix_btn');
           }
         else {
             navFixed.className = "top-btm";
+            lSideNav.classList.remove('fixed');
+            rSideNav.classList.remove('fixed');
+            lNavBtn.classList.remove('fixed_btn');
+            lNavBtn.classList.add('fix_btn');
           }
     }
 }

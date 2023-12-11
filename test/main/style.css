@@ -218,12 +218,16 @@
   margin: 0;
 }
 
+.fixed {
+  position: fixed;
+  top: 70px;
+}
+
 #scroll_left{
   border: 1px solid #ccc;
   width: 200px;
   height: 900px;
-  position: fixed;
-  top: 70px;
+
 }
 
 #ad1, #ad2 {
@@ -237,20 +241,23 @@
 
 
 
-.left_scroll_btn{
+#left_scroll_btn{
   width: 50px;
   height: 50px;
   background: #000;
-  top: 400px;
   left: 200px;
   position: absolute;
+}
+.fix_btn {
+  top: 720px;
+}
+.fixed_btn {
+  top: 400px;
 }
 
 
 #scroll_right {
   border: 1px solid #ccc;
-  position: fixed;
-  top: 70px;
   right: 0;
   width: 150px;
 }
