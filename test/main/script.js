@@ -220,9 +220,63 @@ function changeAd(){
         addDiv.appendChild(addA);
         nav.appendChild(addDiv);
     })
-
+    
+    let turn = "on";
     function AdChange(){
         let ad1 = document.querySelector("#ad1");
         let ad2 = document.querySelector("#ad2");
+
+        ad1.style.transition = "opacity 1s ease-in-out";
+        ad2.style.transition = "opacity 1s ease-in-out";
+
+        if(turn == "on") {
+            ad1.style.opacity = 0;
+            ad2.style.opacity = 1;
+            turn = "off";
+        }else {
+            ad1.style.opacity = 1;
+            ad2.style.opacity = 0;
+            turn = "on";
+
+        }
+    }
+    setInterval(AdChange, 3500);
+}
+
+function goTop(){
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function goBottom(){
+    let height = document.body.scrollHeight;
+    window.scrollTo({ top: height, behavior: "smooth" });
+}
+
+function removeBtn() {
+    let btn = document.querySelector("#go_bottom");
+    let viewportHeight = window.innerHeight;
+    let maxHeight = document.body.offsetHeight;
+    let currentHeight = window.scrollY;
+    let nowHeight = currentHeight + viewportHeight;
+
+    if (maxHeight <= nowHeight) {
+        if (btn) {
+            btn.remove();
+        }
+    } else {
+        if (!btn) {
+            let div = document.querySelector(".go_top_bottom");
+            let goBottomBtn = document.createElement("button");
+            let i = document.createElement("i");
+
+            goBottomBtn.id = "go_bottom";
+            goBottomBtn.onclick = goBottom;
+            i.className = "fa-solid fa-arrow-down";
+            goBottomBtn.appendChild(i);
+            div.appendChild(goBottomBtn);
+        }
     }
 }
+
+window.addEventListener('scroll', removeBtn);
+removeBtn();

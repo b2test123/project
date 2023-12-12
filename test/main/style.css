@@ -283,6 +283,11 @@ button:hover {
   position: relative;
 }
 
+.scroll_right_cont div p {
+  font-size: 0.8rem;
+  color: #999;
+}
+
 .justview {
   width: 100px;
   height: 100px;
