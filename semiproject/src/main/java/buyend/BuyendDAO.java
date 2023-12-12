@@ -14,12 +14,13 @@ public class BuyendDAO {
      PreparedStatement pstmt;
      ResultSet rs ;
 
-     public List<BuyendVO> getlistAll(){
+     public List<BuyendVO> getlistAll(String id){
     	 conn=JDBCUtil.getConnection();
     	 List<BuyendVO> BA = new ArrayList<>();
     	 try {
     		 String sql = "select*from buyend where id=? ";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
 			rs= pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -28,7 +29,7 @@ public class BuyendDAO {
 				ss.setOrderdate(rs.getTimestamp("orderdate"));
 				ss.setOrderNo(rs.getInt("orderNo"));
 				ss.setPrice(rs.getInt("price"));
-				ss.setId(rs.getString("id"));
+				
 				BA.add(ss);
 			}
 		} catch (SQLException e) {
