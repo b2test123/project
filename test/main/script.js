@@ -67,25 +67,29 @@ function addTtmMenu(){
         let uid = '<%=(String)session.getAttribute("sessionId")%>';
         let ul = document.querySelector(".ttm-list");
         let loginLi = ul.getElementsByTagName("li");
-        let link = loginLi[1].getElementsByTagName("a")
-        if(uid != "null"){
+        if(uid == "null"){
+            link.innerText = "LOG-IN";
+            link.href = "/login.do";
+        }else {
+            let link = loginLi[1].getElementsByTagName("a")
             link.innerText = "LOG-OUT";
             link.href = "/logout.do";
             loginLi[0].remove();
         }
     }
     
-    checkSession();
-
+    
     // 검색창 설정
     addInput.type = "text";
     addInput.id = "search";
     addLi.appendChild(addInput);
     addLi.innerHTML += " 🔍";
-
+    
     // 검색창 목록에 추가
     addUl.appendChild(addLi);
     topTopMenu.appendChild(addUl);
+    
+    checkSession();
 }   
 
 
