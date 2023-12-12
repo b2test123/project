@@ -229,6 +229,7 @@ button:hover {
   background: #000;
   left: 200px;
   position: absolute;
+  top: 420px;
 }
 
 .fix_btn {

@@ -6,8 +6,7 @@ let addUl = document.createElement("ul");
 let addLi = document.createElement("li");
 let addA = document.createElement("a");
 let addInput = document.createElement("input");
-// 세션아이디 가져오기
-let uid = '<%=(String)session.hetAttrivute("sessionId)%>';
+
 
 addMsShortcut();
 addTtmMenu();
@@ -63,22 +62,6 @@ function addTtmMenu(){
         addUl.appendChild(addLi);
     });
 
-    function checkSession(){
-        let uid = '<%=(String)session.getAttribute("sessionId")%>';
-        let ul = document.querySelector(".ttm-list");
-        let loginLi = ul.getElementsByTagName("li");
-        if(uid == "null"){
-            link.innerText = "LOG-IN";
-            link.href = "/login.do";
-        }else {
-            let link = loginLi[1].getElementsByTagName("a")
-            link.innerText = "LOG-OUT";
-            link.href = "/logout.do";
-            loginLi[0].remove();
-        }
-    }
-    
-    
     // 검색창 설정
     addInput.type = "text";
     addInput.id = "search";
@@ -88,10 +71,15 @@ function addTtmMenu(){
     // 검색창 목록에 추가
     addUl.appendChild(addLi);
     topTopMenu.appendChild(addUl);
-    
-    checkSession();
-}   
 
+    let uid = "null";
+    let ul = document.querySelector(".ttm-list");
+    let loginLi = ul.getElementsByTagName("li");
+    if(uid != "null"){
+        loginLi[1].innerHTML = '<a href="/logout.do">LOG-OUT</a>'
+        loginLi[0].remove();
+    }
+}   
 
 
 
