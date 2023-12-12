@@ -226,10 +226,11 @@ button:hover {
 #left_scroll_btn {
   width: 50px;
   height: 50px;
-  background: #000;
   left: 200px;
   position: absolute;
   top: 420px;
+  font-size: 2rem;
+  border: none;
 }
 
 .fix_btn {
@@ -283,6 +284,11 @@ button:hover {
   background: #000;
 }
 
+.justview .justview_pic {
+  width: 100px;
+  height: 100px;
+}
+
 .go_QnA,
 .go_review {
   border-top: 1px dotted #ccc;
@@ -290,20 +296,22 @@ button:hover {
 }
 
 /* #mid */
-
+#mid {
+  width: 100%;
+}
 /* .mid-top */
 #mid .mid-top {
+  width: 1100px;
   position: relative;
 }
 
 .main-prod-show {
-  width: 100%;
+  width: 1100px;
 }
 
 .main-prod-pic {
   width: 1100px;
   height: 600px;
-  padding: 15px 150px;
   background-color: #fff;
   display: none;
 }
@@ -315,7 +323,7 @@ button:hover {
 .main-pic-button {
   position: absolute;
   bottom: 350px;
-  left: 570px;
+  left: 475px;
 }
 
 .main-pic-button button {
@@ -347,7 +355,6 @@ button:hover {
 .main-pic-arrowBtn button:active {
   color: #ee4;
   text-shadow: 2px 2px 10px #aa6,
-    -2px -2px 10px #ffa;
 }
 
 .main-pic-arrowBtn .left {
@@ -363,21 +370,14 @@ button:hover {
 /* board */
 .board {
   display: block;
-  width: 100%;
+  width: 1100px;
   height: 300px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
 }
 
 .board div {
   width: 30%;
   height: 250px;
-  float: left;
-  margin: 30px 20px 5px 23px;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  background-color: #fff;
+  border: 1px solid #9f9;
 }
 
 .board div h3 {
