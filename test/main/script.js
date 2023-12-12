@@ -260,23 +260,20 @@ function removeBtn() {
     let nowHeight = currentHeight + viewportHeight;
 
     if (maxHeight <= nowHeight) {
-        if (btn) {
-            btn.remove();
-        }
+        btn.classList.add("fadeOut");
+        setTimeout(() => {
+            btn.classList.remove("fadeOut");
+        }, 500);
+        btn.style.opacity = "0";
     } else {
-        if (!btn) {
-            let div = document.querySelector(".go_top_bottom");
-            let goBottomBtn = document.createElement("button");
-            let i = document.createElement("i");
-
-            goBottomBtn.id = "go_bottom";
-            goBottomBtn.onclick = goBottom;
-            i.className = "fa-solid fa-arrow-down";
-            goBottomBtn.appendChild(i);
-            div.appendChild(goBottomBtn);
-        }
+        setTimeout(() => {
+            btn.classList.add("fadeIn");
+            setTimeout(() => {
+                btn.classList.remove("fadeIn");
+            }, 500);
+            btn.style.opacity = "1";
+        }, 0);
     }
 }
 
-window.addEventListener('scroll', removeBtn);
-removeBtn();
+window.addEventListener("scroll", removeBtn);
