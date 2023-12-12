@@ -170,17 +170,27 @@ function moveNav(){
         let lSideNav = document.querySelector("#scroll_left");
         let rSideNav = document.querySelector("#scroll_right");
         let lNavBtn = document.querySelector("#left_scroll_btn");
+
         if (height <= scrollPosition){
             topNav.classList.add('top-btm_fixed');
+
+            lSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            rSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            lNavBtn.style.transition = "all 0.3s ease-in-out";
+
             lSideNav.style.position="fixed";
             rSideNav.style.position="fixed";
             lSideNav.style.top="70px";
             rSideNav.style.top="70px";
             lNavBtn.classList.add('fixed_btn');
             lNavBtn.classList.remove('fix_btn');
-          }
-        else {
+          }else {
             topNav.classList.remove('top-btm_fixed');
+
+            lSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            rSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            lNavBtn.style.transition = "all 0.3s ease-in-out";
+
             lSideNav.style.position="absolute";
             rSideNav.style.position="absolute";
             lSideNav.style.top="0";
