@@ -7,6 +7,7 @@ let addLi = document.createElement("li");
 let addA = document.createElement("a");
 let addInput = document.createElement("input");
 
+
 addMsShortcut();
 addTtmMenu();
 addtbMenu();
@@ -66,12 +67,22 @@ function addTtmMenu(){
     addInput.id = "search";
     addLi.appendChild(addInput);
     addLi.innerHTML += " 🔍";
-
+    
     // 검색창 목록에 추가
     addUl.appendChild(addLi);
-
     topTopMenu.appendChild(addUl);
+
+    let uid = "null";
+    let ul = document.querySelector(".ttm-list");
+    let loginLi = ul.getElementsByTagName("li");
+    if(uid != "null"){
+        loginLi[1].innerHTML = '<a href="/logout.do">LOG-OUT</a>'
+        loginLi[0].remove();
+    }
 }   
+
+
+
 
 function addtbMenu(){
     let addUl = document.createElement("ul");

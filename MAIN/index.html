@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
-    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bf7b37fa88.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -54,19 +54,25 @@
                         상품이<br>
                         없습니다.
                         </li> -->
-                        <div class="justview"></div>
-                        <div class="justview"></div>
-                        <div class="justview"></div>
+                        <div class="justview"><img class="justview_pic" src="img/products/food1.jpg" alt=""></div>
+                        <div class="justview"><img class="justview_pic" src="img/products/house1.jpg" alt=""></div>
+                        <div class="justview"><img class="justview_pic" src="img/products/toy1.jpg" alt=""></div>
                     </div>
+
                     <div class="go_QnA">
                         <a>문의 게시판</a>
                     </div>
                     <div class="go_review">
                         <a>리뷰 게시판</a>
                     </div>
+                    <div class="go_top_bottom">
+                        <button id="go_top"><i class="fa-solid fa-arrow-up"></i></button>
+                        <button id="go_bottom"><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
                 </nav>
             </div>
         </div>
+
         <div id="mid">
             <div class="mid-top">
                 <div class="main-prod-show">  <!-- 제일 큰 사진으로 주요 제품 등을 보여줌 -->
@@ -82,8 +88,8 @@
                     <button class="pic5" onclick="selectPic(4)"></button>
                 </div>
                 <div class="main-pic-arrowBtn">
-                    <button class="left" onclick="beforeSlide()" value="<"><</button>
-                    <button class="right" onclick="nextSlide()" value=">">></button>
+                    <button class="left" onclick="beforeSlide()" value="<"></button>
+                    <button class="right" onclick="nextSlide()" value=">"></button>
                 </div>
 
                 <div class="board">
@@ -92,7 +98,6 @@
                         <ul class="notice-list">
                             <li><a href="">Notice 1</a></li>
                             <li><a href="">Notice 2</a></li>
-                            <li><a href="">Event 3</a></li>
                             <li><a href="">Event 2</a></li>
                             <li><a href="">Event 1</a></li>
                         </ul>
@@ -197,5 +202,5 @@
         </div>
     </div>
 </body>
-<script src="main_script.js"></script>
+<script src="script.js"></script>
 </html>
