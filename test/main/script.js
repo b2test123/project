@@ -7,7 +7,6 @@ let addLi = document.createElement("li");
 let addA = document.createElement("a");
 let addInput = document.createElement("input");
 
-
 addMsShortcut();
 addTtmMenu();
 addtbMenu();
@@ -71,18 +70,7 @@ function addTtmMenu(){
     // 검색창 목록에 추가
     addUl.appendChild(addLi);
     topTopMenu.appendChild(addUl);
-
-    let uid = 'null';
-    let ul = document.querySelector(".ttm-list");
-    let loginLi = ul.getElementsByTagName("li");
-    if(uid != "null"){
-        loginLi[1].innerHTML = '<a href="/logout.do">LOG-OUT</a>'
-        loginLi[0].remove();
-    }
 }   
-
-
-
 
 function addtbMenu(){
     let addUl = document.createElement("ul");
@@ -277,3 +265,22 @@ function removeBtn() {
 }
 
 window.addEventListener("scroll", removeBtn);
+
+
+
+
+// 세션 확인 코드
+// let uid = '<%= session.getAttribute("sessionId") %>';
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     let ul = document.querySelector(".ttm-list");
+
+//     if (ul) {
+//         let loginLi = ul.getElementsByTagName("li");
+
+//         if (uid !== "null" && loginLi[1]) {
+//             loginLi[1].innerHTML = '<a href="/logout.do">LOG-OUT</a>';
+//             loginLi[0].remove();
+//         }
+//     }
+// });
