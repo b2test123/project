@@ -209,15 +209,12 @@ button:hover {
   margin: 0;
 }
 
-.fixed {
-  position: fixed;
-  top: 70px;
-}
-
 #scroll_left {
   border: none;
   width: 200px;
   height: 900px;
+  position: relative;
+  left: 0;
 }
 
 #ad1,
@@ -507,6 +504,7 @@ button:hover {
 .btm-icon {
   width: 350px;
   margin: 0;
+  z-index: 1;
 }
 
 .btm-icon-list {
