@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>멍뭉꼬냥</title>
 <link rel="stylesheet" href="resources/css/main.css">
-<script src="resources/js/main.js"></script>
+<script src="https://kit.fontawesome.com/bf7b37fa88.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="container">
@@ -18,17 +18,10 @@
 				<div class="main-prod-show">
 					<!-- 제일 큰 사진으로 주요 제품 등을 보여줌 -->
 					<div>
-						<a href=""><img id="main-prod-pic1" class="main-prod-pic"
-							src="img/main_product/main-pic1.jpg" alt=""></a>
+						<a href="">
+							<img id="main-prod-pic1" class="main-prod-pic" src="resources/images/main/main-pic1.jpg" alt="">
+						</a>
 					</div>
-					<a href=""><img id="main-prod-pic1" class="main-prod-pic"
-						src="img/main_product/main-pic2.jpg" alt=""></a> <a href=""><img
-						id="main-prod-pic1" class="main-prod-pic"
-						src="img/main_product/main-pic3.jpg" alt=""></a> <a href=""><img
-						id="main-prod-pic1" class="main-prod-pic"
-						src="img/main_product/main-pic4.jpg" alt=""></a> <a href=""><img
-						id="main-prod-pic1" class="main-prod-pic"
-						src="img/main_product/main-pic5.jpg" alt=""></a>
 				</div>
 				<div class="main-pic-button">
 					<!-- 버튼 클릭으로 메인 사진 선택 -->
@@ -88,30 +81,44 @@
 					<h2>Home Sweet Home</h2>
 					<div class="sub-prod-show">
 						<!-- 메인 제품 외의 주요 제품 목록 -->
-						<a href=""><img class="sub-prod-pic" src="img/house1.jpg"
-							alt=""></a> <a href=""><img class="sub-prod-pic"
-							src="img/house2.jpg" alt=""></a> <a href=""><img
-							class="sub-prod-pic" src="img/house3.jpg" alt=""></a> <a
-							href=""><img class="sub-prod-pic" src="img/house4.jpg" alt=""></a>
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/house1.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/house2.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/house3.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/house4.jpg" alt="">
+						</a>
 					</div>
 
 					<h2>WaGoo WaGoo</h2>
 					<div class="sub-prod-show">
 						<!-- 메인 제품 외의 주요 제품 목록 -->
-						<a href=""><img class="sub-prod-pic" src="img/food1.jpg"
-							alt=""></a> <a href=""><img class="sub-prod-pic"
-							src="img/food2.jpg" alt=""></a> <a href=""><img
-							class="sub-prod-pic" src="img/food3.jpg" alt=""></a> <a href=""><img
-							class="sub-prod-pic" src="img/food4.jpg" alt=""></a>
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/food1.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/food3.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/food3.jpg" alt="">
+						</a> 
+						<a href="">
+							<img class="sub-prod-pic" src="resources/images/main/food4.jpg" alt="">
+						</a>
 					</div>
 
 					<h2>Let's Play</h2>
 					<div class="sub-prod-show">
 						<!-- 메인 제품 외의 주요 제품 목록 -->
-						<a href=""><img class="sub-prod-pic" src="img/toy1.jpg" alt=""></a>
-						<a href=""><img class="sub-prod-pic" src="img/toy2.jpg" alt=""></a>
-						<a href=""><img class="sub-prod-pic" src="img/toy3.jpg" alt=""></a>
-						<a href=""><img class="sub-prod-pic" src="img/toy4.jpg" alt=""></a>
+						<a href=""><img class="sub-prod-pic" src="resources/images/main/toy1.jpg" alt=""></a>
+						<a href=""><img class="sub-prod-pic" src="resources/images/main/toy2.jpg" alt=""></a>
+						<a href=""><img class="sub-prod-pic" src="resources/images/main/toy3.jpg" alt=""></a>
+						<a href=""><img class="sub-prod-pic" src="resources/images/main/toy4.jpg" alt=""></a>
 					</div>
 				</div>
 			</div>
@@ -119,4 +126,5 @@
 		<jsp:include page="footer.jsp" />
 	</div>
 </body>
+<script src="resources/js/main.js"></script>
 </html>

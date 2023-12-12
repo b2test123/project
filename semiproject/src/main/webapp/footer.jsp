@@ -22,11 +22,11 @@
 		</div>
 		<div class="btm-icon">
 			<ul class="btm-icon-list">
-				<li><a href=""><img class="icon" src="" alt=""></a></li>
-				<li><a href=""><img class="icon" src="" alt=""></a></li>
-				<li><a href=""><img class="icon" src="" alt=""></a></li>
-				<li><a href=""><img class="icon" src="" alt=""></a></li>
-				<li><a href=""><img class="icon" src="" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick1.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick2.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick3.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick4.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick5.png" alt=""></a></li>
 			</ul>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 			<p class="span-list">
 				<span>team_2 : KHacademy</span> <span>address : korea seoul</span> <span>tel
 					: 1234-1234</span> <span>e-mail : team_2@naver.com</span> <br> <span>leader
-					: choi hae won</span> <span>member : seok min / dong hyeon / ji
+					: choi jae won</span> <span>member : seok min / dong hyeon / ji
 					seong / je heon / seung beom </span> <br> <span>copyright ⓒ
 					team_2. All rights reserved. Design by team_2.</span>
 			</p>

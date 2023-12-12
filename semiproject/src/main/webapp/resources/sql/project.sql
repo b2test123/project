@@ -36,10 +36,8 @@ CREATE TABLE qa (
    qname    VARCHAR2(20)    NOT NULL,
    qdate    TIMESTAMP,
    qhit     NUMBER,
-   aid      VARCHAR2(30)    NOT NULL,
    id       VARCHAR2(30)    NOT NULL,
    FOREIGN KEY(id) REFERENCES member,
-   FOREIGN KEY(aid) REFERENCES admin
 );
 
 CREATE TABLE review (
@@ -73,9 +71,8 @@ CREATE TABLE notice (
    ntitle   VARCHAR2(50)    NOT NULL,
    nname    VARCHAR2(20)    NOT NULL,
    ndate    TIMESTAMP       NOT NULL,
+   ncontent VARCHAR2(600)
    nhit     NUMBER,
-   aid      VARCHAR2(30)    NOT NULL,
-   FOREIGN KEY(aid) REFERENCES admin
 );
 
 CREATE TABLE category (
@@ -118,7 +115,5 @@ CREATE TABLE board (
    createdate   TIMESTAMP       DEFAULT SYSTIMESTAMP,
    bupdate      TIMESTAMP       DEFAULT SYSTIMESTAMP,
    id           VARCHAR2(20)    NOT NULL,
-   aid          VARCHAR2(30)    NOT NULL,
    FOREIGN KEY(id) REFERENCES member,
-   FOREIGN KEY(aid) REFERENCES admin
 );

@@ -23,12 +23,12 @@
 							<tr>
 								<th>ID</th>
 								<td><input type="text" name="id"><span>(영문 소문자/숫자,
-										4~20자)</span></td>
+										6~20자)</span></td>
 							</tr>
 							<tr>
 								<th>PassWord</th>
 								<td><input type="password" name="passwd"><span>(영문
-										대소문자/숫자/특수문자, 10~20자)</span></td>
+										대소문자/숫자/특수문자, 8~14자)</span></td>
 							</tr>
 							<tr>
 								<th>Confirm PW</th>

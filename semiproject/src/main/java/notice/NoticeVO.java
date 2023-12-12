@@ -12,8 +12,7 @@ public class NoticeVO implements Serializable{
 	private String nname;
 	private Timestamp nDate;
 	private int nhit;
-	private String aid;
-	
+	private String ncontent;
 	
 	public int getNno() {
 		return nno;
@@ -45,11 +44,11 @@ public class NoticeVO implements Serializable{
 	public void setNhit(int nhit) {
 		this.nhit = nhit;
 	}
-	public String getAid() {
-		return aid;
+	public String getNcontent() {
+		return ncontent;
 	}
-	public void setAid(String aid) {
-		this.aid = aid;
+	public void setNcontent(String ncontent) {
+		this.ncontent = ncontent;
 	}
 	
 }

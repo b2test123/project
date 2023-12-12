@@ -73,6 +73,33 @@ public class JoinController extends HttpServlet {
 			mDAO.insertMember(m);
 			
 			nextPage = "/main.jsp";
+		}else if(command.equals("/loginform.do")){
+			nextPage = "/member/loginform.jsp";
+		}else if(command.equals("/login.do")) {
+			String id = request.getParameter("id");
+			String passwd = request.getParameter("passwd");
+			
+			MemberVO m = new MemberVO();
+			m.setId(id);
+			m.setPasswd(passwd);
+			
+			MemberVO member = mDAO.checkLogin(m);
+			String name = member.getName();
+			
+			if(name != null) {
+				session.setAttribute("sessionId", id);
+				session.setAttribute("sessionName", name);
+				
+				nextPage = "/main.jsp";
+			}else {
+				String error = "아이디나 비밀번호를 확인해주세요.";
+				request.setAttribute("error", error);
+				//에러 발생 후 페이지 이동
+				nextPage = "/member/loginform.jsp";
+			}
+		}else if(command.equals("/logout.do")) {
+			session.invalidate(); //세션삭제
+			nextPage = "/main.jsp";
 		}
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);

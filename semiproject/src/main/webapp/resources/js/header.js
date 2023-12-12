@@ -41,8 +41,8 @@ function addTtmMenu(){
     let addUl = document.createElement("ul");
     addUl.className = "ttm-list";
     let itemsList = [
-        { text: "JOIN", link: "/join.do" },
-        { text: "LOG-IN", link: "/login.do" },
+        { text: "JOIN", link: "/joinform.do" },
+        { text: "LOG-IN", link: "/loginform.do" },
         { text: "MY-PAGE", link: "/mypage.do" },
         { text: "BASKET", link: "/basket.do" },
         { text: "ORDER-INQUIRY", link: "/orderinquiry.do" },
@@ -53,7 +53,15 @@ function addTtmMenu(){
         let addLi = document.createElement("li");
         let addA = document.createElement("a");
         addA.href = item.link;
-        addA.textContent = item.text;
+        /*if(sessionIdExists && item.text === "Log-in"){
+			addA.textContent = "Log-out";
+		}else{
+			addA.textContent = item.text;
+		}
+		addLi.appendChild(addA);
+		addUl.appendChild(addLi);*/
+		
+		addA.textContent = item.text;
 
         addLi.appendChild(addA);
         addUl.appendChild(addLi);

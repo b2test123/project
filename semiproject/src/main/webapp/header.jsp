@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="resources/css/header.css">
+<script src="https://kit.fontawesome.com/bf7b37fa88.js" crossorigin="anonymous"></script>
 <header>
 	<div id="top">
 		<div class="top-top">
@@ -16,7 +17,7 @@
 
 		<div class="top-mid">
 			<!-- 메인 로고, 사진 -->
-			<a href=""><img class="logo-pic" src="01_logo2.2.jpg" alt=""></a>
+			<a href="/main.jsp"><img class="logo-pic" src="resources/images/header/01_logo2.2.jpg" alt=""></a>
 		</div>
 
 		<div class="top-btm">

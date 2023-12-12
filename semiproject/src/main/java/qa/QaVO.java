@@ -12,7 +12,6 @@ public class QaVO implements Serializable{
 	private String qname;
 	private Timestamp qDate;
 	private int qhit;
-	private String aid;
 	private String id;
 	
 	public int getQno() {
@@ -44,12 +43,6 @@ public class QaVO implements Serializable{
 	}
 	public void setQhit(int qhit) {
 		this.qhit = qhit;
-	}
-	public String getAid() {
-		return aid;
-	}
-	public void setAid(String aid) {
-		this.aid = aid;
 	}
 	public String getId() {
 		return id;

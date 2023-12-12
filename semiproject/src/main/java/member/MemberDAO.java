@@ -76,5 +76,28 @@ public class MemberDAO {
 		} finally {
 			JDBCUtil.close(conn, pstmt);
 		}
+	}//회원가입
+	
+	//로그인 인증
+	public MemberVO checkLogin(MemberVO m) {
+		try {
+			conn = JDBCUtil.getConnection();
+			String sql = "select * from member where id = ? and passwd = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getId());
+			pstmt.setString(2, m.getPasswd());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				m.setName(rs.getString("name"));
+				System.out.println("Login successful. Name: " + m.getName());
+			}else {
+				System.out.println("Login failed.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return m;
 	}
 }
