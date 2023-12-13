@@ -14,7 +14,7 @@ addTtmMenu();
 addtbMenu();
 changeAd();
 moveNav();
-mainProdPicChange();
+// mainProdPicChange();
 
 function addMsShortcut(){
     let addUl = document.createElement("ul");
@@ -328,72 +328,72 @@ window.addEventListener("scroll", removeBtn);
 //     }
 // });
 
-function mainProdPicChange() {
-    let pic1 = document.querySelector("#main-prod-pic1");
-    let pic2 = document.querySelector("#main-prod-pic2");
-    let pic3 = document.querySelector("#main-prod-pic3");
-    let pic4 = document.querySelector("#main-prod-pic4");
-    let pic5 = document.querySelector("#main-prod-pic5");
-    let pics = [pic1, pic2, pic3, pic4, pic5];
+// function mainProdPicChange() {
+//     let pic1 = document.querySelector("#main-prod-pic1");
+//     let pic2 = document.querySelector("#main-prod-pic2");
+//     let pic3 = document.querySelector("#main-prod-pic3");
+//     let pic4 = document.querySelector("#main-prod-pic4");
+//     let pic5 = document.querySelector("#main-prod-pic5");
+//     let pics = [pic1, pic2, pic3, pic4, pic5];
 
-    pics.forEach((pic, index) => {
-        if (index === 0) {
-            pic.style.opacity = 1; 
-        } else {
-            pic.style.opacity = 0;
-        }
-    });
+//     pics.forEach((pic, index) => {
+//         if (index === 0) {
+//             pic.style.opacity = 1; 
+//         } else {
+//             pic.style.opacity = 0;
+//         }
+//     });
 
-    pics.forEach(pic => {
-        pic.style.transition = "opacity 1s ease-in-out"; 
-    });
+//     pics.forEach(pic => {
+//         pic.style.transition = "opacity 1s ease-in-out"; 
+//     });
 
-    let currentIndex = 1; 
-    setInterval(() => {
-        pics[currentIndex].style.opacity = 1;
+//     let currentIndex = 1; 
+//     setInterval(() => {
+//         pics[currentIndex].style.opacity = 1;
 
-        for (let i = 0; i < pics.length; i++) {
-            if (i !== currentIndex) {
-                pics[i].style.opacity = 0;
-            }
-        }
+//         for (let i = 0; i < pics.length; i++) {
+//             if (i !== currentIndex) {
+//                 pics[i].style.opacity = 0;
+//             }
+//         }
 
-        currentIndex = (currentIndex + 1) % pics.length;
-    }, 3000);
-}
+//         currentIndex = (currentIndex + 1) % pics.length;
+//     }, 3000);
+// }
 
-function createButtonClickHandler(index) {
-    return function() {
-        selectPic(index);
-    };
-}
+// function createButtonClickHandler(index) {
+//     return function() {
+//         selectPic(index);
+//     };
+// }
 
-function selectPic(index) {
-    let pics = [
-        document.querySelector("#main-prod-pic1"),
-        document.querySelector("#main-prod-pic2"),
-        document.querySelector("#main-prod-pic3"),
-        document.querySelector("#main-prod-pic4"),
-        document.querySelector("#main-prod-pic5")
-    ];
+// function selectPic(index) {
+//     let pics = [
+//         document.querySelector("#main-prod-pic1"),
+//         document.querySelector("#main-prod-pic2"),
+//         document.querySelector("#main-prod-pic3"),
+//         document.querySelector("#main-prod-pic4"),
+//         document.querySelector("#main-prod-pic5")
+//     ];
 
-    pics.forEach((pic, i) => {
-        if (i === index) {
-            pic.style.opacity = 1;
-        } else {
-            pic.style.opacity = 0;
-        }
-    });
+//     pics.forEach((pic, i) => {
+//         if (i === index) {
+//             pic.style.opacity = 1;
+//         } else {
+//             pic.style.opacity = 0;
+//         }
+//     });
 
-    pics.forEach(pic => {
-        pic.style.transition = "opacity 0.5s ease-in-out";
-    });
-}
+//     pics.forEach(pic => {
+//         pic.style.transition = "opacity 0.5s ease-in-out";
+//     });
+// }
 
-for (let i = 0; i < 5; i++) {
-    let newButton = document.createElement('button');
-    newButton.className = 'pic' + (i + 1);
-    newButton.addEventListener('click', createButtonClickHandler(i));
+// for (let i = 0; i < 5; i++) {
+//     let newButton = document.createElement('button');
+//     newButton.className = 'pic' + (i + 1);
+//     newButton.addEventListener('click', createButtonClickHandler(i));
 
-    mainPicButtonDiv.appendChild(newButton);
-}
+//     mainPicButtonDiv.appendChild(newButton);
+// }
