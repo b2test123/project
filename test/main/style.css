@@ -352,6 +352,7 @@ button:hover {
 /* .mid-top */
 #mid .mid-top {
   width: 1100px;
+  height: 600px;
   margin-top: 20px;
   position: relative;
 }
@@ -363,17 +364,15 @@ button:hover {
 .main-prod-pic {
   width: 1100px;
   height: 600px;
-  background-color: #fff;
-  display: none;
 }
 
-#main-prod-pic1 {
-  display: block;
+.main-prod {
+  position: absolute;
 }
 
 .main-pic-button {
   position: absolute;
-  bottom: 350px;
+  bottom: 20px;
   left: 475px;
 }
 
@@ -385,26 +384,13 @@ button:hover {
   margin: 0 5px;
   cursor: pointer;
   background: #fff;
-}
-
-.main-pic-arrowBtn button {
-  position: absolute;
-  background: none;
-  border: none;
-  font-size: 10rem;
-  color: #ffc;
-  box-shadow: none;
+  z-index: 100;
 }
 
 
-.main-pic-arrowBtn .left {
-  top: 200px;
-  left: 50px;
-}
-
-.main-pic-arrowBtn .right {
-  top: 200px;
-  right: 50px;
+/* mid-mid */
+.mid-mid {
+  width: 1100px;
 }
 
 /* board */
@@ -451,8 +437,8 @@ button:hover {
 
 
 
-/* .mid-mid */
-.mid-mid {
+/* .mid-bottom */
+.mid-bottom {
   width: 1100px;
   margin-top: 20px;
 }
