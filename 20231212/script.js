@@ -310,15 +310,17 @@ window.addEventListener("scroll", removeBtn);
 
 
 // 세션 확인 코드
-// let uid = '<%= session.getAttribute("sessionId") %>';
+// JSP 파일 내 내부 스크립트로 전역 변수 선언
+// var uid = '<%= session.getAttribute("sessionId") %>';
 
+// JSP 파일 외 외부 스크립트로 연결될 때 함수가 JSP 파일 내부의 전역 변수를 가져옴
 // document.addEventListener("DOMContentLoaded", function() {
 //     let ul = document.querySelector(".ttm-list");
 
 //     if (ul) {
 //         let loginLi = ul.getElementsByTagName("li");
 
-//         if (uid !== "null" && loginLi[1]) {
+//         if (uid != "null" && loginLi[1]) {
 //             loginLi[1].innerHTML = '<a href="/logout.do">LOG-OUT</a>';
 //             loginLi[0].remove();
 //         }
