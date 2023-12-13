@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/join_style.css">
+      <title>배송조회</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="top">
+
+        <div class="top-top">
+          <div class="mini-shortcut"> <!-- 상단 좌측 링크 아이콘 -->
+            <ul class="ms-list">
+              <li><a href="">youtube</a></li>
+              <li><a href="">instagram</a></li>
+              <li><a href="">twitter</a></li>
+            </ul>
+          </div>
+
+          <div class="top-top-menu"> <!-- 상단 미니메뉴 -->
+            <ul class="ttm-list">
+              <li><a href="">JOIN</a></li>
+              <li><a href="">LOG IN</a></li>
+              <li><a href="">MY PAGE</a></li>
+              <li><a href="">BASKET</a></li>
+              <li><a href="">ORDER INQUIRY</a></li>
+              <li><a href="">BOARD</a></li>
+              <li><input type="text" id="search"> 🔍</li> <!-- 상단 검색창 -->
+            </ul>
+          </div>
+        </div>  
+
+        <div class="top-mid">   <!-- 메인 로고, 사진 -->
+          <a href=""><img class="logo-pic" src="img/logoimg.jpg" alt=""></a>
+        </div>
+
+        <div class="top-btm">   <!-- 사이트 내 각종 메뉴 모음 -->
+          <div class="top-btm-menu">
+            <ul class="tbm-list">
+              <li><a href="">MENU1</a></li>
+              <li><a href="">MENU2</a></li>
+              <li><a href="">MENU3</a></li>
+              <li><a href="">MENU4</a></li>
+              <li><a href="">MENU5</a></li>
+              <li><a href="">MENU6</a></li>
+              <li><a href="">MENU7</a></li>
+              <li><a href="">MENU8</a></li>
+              <li><a href="">MENU9</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="mid">
+        <h3>ORDER</h3>
+          <section id="order">
+            <div class="mid-top">
+              <h2>주문내역조회</h2>
+                  <br>
+                <fieldset>
+                  <legend>검색기간설정</legend>
+                    <select id="order_status" name="order_status" class="fSelect">
+                      <option value="all">전체 주문처리 상태</option>
+                      <option value="shipped_before">입금전</option>
+                      <option value="shipped_standby">배송준비중</option>
+                      <option value="shipped_begin">배송중</option>
+                      <option value="shipped_complate">배송완료</option>
+                      <option value="order_cancel">취소</option>
+                      <option value="order_exchange">교환</option>
+                      <option value="order_return">반품</option>
+                    </select>
+
+                    <span class="period">
+                      <a href="#none" class="btnNormal" days="00">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date1.gif" alt="오늘">
+                      </a>
+                      <a href="#none" class="btnNormal" days="07">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date2.gif" alt="1주일">
+                      </a>
+                      <a href="#none" class="btnNormal" days="30">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date3.gif" alt="1개월">
+                      </a>
+                      <a href="#none" class="btnNormal" days="90">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date4.gif" alt="3개월">
+                      </a>
+                      <a href="#none" class="btnNormal" days="180">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_date5.gif" alt="6개월">
+                      </a>
+                    </span>
+                    
+                    <input id="history_start_date" name="history_start_date" class="fText hasDatepicker" readonly="readonly" size="10" value="2023-09-04" type="text">
+                      <button type="button" class="ui-datepicker-trigger">
+                        <img src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/ico_cal.gif" alt="..." title="...">
+                      </button>
+                         " ~ "
+                    <input id="history_end_date" name="history_end_date" class="fText hasDatepicker" readonly="readonly" size="10" value="2023-12-03" type="text">
+                      <button type="button" class="ui-datepicker-trigger">
+                        <img src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/ico_cal.gif" alt="..." title="...">
+                      </button>        
+                          
+                    <input alt="조회" id="order_search_btn" type="image" src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/btn_search.gif">    
+
+                </fieldset>
+                  <ul>
+                    <p>기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</p>
+                    <p>주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.</p>
+                  </ul>
+            </div>
+              </br>
+              </br>
+
+            <div class="mid-mid">
+              <h2>주문 상품 정보</h2>
+                </br>
+                </br>
+    
+              <table class="product-info">
+                <thead>
+                  <tr>
+                    <th scope="col" class="number">
+                      "주문일자"
+                        <br>
+                      "[주문번호]"
+                    </th>
+                    <th scope="col" class="thumb">이미지</th>
+                    <th scope="col" class="product">상품정보</th>
+                    <th scope="col" class="quantity">수량</th>
+                    <th scope="col" class="price">상품구매금액</th>
+                    <th scope="col" class="state">주문처리상태</th>
+                    <th scope="col" class="service">취소/교환/반품</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <td class="주문일자">
+                      <p>2023-12-04</p>
+                      <p>[P1234567890]</p>
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif" alt="주문취소">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_exchange.gif" alt="교환신청">
+                    </td>
+
+                    <td class="이미지">
+                      <img src="/test1/image/dog-horse.jpg" alt="강아지목줄" width="100" height="80">
+                    </td>
+                    <td class="상품정보">
+                      "강아지 목줄"
+                    </td>
+                    <td class="수량">
+                      1
+                    </td>
+                    <td class="상품구매금액">
+                      30,000
+                    </td>
+                    <td class="주문처리상태">
+                      배송 진행 예정
+                        <br> 
+                        <br>
+                      <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_comment.gif" alt="구매후기">
+                      <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_retract2.gif" alt="교환철회">
+                    </td>
+                    <td class="취소/교환/반품">
+                      <p class="displaynone"><a href="#none" class="line" onclick="">[상세정보]</a></p>
+                    </td>
+                  </tr>
+ 
+                  <tr>
+                    <td class="주문일자">
+                      <p>2023-12-06</p>
+                      <p>[W1256723564]</p>
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_cancel.gif" alt="주문취소">
+                        <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_exchange.gif" alt="교환신청">
+                    </td>
+                    <td class="이미지">
+                        <img src="/test1/image/dog-food.jpg" alt="강아지사료" width="100" height="80">
+                    </td>
+                    <td class="상품정보">
+                        "강아지 사료"
+                    </td>
+                    <td class="수량">
+                        2
+                    </td>
+                    <td class="상품구매금액">
+                        74,000
+                    </td>
+                    <td class="주문처리상태">
+                        배송 진행 중
+                       <br> 
+                       <br>
+                      <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_comment.gif" alt="구매후기">
+                      <img src="https://img.echosting.cafe24.com/skin/base_ko_KR/myshop/btn_order_retract2.gif" alt="교환철회">
+                    </td>
+                    <td class="취소/교환/반품">
+                       <p class="displaynone"><a href="#none" class="line" onclick="">[상세정보]</a></p>
+                     </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+      </div>
+ 
+
+
+
+      <div id="bottom">
+        <div class="cst-center">
+          <h3>CUSTOMER CENTER</h3>
+            <p>
+            TEL 010-0000-0000 <br>
+            Kakao team_2 <br>
+            AM 10 ~ PM 6 <br>
+            Closed ~ Weekend, Holiday
+            </p>
+        </div>
+        <div class="bank-info">
+          <h3>BANK INFO</h3>
+           <p>
+            농협 123-1234-1234-12 <br>
+            국민 123456-12-123456 <br>
+            예금주 : (주)team_2
+           </p>
+        </div>
+        <div class="btm-icon">
+          <ul class="btm-icon-list">
+            <li><a href=""><img class="icon" src="" alt="">o</a></li>
+            <li><a href=""><img class="icon" src="" alt="">o</a></li>
+            <li><a href=""><img class="icon" src="" alt="">o</a></li>
+            <li><a href=""><img class="icon" src="" alt="">o</a></li>
+            <li><a href=""><img class="icon" src="" alt="">o</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <footer id="footer">
+        <div class="footer-info">
+          <p class="span-list">
+            <span>team_2 : KHacademy</span>
+            <span>address : korea seoul</span>
+            <span>tel : 1234-1234</span>
+            <span>e-mail : team_2@naver.com</span> <br>
+            <span>leader : choi hae won</span>
+            <span>member : seok min / dong hyeon / ji seong / je heon / seung beom </span> <br>
+            <span>copyright ⓒ team_2. All rights reserved. Design by team_2.</span>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
