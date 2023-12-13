@@ -6,6 +6,8 @@ let addUl = document.createElement("ul");
 let addLi = document.createElement("li");
 let addA = document.createElement("a");
 let addInput = document.createElement("input");
+let mainPicButtonDiv = document.querySelector('.main-pic-button');
+
 
 addMsShortcut();
 addTtmMenu();
@@ -360,13 +362,20 @@ function mainProdPicChange() {
     }, 3000);
 }
 
+function createButtonClickHandler(index) {
+    return function() {
+        selectPic(index);
+    };
+}
+
 function selectPic(index) {
-    let pic1 = document.querySelector("#main-prod-pic1");
-    let pic2 = document.querySelector("#main-prod-pic2");
-    let pic3 = document.querySelector("#main-prod-pic3");
-    let pic4 = document.querySelector("#main-prod-pic4");
-    let pic5 = document.querySelector("#main-prod-pic5");
-    let pics = [pic1, pic2, pic3, pic4, pic5];
+    let pics = [
+        document.querySelector("#main-prod-pic1"),
+        document.querySelector("#main-prod-pic2"),
+        document.querySelector("#main-prod-pic3"),
+        document.querySelector("#main-prod-pic4"),
+        document.querySelector("#main-prod-pic5")
+    ];
 
     pics.forEach((pic, i) => {
         if (i === index) {
@@ -375,9 +384,16 @@ function selectPic(index) {
             pic.style.opacity = 0;
         }
     });
-    pic1.style.transition = "opacity 0.5s ease-in-out";
-    pic2.style.transition = "opacity 0.5s ease-in-out";
-    pic3.style.transition = "opacity 0.5s ease-in-out";
-    pic4.style.transition = "opacity 0.5s ease-in-out";
-    pic5.style.transition = "opacity 0.5s ease-in-out";
+
+    pics.forEach(pic => {
+        pic.style.transition = "opacity 0.5s ease-in-out";
+    });
+}
+
+for (let i = 0; i < 5; i++) {
+    let newButton = document.createElement('button');
+    newButton.className = 'pic' + (i + 1);
+    newButton.addEventListener('click', createButtonClickHandler(i));
+
+    mainPicButtonDiv.appendChild(newButton);
 }
