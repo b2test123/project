@@ -8,53 +8,73 @@
 </head>
 <body>
     <div id="container">
-        <div id="top">
-            <div class="top-top">
+        <script src="https://kit.fontawesome.com/bf7b37fa88.js" crossorigin="anonymous"></script>
 
+
+    <div id="top">
+        <div class="top-top">
+            <div class="tt-box">
                 <div class="mini-shortcut"> <!-- 상단 좌측 링크 아이콘 -->
-                    <ul class="ms-list">
-                        <li><a href="">youtube</a></li>
-                        <li><a href="">instagram</a></li>
-                        <li><a href="">twitter</a></li>
-                    </ul>
                 </div>
-
+        
                 <div class="top-top-menu"> <!-- 상단 미니메뉴 -->
-                    <ul class="ttm-list">
-                        <li><a href="">JOIN</a></li>
-                        <li><a href="">LOG IN</a></li>
-                        <li><a href="">MY PAGE</a></li>
-                        <li><a href="">BASKET</a></li>
-                        <li><a href="">ORDER INQUIRY</a></li>
-                        <li><a href="">BOARD</a></li>
-                        <li><input type="text" id="search"> 🔍</li> <!-- 상단 검색창 -->
-                    </ul>
-                </div>
-            </div>  
-
-            <div class="top-mid">   <!-- 메인 로고, 사진 -->
-                <a href=""><img class="logo-pic" src="img/logoimg.jpg" alt=""></a>
-            </div>
-
-            <div class="top-btm">   <!-- 사이트 내 각종 메뉴 모음 -->
-                <div class="top-btm-menu">
-                    <ul class="tbm-list">
-                        <li><a href="">MENU1</a></li>
-                        <li><a href="">MENU2</a></li>
-                        <li><a href="">MENU3</a></li>
-                        <li><a href="">MENU4</a></li>
-                        <li><a href="">MENU5</a></li>
-                        <li><a href="">MENU6</a></li>
-                        <li><a href="">MENU7</a></li>
-                        <li><a href="">MENU8</a></li>
-                        <li><a href="">MENU9</a></li>
-                    </ul>
                 </div>
             </div>
+        </div>  
+    
+        <div class="top-mid">   <!-- 메인 로고, 사진 -->
+            <a href=""><img class="logo-pic" src="img/logo/01_logo2.2.jpg" alt=""></a>
         </div>
+    
+        <div id="top-btm">   <!-- 사이트 내 각종 메뉴 모음 -->
+            <nav class="top-btm-menu">
+            </nav>
+        </div>
+    </div>
+    <div id="sideNav">
+        <div class="lr_nav">
+            <nav id="scroll_left">
+                <button id="left_scroll_btn" onclick=lrBtn()><</button>
+            </nav>
+
+            <nav id="scroll_right">
+                <div class="right_banner">
+                    <a class="btn_brandview" href="">브랜드</a>
+                </div>
+                <div class="quick_btn_cart">
+                    <div class="basket_title">장바구니</div>
+                </div>
+                <div class="scroll_right_cont">
+                    <div><p>최근 본 상품</p></div>
+                    <!-- <li class="view_empty">
+                    최근 본<br>
+                    상품이<br>
+                    없습니다.
+                    </li> -->
+                    <div class="justview"><img class="justview_pic" src="img/products/food1.jpg" alt=""></div>
+                    <div class="justview"><img class="justview_pic" src="img/products/house1.jpg" alt=""></div>
+                    <div class="justview"><img class="justview_pic" src="img/products/toy1.jpg" alt=""></div>
+                </div>
+
+                <div class="go_QnA">
+                    <a>문의 게시판</a>
+                </div>
+                <div class="go_review">
+                    <a>리뷰 게시판</a>
+                </div>
+                <div class="go_top_bottom">
+                    <button id="go_top" onclick=goTop()><i class="fa-solid fa-arrow-up"></i></button>
+                    <button id="go_bottom" onclick="goBottom()"><i class="fa-solid fa-arrow-down"></i></button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
 
         <div id="mid">
-            <h3>LOG IN</h3>
+            <div class="mid_h3">
+                <h3>LOG IN</h3>
+            </div>
             <div id="login">
                 <form action="#" id="mid_form">
                     <table class="login_tb">
@@ -83,48 +103,51 @@
         </div>
 
         <div id="bottom">
-            <div class="cst-center">
-                <h3>CUSTOMER CENTER</h3>
-                <p>
-                    TEL 010-0000-0000 <br>
-                    Kakao team_2 <br>
-                    AM 10 ~ PM 6 <br>
-                    Closed ~ Weekend, Holiday
-                </p>
+            <div class="btm-box">
+                <div class="cst-center">
+                    <p class="info-title">CUSTOMER CENTER</p><br>
+                    <p class="info-content">
+                        TEL 010-0000-0000 <br>
+                        Kakao team_2 <br>
+                        AM 10 ~ PM 6 <br>
+                        Closed ~ Weekend, Holiday
+                    </p>
+                </div>
+                <div class="bank-info">
+                    <p class="info-title">BANK INFO</p><br>
+                    <p class="info-content">
+                        <span>농협 123-1234-1234-12</span> / <span>국민 123456-12-123456</span><br>
+                        예금주 : (주)team_2
+                    </p>
+                </div>
+                <div class="btm-icon">
+                    <ul class="btm-icon-list">
+                        <li><a href=""><img class="icon" src="img/icon/icon_quick1.png" alt=""></a></li>
+                        <li><a href=""><img class="icon" src="img/icon/icon_quick2.png" alt=""></a></li>
+                        <li><a href=""><img class="icon" src="img/icon/icon_quick3.png" alt=""></a></li>
+                        <li><a href=""><img class="icon" src="img/icon/icon_quick4.png" alt=""></a></li>
+                        <li><a href=""><img class="icon" src="img/icon/icon_quick5.png" alt=""></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="bank-info">
-                <h3>BANK INFO</h3>
-                <p>
-                    농협 123-1234-1234-12 <br>
-                    국민 123456-12-123456 <br>
-                    예금주 : (주)team_2
-                </p>
-            </div>
-            <div class="btm-icon">
-                <ul class="btm-icon-list">
-                    <li><a href=""><img class="icon" src="" alt="">o</a></li>
-                    <li><a href=""><img class="icon" src="" alt="">o</a></li>
-                    <li><a href=""><img class="icon" src="" alt="">o</a></li>
-                    <li><a href=""><img class="icon" src="" alt="">o</a></li>
-                    <li><a href=""><img class="icon" src="" alt="">o</a></li>
-                </ul>
-            </div>
+            
+            <footer id="ftr-box">
+                <div class="footer-info">
+                    <div class="ftr-tags">
+                        <a href="">HOME</a> |  <a href="">COMPANY</a> | <a href="">AGREEMENT</a> | <a href="">PRIVACY POLICY</a> | <a href="">GUIDE</a>
+                    </div>
+                    <p class="span-list">
+                        <span>team_2 : KHacademy</span>
+                        <span>address : korea seoul</span>
+                        <span>tel : 1234-1234</span>
+                        <span>e-mail : team_2@naver.com</span> <br>
+                        <span>leader : choi jae won</span>
+                        <span>member : seok min / dong hyeon / ji seong / je heon / seung beom </span> <br>
+                        <span>copyright ⓒ team_2. All rights reserved. Design by team_2.</span>
+                    </p>
+                </div>
+            </footer>
         </div>
-        
-        <footer id="footer">
-            <div class="footer-info">
-                <p class="span-list">
-                    <span>team_2 : KHacademy</span>
-                    <span>address : korea seoul</span>
-                    <span>tel : 1234-1234</span>
-                    <span>e-mail : team_2@naver.com</span> <br>
-                    <span>leader : choi jae won</span>
-                    <span>member : seok min / dong hyeon / ji seong / je heon / seung beom </span> <br>
-                    <span>copyright ⓒ team_2. All rights reserved. Design by team_2.</span>
-                </p>
-            </div>
-        </footer>
-
-    </div>
 </body>
+<script src="Login_script.js"></script>
 </html>
