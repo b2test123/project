@@ -384,7 +384,6 @@ button:hover {
   margin: 0 5px;
   cursor: pointer;
   background: #fff;
-  z-index: 100;
 }
 
 
