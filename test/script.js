@@ -226,3 +226,18 @@ function changeAd(){
         let ad2 = document.querySelector("#ad2");
     }
 }
+
+function goTop(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function  goDown(){
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+document.addEventListener('scroll', function () {
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    if (scrollPosition > 100) {
+
+    } else {
+
+    }
+ });

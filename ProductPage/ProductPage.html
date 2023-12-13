@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,179 +16,73 @@
 
 <body>
   <div id="container">
-    <div id="top">
-      <div class="top-top">
-        <div class="tt-box">
-          <div class="mini-shortcut"> <!-- 상단 좌측 링크 아이콘 -->
-            <ul class="ms-list">
-              <li><a href="https://www.youtube.com" target="_blank">youtube</a></li>
-              <li><a href="https://www.instagram.com/" targer="_blank">instagram</a></li>
-              <li><a href="https://www.twitter.com/" targer="_blank">twitter</a></li>
-            </ul>
-          </div>
-
-          <div class="top-top-menu"> <!-- 상단 미니메뉴 -->
-            <ul class="ttm-list">
-              <li><a href="">JOIN</a></li>
-              <li><a href="">LOG IN</a></li>
-              <li><a href="">MY PAGE</a></li>
-              <li><a href="">BASKET</a></li>
-              <li><a href="">ORDER INQUIRY</a></li>
-              <li><a href="">BOARD</a></li>
-              <li><input type="text" id="search"> 🔍</li> <!-- 상단 검색창 -->
-            </ul>
-          </div>
+        <div id="top">
+            <div class="top-top">
+                <div class="tt-box">
+                    <div class="mini-shortcut"> <!-- 상단 좌측 링크 아이콘 -->
+                    </div>
+            
+                    <div class="top-top-menu"> <!-- 상단 미니메뉴 -->
+                    </div>
+                </div>
+            </div>  
+        
+            <div class="top-mid">   <!-- 메인 로고, 사진 -->
+                <a href=""><img class="logo-pic" src="img/logo/로고_01_logo2.2.jpg" alt=""></a>
+            </div>
+        
+            <div id="top-btm">   <!-- 사이트 내 각종 메뉴 모음 -->
+                <nav class="top-btm-menu">
+                </nav>
+            </div>
         </div>
-      </div>
+        <div id="sideNav">
+            <div class="lr_nav">
+                <nav id="scroll_left">
+                    <!-- <div id="ad1">
+                        <a href=""><img class="advertisement" src="img/ad/광고_02_advertisement1.jpg" alt="광고1"></a>
+                    </div>
+                    <div id="ad2">
+                        <a href=""><img class="advertisement" src="img/ad/광고_02_advertisement2.jpg" alt="광고2"></a>
+                    </div> -->
+                    <button id="left_scroll_btn"><</button>
+                </nav>
 
-      <div class="top-mid"> <!-- 메인 로고, 사진 -->
-        <a href=""><img class="logo-pic" src="img/logo/로고_01_logo2.2.jpg" alt=""></a>
-      </div>
+                <nav id="scroll_right">
+                    <div class="right_banner">
+                        <a class="btn_brandview" href="">브랜드</a>
+                    </div>
+                    <div class="quick_btn_cart">
+                        <div class="basket_title">장바구니</div>
+                    </div>
+                    <div class="scroll_right_cont">
+                        <!-- <li class="view_empty">
+                        최근 본<br>
+                        상품이<br>
+                        없습니다.
+                        </li> -->
+                        <div class="justview"><img class="justview_pic" src="img/products/food1.jpg" alt=""></div>
+                        <div class="justview"><img class="justview_pic" src="img/products/house1.jpg" alt=""></div>
+                        <div class="justview"><img class="justview_pic" src="img/products/toy1.jpg" alt=""></div>
+                    </div>
 
-      <div class="top-btm"> <!-- 사이트 내 각종 메뉴 모음 -->
-        <nav class="top-btm-menu">
-          <ul class="tbm-list">
-            <li class="tbm-list-li"><a href="#"><i class="fa-solid fa-bars"></i> 전체 메뉴</a>
-              <ul class="sub_all_menu">
-                <ul><a href="">강아지 먹거리</a>
-                  <li><a href="">사료</li></a>
-                  <li><a href="">간식</li></a>
-                  <li><a href="">영양제</li></a>
-                </ul>
-                <ul><a href="">강아지 용품</a>
-                  <li><a href="">강아지 집</li></a>
-                  <li><a href="">강아지 옷</li></a>
-                  <li><a href="">강아지 장난감</li></a>
-                  <li><a href="">강아지 밥그릇</li></a>
-                  <li><a href="">강아지 산책용품</li></a>
-                </ul>
-                <ul><a href="">고양이 먹거리</a>
-                  <li><a href="">사료</li></a>
-                  <li><a href="">간식</li></a>
-                  <li><a href="">영양제</li></a>
-                </ul>
-                <ul><a href="">고양이 용품</a>
-                  <li><a href="">고양이 집</li></a>
-                  <li><a href="">고양이 옷</li></a>
-                  <li><a href="">고양이 장난감</li></a>
-                  <li><a href="">고양이 밥그릇</li></a>
-                  <li><a href="">고양이 방콕용품</li></a>
-                </ul>
-                <ul><a href="">햄스터 먹거리</a>
-                  <li><a href="">사료</li></a>
-                  <li><a href="">간식</li></a>
-                  <li><a href="">영양제</li></a>
-                </ul>
-                <ul><a href="">햄스터 용품</a>
-                  <li><a href="">햄스터 집</li></a>
-                  <li><a href="">햄스터 장난감</li></a>
-                  <li><a href="">햄스터 밥그릇</li></a>
-                  <li><a href="">햄스터 챗바퀴</li></a>
-                  <li><a href="">햄스터 이갈이</li></a>
-                </ul>
-                <ul><a href="">이벤트 상품</a>
-                  <li><a href="">기간 할인 상품</li></a>
-                  <li><a href="">신상품 할인 이벤트</li></a>
-                  <li><a href="">시즌 한정 상품</li></a>
-                </ul>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">강아지 먹거리</a>
-              <ul class="sub_menu">
-                <li><a href="">사료</li></a>
-                <li><a href="">간식</li></a>
-                <li><a href="">영양제</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">강아지 용품</a>
-              <ul class="sub_menu">
-                <li><a href="">강아지 집</li></a>
-                <li><a href="">강아지 옷</li></a>
-                <li><a href="">강아지 장난감</li></a>
-                <li><a href="">강아지 밥그릇</li></a>
-                <li><a href="">강아지 산책용품</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">고양이 먹거리</a>
-              <ul class="sub_menu">
-                <li><a href="">사료</li></a>
-                <li><a href="">간식</li></a>
-                <li><a href="">영양제</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">고양이 용품</a>
-              <ul class="sub_menu">
-                <li><a href="">고양이 집</li></a>
-                <li><a href="">고양이 옷</li></a>
-                <li><a href="">고양이 장난감</li></a>
-                <li><a href="">고양이 밥그릇</li></a>
-                <li><a href="">고양이 방콕용품</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">햄스터 먹거리</a>
-              <ul class="sub_menu">
-                <li><a href="">사료</li></a>
-                <li><a href="">간식</li></a>
-                <li><a href="">영양제</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">햄스터 용품</a>
-              <ul class="sub_menu">
-                <li><a href="">햄스터 집</li></a>
-                <li><a href="">햄스터 장난감</li></a>
-                <li><a href="">햄스터 밥그릇</li></a>
-                <li><a href="">햄스터 챗바퀴</li></a>
-                <li><a href="">햄스터 이갈이</li></a>
-              </ul>
-            </li>
-            <li class="tbm-list-li"><a href="#">이벤트 상품</a>
-              <ul class="sub_menu">
-                <li><a href="">기간 할인 상품</li></a>
-                <li><a href="">신상품 할인 이벤트</li></a>
-                <li><a href="">시즌 한정 상품</li></a>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
+                    <div class="go_QnA">
+                        <a>문의 게시판</a>
+                    </div>
+                    <div class="go_review">
+                        <a>리뷰 게시판</a>
+                    </div>
+                    <div class="go_top_bottom">
+                        <button id="go_top" onclick=goTop()><i class="fa-solid fa-arrow-up"></i></button>
+                        <button id="go_bottom" onclick=goDown()><i class="fa-solid fa-arrow-down"></i></button>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </div> <!-- top끝 -->
 
     <div id="mid">
       <div class="mid-top">
-        <nav id="scroll_left">
-          <div id="ad1">
-            <a href=""><img class="advertisement" src="img/ad/광고_02_advertisement1.jpg" alt="광고1"></a>
-          </div>
-          <div id="ad2">
-            <a href=""><img class="advertisement" src="img/ad/광고_02_advertisement2.jpg" alt="광고2"></a>
-          </div>
-          <button class="left_scroll_btn"><</button>
-        </nav>
-
-        <nav id="scroll_right">
-          <div class="right_banner">
-            <a class="btn_brandview" href="">브랜드</a>
-          </div>
-          <div class="quick_btn_cart">
-            <div class="basket_title">장바구니</div>
-          </div>
-          <div class="scroll_right_cont">
-            <!-- <li class="view_empty">
-                최근 본<br>
-                상품이<br>
-                없습니다.
-                </li> -->
-            <div class="justview"></div>
-            <div class="justview"></div>
-            <div class="justview"></div>
-          </div>
-          <div class="go_QnA">
-            <a>문의 게시판</a>
-          </div>
-          <div class="go_review">
-            <a>리뷰 게시판</a>
-          </div>
-        </nav>
         <div class="menu-category"> <!-- 사료 카테고리 -->
           <h3 class="title-notice">사료</h3>
           <ul class="notice-list">
@@ -196,7 +90,7 @@
             <li><a href="">고양이사료</a></li>
           </ul>
         </div>
-        <div class="function">
+        <div class="function">  <!-- 리스트 목록 -->
           <p class="prd_count">
             "* "<strong>12</strong>" item in this category."
           </p>
@@ -218,155 +112,82 @@
       </div>
 
       <div class="mid-mid">
-        <div class="prd_unit">
-          <div class="prd_img">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd1.jpg" alt="[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥"></a>
+        <div class="prd_p">
+          <div class="prd_unit">
+            <div class="prd_img">
+              <a href=""><img class="sub-prod-pic" src="img/product/prd1.jpg" alt="[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥"></a>
+            </div>
+            <div class="prd_name">
+              <span class="title displaynone"></span>
+              <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥</span>
+            </div>
+            <ul class="prd_price">
+              <li class="">
+                <strong class="title displaynone"></strong>
+                <span style="font-size: 12px; color: #fd8c8c;">2,200원</span>
+              </li>
+            </ul>
+            <div class="prd_icon">
+              <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
+              <img src="img/icon/best.gif" class="icon_img" alt="BEST">
+            </div>
           </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">2,200원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-            <img src="img/icon/best.gif" class="icon_img" alt="BEST">
-          </div>
-        </div>
 
-        <div class="prd_unit">
-          <div class="prd_img">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd2.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용"></a>
+          <div class="prd_unit">
+            <div class="prd_img">
+              <a href=""><img class="sub-prod-pic" src="img/product/prd2.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용"></a>
+            </div>
+            <div class="prd_name">
+              <span class="title displaynone"></span>
+              <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용</span>
+            </div>
+            <ul class="prd_price">
+              <li class="">
+                <strong class="title displaynone"></strong>
+                <span style="font-size: 12px; color: #fd8c8c;">3,100원</span>
+              </li>
+            </ul>
+            <div class="prd_icon">
+              <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
+              <img src="img/icon/new.gif" class="icon_img" alt="NEW">
+            </div>
           </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">3,100원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-            <img src="img/icon/new.gif" class="icon_img" alt="NEW">
-          </div>
-        </div>
 
-        <div class="prd_unit">
-          <div class="prd_prdimg">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd3.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용"></a>
+          <div class="prd_unit">
+            <div class="prd_prdimg">
+              <a href=""><img class="sub-prod-pic" src="img/product/prd3.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용"></a>
+            </div>
+            <div class="prd_name">
+              <span class="title displaynone"></span>
+              <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용</span>
+            </div>
+            <ul class="prd_price">
+              <li class="">
+                <strong class="title displaynone"></strong>
+                <span style="font-size: 12px; color: #fd8c8c;">3,000원</span>
+              </li>
+            </ul>
+            <div class="prd_icon">
+              <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
+            </div>
           </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">3,000원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-          </div>
-        </div>
 
-        <div class="prd_unit">
-          <div class="prd_prdimg">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd4.jpg" alt="[멍뭉꼬냥] 프리미엄 드워프햄스터 사료"></a>
+          <div class="prd_unit">
+            <div class="prd_prdimg">
+              <a href=""><img class="sub-prod-pic" src="img/product/prd4.jpg" alt="[멍뭉꼬냥] 프리미엄 드워프햄스터 사료"></a>
+            </div>
+            <div class="prd_name">
+              <span class="title displaynone"></span>
+              <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 프리미엄 드워프햄스터 사료</span>
+            </div>
+            <ul class="prd_price">
+              <li class="">
+                <strong class="title displaynone"></strong>
+                <span style="font-size: 12px; color: #fd8c8c;">2,400원</span>
+              </li>
+            </ul>
           </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 프리미엄 드워프햄스터 사료</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">2,400원</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="prd_unit">
-          <div class="prd_img">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd1.jpg" alt="[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥"></a>
-          </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 몸에 좋고 맛도 좋은 햄찌밥</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">2,200원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-            <img src="img/icon/best.gif" class="icon_img" alt="BEST">
-          </div>
-        </div>
-
-        <div class="prd_unit">
-          <div class="prd_img">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd2.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용"></a>
-          </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-골든 햄스터용</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">3,100원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-            <img src="img/icon/new.gif" class="icon_img" alt="NEW">
-          </div>
-        </div>
-
-        <div class="prd_unit">
-          <div class="prd_prdimg">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd3.jpg" alt="[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용"></a>
-          </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 해씨 햄스터가든-드워프 햄스터용</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">3,000원</span>
-            </li>
-          </ul>
-          <div class="prd_icon">
-            <img src="img/icon/recommended.gif" class="icon_img" alt="추천">
-          </div>
-        </div>
-
-        <div class="prd_unit">
-          <div class="prd_prdimg">
-            <a href=""><img class="sub-prod-pic" src="img/product/prd4.jpg" alt="[멍뭉꼬냥] 프리미엄 드워프햄스터 사료"></a>
-          </div>
-          <div class="prd_name">
-            <span class="title displaynone"></span>
-            <span style="font-size: 12px; color: #555555;">[멍뭉꼬냥] 프리미엄 드워프햄스터 사료</span>
-          </div>
-          <ul class="prd_price">
-            <li class="">
-              <strong class="title displaynone"></strong>
-              <span style="font-size: 12px; color: #fd8c8c;">2,400원</span>
-            </li>
-          </ul>
-        </div>
+        </div> <!-- prd_p 끝 -->
 
         <div id="page">
           <a href=""><button class="arrow"><</button></a>
@@ -376,6 +197,7 @@
           <a href=""><button>4</button></a>
           <a href=""><button class="arrow">></button></a>
         </div> <!-- page 끝 -->
+
       </div> <!-- mid-mid 끝 -->
     </div> <!-- mid 끝 -->
 
@@ -428,5 +250,5 @@
     </div>
   </div>
 </body>
-
+<script src="ProductPage.js"></script>
 </html>
