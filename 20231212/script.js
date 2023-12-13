@@ -39,7 +39,6 @@ function addMsShortcut(){
     miniShortcut.appendChild(addUl);
 }
 
-// ================================TopMiniNavBar==============================
 function addTtmMenu(){
     let addUl = document.createElement("ul");
     addUl.className = "ttm-list";
@@ -72,7 +71,7 @@ function addTtmMenu(){
     addUl.appendChild(addLi);
     topTopMenu.appendChild(addUl);
 }   
-// =================================TopMenuNavBar=====================================
+
 function addtbMenu(){
     let addUl = document.createElement("ul");
     addUl.className = "tbm-list";
@@ -159,8 +158,6 @@ function addtbMenu(){
 
 }
 
-// ==============================sideNav=====================================
-
 function moveNav(){
     document.addEventListener('scroll', onScroll, {passive:true});
     let top = document.querySelector("#top");
@@ -173,24 +170,37 @@ function moveNav(){
         let lSideNav = document.querySelector("#scroll_left");
         let rSideNav = document.querySelector("#scroll_right");
         let lNavBtn = document.querySelector("#left_scroll_btn");
+
         if (height <= scrollPosition){
             topNav.classList.add('top-btm_fixed');
-            lSideNav.classList.add('fixed');
-            rSideNav.classList.add('fixed');
+
+            lSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            rSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            lNavBtn.style.transition = "all 0.3s ease-in-out";
+
+            lSideNav.style.position="fixed";
+            rSideNav.style.position="fixed";
+            lSideNav.style.top="70px";
+            rSideNav.style.top="70px";
             lNavBtn.classList.add('fixed_btn');
             lNavBtn.classList.remove('fix_btn');
-          }
-        else {
+          }else {
             topNav.classList.remove('top-btm_fixed');
-            lSideNav.classList.remove('fixed');
-            rSideNav.classList.remove('fixed');
+
+            lSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            rSideNav.style.transition = "position 0.3s ease-in-out, top 0.3s ease-in-out";
+            lNavBtn.style.transition = "all 0.3s ease-in-out";
+
+            lSideNav.style.position="absolute";
+            rSideNav.style.position="absolute";
+            lSideNav.style.top="0";
+            rSideNav.style.top="0";
             lNavBtn.classList.remove('fixed_btn');
             lNavBtn.classList.add('fix_btn');
           }
     }
 }
 
-// ===================================ADChange=======================================
 function changeAd(){
     let nav = document.querySelector("#scroll_left");
     let addList = [
@@ -235,7 +245,32 @@ function changeAd(){
     setInterval(AdChange, 3500);
 }
 
-// ====================================goTop,goBottom_onclickMethod===============================
+function lrBtn (){
+    let btn = document.querySelector("#left_scroll_btn");
+    let nav = document.querySelector("#scroll_left");
+
+        let currentLeft = parseInt(nav.style.left) || 0;
+
+        if (isNaN(currentLeft)) {
+            currentLeft = 0;
+            nav.style.left = currentLeft + "px";
+        }
+
+        let newLeft = currentLeft === 0 ? -200 : 0;
+    
+        nav.style.transition = "left 0.5s ease-in-out";
+        nav.style.left = newLeft + "px";
+        
+        setTimeout(() => {
+            nav.style.transition = "none";
+        }, 500);
+        if(currentLeft == 0){
+            btn.textContent=">";
+        }else{
+            btn.textContent="<";
+        }
+}
+
 function goTop(){
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
