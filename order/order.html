@@ -212,51 +212,51 @@
             <div class="mid-mid">
                 <div class="order_order_info">
                     <div class="order_info_span">
-                        <span>주문자 정보</span>
-                        <span>필수입력사항</span>
+                        <span class="span_title">주문자 정보</span>
+                        <span><span class="required">*</span> 필수입력사항</span>
                     </div>
                     <table>
                         <tbody>
                             <tr>
-                                <th>주문하시는 분 *</th>
-                                <td><input type="text"></td>
+                                <th>주문하시는 분 <span class="required">*</span></th>
+                                <td><input type="text" size="10"></td>
                             </tr>
                             <tr>
-                                <th>주소 *</th>
+                                <th>주소 <span class="required">*</span></th>
                                 <td>
                                     <div class="order_address">
-                                        <input type="text"><button>우편번호 ></button>
-                                        <input type="text"> 기본주소
-                                        <input type="text"> 나머지주소
+                                        <input type="text" size="10"><button>우편번호 ></button> <br>
+                                        <input type="text" size="30"> 기본주소 <br>
+                                        <input type="text" size="30"> 나머지주소
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th>일반 전화</th>
                                 <td>
-                                    <select name="telephone" id="telephone">
+                                    <select name="telephone1" id="telephone1">
                                         <option value="02">02</option>
                                         <option value="031">031</option>
                                         <option value="032">032</option>
                                     </select> -
-                                    <input type="text"> -
-                                    <input type="text">
+                                    <input type="text" size="5" maxlength="4"> -
+                                    <input type="text" size="5" maxlength="4">
                                 </td>
                             </tr>
                             <tr>
-                                <th>휴대전화 *</th>
+                                <th>휴대전화 <span class="required">*</span></th>
                                 <td>
-                                    <select name="mobilephone" id="mobilephone">
+                                    <select name="mobilephone1" id="mobilephone1">
                                         <option value="02">010</option>
                                         <option value="031">011</option>
                                         <option value="032">019</option>
                                     </select> -
-                                    <input type="text"> -
-                                    <input type="text">
+                                    <input type="text" size="5" maxlength=4> -
+                                    <input type="text" size="5" maxlength=4>
                                 </td>
                             </tr>
                             <tr>
-                                <th>이메일 *</th>
+                                <th>이메일 <span class="required">*</span></th>
                                 <td>
                                     <input type="text">@
                                     <input type="text">
@@ -274,68 +274,68 @@
                 </div>
                 <div class="deliver_order_info">
                     <div class="deliver_info_span">
-                        <span>배송 정보</span>
-                        <span>필수입력사항</span>
+                        <span class="span_title">배송 정보</span>
+                        <span><span class="required">*</span> 필수입력사항</span>
                     </div>
                     <table>
                         <tbody>
                             <tr>
                                 <th>배송지 선택</th>
                                 <td>
-                                    <input type="radio" id="order" name="address" value="same"><label for="smae">주문자와
+                                    <input type="radio" id="order" name="address" value="same"><label for="order">주문자와
                                         동일</label>
-                                    <input type="radio" id="deliver" name="address" value="new"><label for="new">새로운
+                                    <input type="radio" id="deliver" name="address" value="new"><label for="deliver">새로운
                                         배송지</label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>주소 *</th>
+                                <th>주소 <span class="required">*</span></th>
                                 <td>
                                     <div class="order_address">
-                                        <input type="text"><button>우편번호 ></button>
-                                        <input type="text"> 기본주소
-                                        <input type="text"> 나머지주소
+                                        <input type="text" size="10"><button>우편번호 ></button> <br>
+                                        <input type="text" size="30"> 기본주소 <br>
+                                        <input type="text" size="30"> 나머지주소
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th>일반 전화</th>
                                 <td>
-                                    <select name="telephone" id="telephone">
+                                    <select name="telephone2" id="telephone2">
                                         <option value="02">02</option>
                                         <option value="031">031</option>
                                         <option value="032">032</option>
                                     </select> -
-                                    <input type="text"> -
-                                    <input type="text">
+                                    <input type="text" size="5" maxlength=4> -
+                                    <input type="text" size="5" maxlength=4>
                                 </td>
                             </tr>
                             <tr>
-                                <th>휴대전화 *</th>
+                                <th>휴대전화 <span class="required">*</span></th>
                                 <td>
-                                    <select name="mobilephone" id="mobilephone">
+                                    <select name="mobilephone2" id="mobilephone2">
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
                                         <option value="019">019</option>
                                     </select> -
-                                    <input type="text"> -
-                                    <input type="text">
+                                    <input type="text" size="5" maxlength=4> -
+                                    <input type="text" size="5" maxlength=4>
                                 </td>
                             </tr>
                             <tr>
                                 <th>배송메시지</th>
                                 <td>
-                                    <textarea name="delive_message" id="delive_message" cols="50" rows="5"></textarea>
+                                    <textarea name="delive_message" id="delive_message" cols="70" rows="5"></textarea>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div>
-                    <p>배송정보 제공방침</p>
-                    <p>본 상품의 원활한 배송을 위하여 회원님의 주소를 상품판매업체 및 배송업체에 제공합니다.</p>
-                    <input type="checkbox">동의
+                    <div class="deliver_agree">
+                        <p>배송정보 제공방침</p>
+                        <p>본 상품의 원활한 배송을 위하여 회원님의 주소를 상품판매업체 및 배송업체에 제공합니다.</p>
+                        <input type="checkbox">동의
+                    </div>
                 </div>
             </div>
 
@@ -376,8 +376,8 @@
                                     for="kakao">카카오 페이</label>
                                 <input type="radio" id="payco" name="method_payment" value="payco"><label
                                     for="payco">페이코</label>
-                                <input type="radio" id="phone" name="method_payment" value="phone"><label
-                                    for="phone">휴대폰 결제</label>
+                                <input type="radio" id="pay_phone" name="method_payment" value="pay_phone"><label
+                                    for="pay_phone">휴대폰 결제</label>
                                 <input type="radio" id="sspay" name="method_payment" value="sspay"><label
                                     for="sspay">삼성페이</label>
                             </div>
