@@ -27,17 +27,19 @@ CREATE TABLE product (
    price        NUMBER          NOT NULL,
    p_score      NUMBER,
    sal_num      NUMBER,
-   pcontent     VARCHAR2(200)
+   pcontent     VARCHAR2(200),
+   category		VARCHAR2(40)
 );
 
 CREATE TABLE qa (
    qno      NUMBER          PRIMARY KEY,
    qtitle   VARCHAR2(50)    NOT NULL,
    qname    VARCHAR2(20)    NOT NULL,
+   qfilename   VARCHAR2(100),
    qdate    TIMESTAMP,
    qhit     NUMBER,
    id       VARCHAR2(30)    NOT NULL,
-   FOREIGN KEY(id) REFERENCES member,
+   FOREIGN KEY(id) REFERENCES member
 );
 
 CREATE TABLE review (
@@ -46,6 +48,7 @@ CREATE TABLE review (
    rtitle    VARCHAR2(50)       NOT NULL,
    rdate     TIMESTAMP,
    rcontent  VARCHAR2(200),
+   rfilename   VARCHAR2(100),
    rrate     NUMBER,
    likes      NUMBER,
    receipt   VARCHAR2(50)       NOT NULL,
@@ -55,8 +58,7 @@ CREATE TABLE review (
 CREATE TABLE orders (
    orderno          NUMBER          PRIMARY KEY,
    orderdate        TIMESTAMP       DEFAULT SYSTIMESTAMP,
-   orderprice       NUMBER,          
-   totalprice       NUMBER,         
+   orderprice       NUMBER,               
    cardcompany      VARCHAR2(30),   
    count            NUMBER,         
    orderstatus      VARCHAR2(60),    
@@ -70,9 +72,9 @@ CREATE TABLE notice (
    nno      NUMBER          PRIMARY KEY,
    ntitle   VARCHAR2(50)    NOT NULL,
    nname    VARCHAR2(20)    NOT NULL,
-   ndate    TIMESTAMP       NOT NULL,
-   ncontent VARCHAR2(600)
-   nhit     NUMBER,
+   nfilename   VARCHAR2(100),
+   ndate    TIMESTAMP,
+   nhit     NUMBER
 );
 
 CREATE TABLE category (
@@ -88,7 +90,7 @@ CREATE TABLE coupon (
     cno         NUMBER                  PRIMARY KEY,
     cid         VARCHAR2(40)            NOT NULL,
     validity    DATE DEFAULT SYSDATE,
-    id         	VARCHAR2(20)            NOT NULL,
+    id            VARCHAR2(20)            NOT NULL,
     FOREIGN KEY(id) REFERENCES member
 );
 
@@ -101,19 +103,4 @@ CREATE TABLE delivery (
    request          VARCHAR2(200),
    orderno          NUMBER            NOT NULL,
    FOREIGN KEY(orderno) REFERENCES orders
-);
-
-CREATE TABLE admin (
-   aid       VARCHAR2(30)      PRIMARY KEY,
-   apasswd   VARCHAR2(30)      NOT NULL
-);
-
-CREATE TABLE board (
-   bno          NUMBER          PRIMARY KEY,
-   btitle       VARCHAR2(60)    NOT NULL,
-   bcontent     VARCHAR2(600),
-   createdate   TIMESTAMP       DEFAULT SYSTIMESTAMP,
-   bupdate      TIMESTAMP       DEFAULT SYSTIMESTAMP,
-   id           VARCHAR2(20)    NOT NULL,
-   FOREIGN KEY(id) REFERENCES member,
 );

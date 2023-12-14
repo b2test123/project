@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,12 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import product.ProductDAO;
+import product.ProductVO;
+import qa.QaDAO;
+
 @WebServlet("/qa.do")
-public class QaController extends HttpServlet {
+public class ExController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	QaDAO qaDAO;
+	ProductDAO pDAO;
        
-    public QaController() {
-    	
+    public ExController() {
+    	pDAO = new ProductDAO();
+    	qaDAO = new QaDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +45,7 @@ public class QaController extends HttpServlet {
 		String nextPage = "";
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
-		
+		//Q&A 게시판
 		if(command.equals("/qaboardlist.do")) {
 			nextPage = "/qa/qaboardlist.jsp";
 		}else if(command.equals("/qawriteform.do")) {
@@ -50,6 +59,32 @@ public class QaController extends HttpServlet {
 		}else if(command.equals("/qaupdateboard.do")) {
 			nextPage = "/qa/qaboardlist.jsp";
 		}
+		
+		//Product
+		else if(command.equals("/productlist.do")) {
+			List<ProductVO> productList = pDAO.getProductList();
+			request.setAttribute("productList", productList);
+			nextPage = "/product/productList.jsp";
+		}else if(command.equals("/productinsert.do")) {
+			int pno = Integer.parseInt(request.getParameter("pno"));
+			String pname = request.getParameter("pname");
+			int price = Integer.parseInt(request.getParameter("price"));
+			int p_score = Integer.parseInt(request.getParameter("p_score"));
+			int sal_num = Integer.parseInt(request.getParameter("psal_num"));
+			String pcontent = request.getParameter("pcontent");
+			
+			ProductVO p = new ProductVO();
+			p.setPno(pno);
+			p.setPname(pname);
+			p.setPrice(price);
+			p.setP_score(p_score);
+			p.setSal_num(sal_num);
+			p.setPcontent(pcontent);
+			
+			nextPage = "/product/productList.jsp";
+		}
+		
+		
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 		dispatch.forward(request, response);

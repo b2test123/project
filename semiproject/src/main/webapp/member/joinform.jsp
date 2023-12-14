@@ -8,12 +8,14 @@
 <title>회원 가입폼</title>
 <link rel="stylesheet" href="../resources/css/join.css">
 <script src="../resources/js/jquery-3.7.1.js"></script>
-<script src="../resources/js/joinform.js"></script>
+<script src="../resources/js/validation.js"></script>
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
 	<div id="mid">
-		<h3>JOIN</h3>
+		<div class="mid_h3">
+			<h3>JOIN</h3>
+		</div>
 		<form action="/insertmember.do" method="post" name="member" id="mid_form">
 			<fieldset id="join_info">
 				<legend>Information</legend>
@@ -22,13 +24,15 @@
 						<tbody>
 							<tr>
 								<th>ID</th>
-								<td><input type="text" name="id"><span>(영문 소문자/숫자,
-										6~20자)</span></td>
+								<td><input type="text" name="id">
+									<span>(영문 소문자/숫자, 8~14자)</span></td>
 							</tr>
 							<tr>
 								<th>PassWord</th>
-								<td><input type="password" name="passwd"><span>(영문
-										대소문자/숫자/특수문자, 8~14자)</span></td>
+								<td>
+									<input type="password" name="passwd">
+									<span>(영문대소문자/숫자/특수문자 포함 10자이상)</span>
+								</td>
 							</tr>
 							<tr>
 								<th>Confirm PW</th>
@@ -87,9 +91,9 @@
 						</div>
 					</div>
 					<p class="agree_box">
-						<span class="Qagree">이용약관에 동의하십니까?</span> <input type="checkbox"
-							name="use_agree" id="use_agree"> <label for="use_agree">
-							Agree</label>
+						<span class="Qagree">이용약관에 동의하십니까?</span> 
+						<input type="checkbox" name="use_agree" id="use_agree"> 
+						<label for="use_agree">Agree</label>
 					</p>
 				</div>
 			</fieldset>
@@ -131,7 +135,7 @@
 				</div>
 			</fieldset>
 			<div class="btnbox">
-				<button type="submit" class="join_btn">JOIN!</button>
+				<button type="button" class="join_btn" onclick="checkMember()">JOIN!</button>
 				<button type="reset" class="reset_btn">Cancel</button>
 			</div>
 		</form>
