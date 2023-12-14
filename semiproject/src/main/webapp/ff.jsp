@@ -16,6 +16,8 @@
                     <a href=""><button>4</button></a>
                     <a href=""><button class="arrow">></button></a>
 
-
+<a href="/">
+                   <button id="toList" >메인으로</button>
+                </a> 
 </body>
 </html>

@@ -44,12 +44,12 @@ function addTtmMenu(){
     let addUl = document.createElement("ul");
     addUl.className = "ttm-list";
     let itemsList = [
-        { text: "JOIN", link: "/join.do" },
-        { text: "LOG-IN", link: "/login.do" },
+        { text: "JOIN", link: "/joinform.do" },
+        { text: "LOG-IN", link: "/loginform.do" },
         { text: "MY-PAGE", link: "/mypage.do" },
         { text: "BASKET", link: "/basket.do" },
         { text: "ORDER-INQUIRY", link: "/orderinquiry.do" },
-        { text: "BOARD", link: "/board.do" }
+        { text: "BOARD", link: "/boardlist.do" }
     ];
 
     itemsList.forEach(function(item) {

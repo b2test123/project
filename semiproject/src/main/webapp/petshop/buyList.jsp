@@ -62,16 +62,17 @@
              
                 <c:forEach var="i" begin="1" end="${endp}">
 					<c:if test="${page == i}">
-						<a href="/buylist.do?pageNum=${i}"><b>${i}</b></a>
+						<a href="/buyList.do?pageNum=${i}"><b>${i}</b></a>
 					</c:if>
 					<c:if test="${page != i}">
-						<a href="/buylist.do?pageNum=${i}">${i}</a>
+						<a href="/buyList.do?pageNum=${i}">${i}</a>
 					</c:if>
 				</c:forEach>
                    </div>
-                <a href="/">
+                   <a href="/">
                    <button id="toList" >메인으로</button>
                 </a> 
+                
             </section>
             
         </div>

@@ -89,16 +89,17 @@ public class OrderDAO {
     }
     
     
-    public List<OrdersVO> getblist(int page){
+    public List<OrdersVO> getblist(int page, String id){
     	conn=JDBCUtil.getConnection();
 		List<OrdersVO> ol= new ArrayList<>();
 	   try {
 		   String sql = "select *  "
-	   + "from (select rownum as RN, od.* from(select * from orders order by bno desc) od) "
-		   		+ "where RN >= ? and RN <= ?";
+	   + "from (select rownum as RN, od.* from(select * from orders order by orderno desc) od) "
+		   		+ "where RN >= ? and RN <= ? and id =? ";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, (page-1)*10+1);
-		pstmt.setInt(2, page*10);
+		pstmt.setInt(1, (page-1)*7+1);
+		pstmt.setInt(2, page*7);
+		pstmt.setString(3, id);
 		rs= pstmt.executeQuery();
 		while(rs.next()) {
 			OrdersVO ov =new OrdersVO();

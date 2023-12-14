@@ -45,15 +45,15 @@ public class Buyendcontroller extends HttpServlet {
 		
 		
 		if(command.equals("/buyList.do")) {
-		
-			//String id = request.getParameter("id");
+				
+			String id = (String) session.getAttribute("sessionId");
 			
 			String pageNum = request.getParameter("pageNum");
-			if(pageNum == null) { //페이지 번호를 클릭하지 않았을때 기본값
+			if(pageNum == null) { 
 				pageNum = "1";
 			}
 			int currentPage = Integer.parseInt(pageNum);
-			int pageSize = 5;
+			int pageSize = 7;
 			
 			int startRow = (currentPage-1)*pageSize + 1;
 			int startPage = startRow / pageSize + 1;
@@ -63,13 +63,11 @@ public class Buyendcontroller extends HttpServlet {
 			endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
 			
 			
-			List<OrdersVO> buyend = oDAO.getblist(currentPage);
+			List<OrdersVO> buyend = oDAO.getblist(currentPage,id);
 			request.setAttribute("buyend",buyend);
-			request.setAttribute("page", currentPage); //현재페이지
-			request.setAttribute("endp", endPage); //마지막페이지
-			
-			
-			
+			request.setAttribute("page", currentPage); 
+			request.setAttribute("startpage", startPage);
+			request.setAttribute("endp", endPage); 	
 			
 			nextPage="/petshop/buyList.jsp";	
 											
