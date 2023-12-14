@@ -1,0 +1,80 @@
+<가구>
+cat-furniture1,2 : 21,500
+cat-furniture3,4 : 11,800
+cat-furniture5,6 : 42,600
+cat-furniture7,8 : 28,500
+
+dog-furniture2,3 : 14,700
+dog-furniture4,5 : 16,400
+dog-furniture6,7 : 17,300
+dog-furniture8,9 : 25,900
+
+<간식 - 개>
+dog-food2,3 : 2,600
+dog-food4,5 : 2,900
+dog-food6,7 : 13,500
+dog-food10,11 : 3,000
+
+<간식 - 고양이>
+cat-food2,3 : 1,700
+cat-food4,5 : 2,150
+cat-food6,7 : 1,550
+cat-food9,10 : 2,500
+
+<고양이모래>
+cat-sand1,2 : 41,800
+cat-sand3,4 : 34,300
+
+<목욕미용>
+dog-bath2,3 : 12,300
+dog-bath4,5 : 27,400
+
+<사료 - 개>
+dog-food2,3 : 390
+dog-food4,5 : 350
+
+<사료 - 고양이>
+cat-food2,3 : 2,100
+cat-food4,5 : 4,900
+
+<살균탈취제>
+die-goon2,3 : 7,900
+die-goon4,5 : 4,600
+die-goon6,7 : 3,700
+
+<옷>
+clothes : 14,500
+
+<장난감>
+cat-toy1,2 : 25,900
+cat-toy3,4 : 4,200
+cat-toy5,6 : 3,100
+
+dog-toy1,2 : 4,800
+dog-toy3,4 : 2,300
+dog-toy5,6 : 1,600
+
+<패드>
+dog-pad2,3 : 11,000
+dog-pad4,5 : 8,600
+dog-pad6,7 : 9,500
+dog-pad8,9 : 10,400
+dog-pad10,11 : 11,600
+
+<하네스>
+hanes1,2 : 58,000
+hanes3,4 : 23,000
+hanes5,6 : 29,500
+
+
+<햄스터>
+ham_food1,2 4,800
+ham_food3,4 7,200
+
+ham_furniture1,2 25,000
+ham_furniture3,4 185,000
+
+ham_sand1,2 4,900
+ham_sand3,4 4,500
+
+ham_toy1,2 5,500
