@@ -1,4 +1,4 @@
-package member;
+/*package member;
 
 import java.io.IOException;
 
@@ -79,3 +79,4 @@ public class logincontroller extends HttpServlet {
 	}
 
 }
+*/

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 public class NoticeVO implements Serializable{
 
-	private static final long serialVersionUID = 115L;
+	private static final long serialVersionUID = 197L;
 	
 	private int nno;
 	private String ntitle;

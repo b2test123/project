@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 
 public class MemberVO implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 124L;
 	
 	
 	private String id;

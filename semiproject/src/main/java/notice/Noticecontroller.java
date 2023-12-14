@@ -1,4 +1,4 @@
-package notice;
+/*package notice;
 
 import java.io.IOException;
 
@@ -118,7 +118,7 @@ public class Noticecontroller extends HttpServlet {
 		int endPage = totalRow /pageSize;
 		endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
 		
-		/*//검색 처리
+		//검색 처리
 		String _field = request.getParameter("field"); 
 		String _kw = request.getParameter("kw");
 		
@@ -134,7 +134,7 @@ public class Noticecontroller extends HttpServlet {
 			kw = _kw;
 		}else { 
 			kw = "";
-		}*/
+		}
 		
 		
 		
@@ -161,3 +161,4 @@ public class Noticecontroller extends HttpServlet {
 	}
 
 }
+*/

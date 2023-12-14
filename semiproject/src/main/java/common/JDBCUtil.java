@@ -11,8 +11,8 @@ public class JDBCUtil {
 	
 	static String driverClass = "oracle.jdbc.OracleDriver";
 	static String url = "jdbc:oracle:thin:@localhost:1521/xe";
-	static String username = "project";
-	static String password = "pw1234";
+	static String username = "jweb";
+	static String password = "pwjweb";
 	ResultSet rs=null;
 	
 	 Connection conn = null;

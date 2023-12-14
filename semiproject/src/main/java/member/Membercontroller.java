@@ -1,4 +1,4 @@
-package member;
+/*package member;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -89,3 +89,4 @@ public class Membercontroller extends HttpServlet {
 	}
 
 }
+*/
