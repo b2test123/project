@@ -55,6 +55,16 @@
     margin: 20px auto;
 }
 
+.new_icon {
+    background: #fb6;
+    padding: 1px 5px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    display: inline;
+    margin: 0 auto;
+}
+
 .order_change_decrip {
     background: #edfed6;
     color: #8a7;
