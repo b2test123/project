@@ -13,16 +13,16 @@
 		<div id="mid">
 			<h3>LOG IN</h3>
 			<div id="login">
-				<form action="login.do" method="post" id="mid_form">
+				<form action="/j_security_check" method="post" id="mid_form">
 					<table class="login_tb">
 						<tr class="login_tr">
 							<td class="td_text">ID</td>
-							<td class="td_input"><input type="text" class="login_input" name="id"></td>
+							<td class="td_input"><input type="text" class="login_input" id="id" name="j_username"></td>
 						</tr>
 						<tr class="login_tr">
 							<td class="td_text">PW</td>
 							<td class="td_input"><input type="password"
-								class="login_input" name="passwd"></td>
+								class="login_input" id="passwd" name="j_password"></td>
 								<td rowspan="2" class="td_btn"><button class="login_btn">LogIn</button></td>
 						</tr>
 					</table>
