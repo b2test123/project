@@ -10,68 +10,58 @@ import java.util.List;
 import common.JDBCUtil;
 
 public class QaDAO {
-	Connection conn = null;         //db연결 및 종료
-	PreparedStatement pstmt = null; //sql처리
-	ResultSet rs = null;			//검색한 데이터 셋
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	
-	//Q&A 게시글 목록
-	public List<QaVO> getQaBoardList(){
-		List<QaVO> qboardList = new ArrayList<>();
+	//게시글 목록 조회
+	public List<QaVO> getQABoardList(){
+		List<QaVO> qaboardList = new ArrayList<>();
+		
 		try {
 			conn = JDBCUtil.getConnection();
-			String sql = "SELECT * FROM qa ORDER BY qno DESC";
+			String sql = "SELECT * FROM notice ORDER BY qno";
 			pstmt = conn.prepareStatement(sql);
+			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				QaVO qa = new QaVO();
-				qa.setQno(rs.getInt("qno"));
-				qa.setQtitle(rs.getString("qtitle"));
-				qa.setQname(rs.getString("qname"));
-				qa.setqDate(rs.getTimestamp("qdate"));
-				qa.setQhit(rs.getInt("qhit"));
-				qa.setId(rs.getString("id"));
+				QaVO qab = new QaVO();
+				qab.setQno(rs.getInt("qno"));
+				qab.setQtitle(rs.getString("qtitle"));
+				qab.setQname(rs.getString("qname"));
+				qab.setQfilename(rs.getString("qfilename"));
+				qab.setQdate(rs.getTimestamp("qdate"));
+				qab.setQhit(rs.getInt("qhit"));
+				qab.setId(rs.getString("id"));
 				
-				qboardList.add(qa);
+				qaboardList.add(qab);				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			JDBCUtil.close(conn, pstmt, rs);
 		}
-		
-		return qboardList;
-	} //게시글 목록
+		return qaboardList;
+	}
 	
-	//게시판 페이지 클릭
-	public List<QaVO> getQaBoardList(int page){
-		List<QaVO> qboardList = new ArrayList<>();
+	//문의게시판 글쓰기
+	public void qaWrite(QaVO qab) {
+		
 		try {
 			conn = JDBCUtil.getConnection();
-			String sql = "select * "
-					+"from (select rownum RN, qa.* from (select * from qa order by qno desc) qa) "
-					+ "where RN >= ? and RN <= ?";
+			String sql = "insert into notice(qno, qtitle, qcontent, id) "
+					+ "VALUES (seq_qno.NEXTVAL, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, (page-1)*10+1); //시작행(start row)
-			pstmt.setInt(2, page*10); //페이지당 게시글 끝번호
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				QaVO qa = new QaVO();
-				qa.setQno(rs.getInt("qno"));
-				qa.setQtitle(rs.getString("qtitle"));
-				qa.setQname(rs.getString("qname"));
-				qa.setqDate(rs.getTimestamp("qdate"));
-				qa.setQhit(rs.getInt("qhit"));
-				qa.setId(rs.getString("id"));
-				
-				qboardList.add(qa);
-			}
+			pstmt.setString(1, qab.getQtitle());
+			pstmt.setString(2, qab.getQcontent());
+			pstmt.setString(3, qab.getId());
+			
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			JDBCUtil.close(conn, pstmt, rs);
+			JDBCUtil.close(conn, pstmt);
 		}
-		
-		return qboardList;
 	}
 	
 }

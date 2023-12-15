@@ -10,9 +10,10 @@ public class NoticeVO implements Serializable{
 	private int nno;
 	private String ntitle;
 	private String nname;
-	private Timestamp nDate;
+	private Timestamp ndate;
 	private int nhit;
 	private String ncontent;
+	private String nfilename;
 	
 	public int getNno() {
 		return nno;
@@ -32,12 +33,6 @@ public class NoticeVO implements Serializable{
 	public void setNname(String nname) {
 		this.nname = nname;
 	}
-	public Timestamp getnDate() {
-		return nDate;
-	}
-	public void setnDate(Timestamp nDate) {
-		this.nDate = nDate;
-	}
 	public int getNhit() {
 		return nhit;
 	}
@@ -49,6 +44,18 @@ public class NoticeVO implements Serializable{
 	}
 	public void setNcontent(String ncontent) {
 		this.ncontent = ncontent;
+	}
+	public String getNfilename() {
+		return nfilename;
+	}
+	public void setNfilename(String nfilename) {
+		this.nfilename = nfilename;
+	}
+	public Timestamp getNdate() {
+		return ndate;
+	}
+	public void setNdate(Timestamp ndate) {
+		this.ndate = ndate;
 	}
 	
 }

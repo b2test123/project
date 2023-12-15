@@ -77,7 +77,7 @@ public class MemberDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}//회원가입
-	
+
 	//로그인 인증
 	public MemberVO checkLogin(MemberVO m) {
 		try {
@@ -92,6 +92,35 @@ public class MemberDAO {
 				System.out.println("Login successful. Name: " + m.getName());
 			}else {
 				System.out.println("Login failed.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return m;
+	}
+
+	//회원상세조회
+	public MemberVO getMember(String id) {
+		MemberVO m = new MemberVO();
+		try {
+			conn = JDBCUtil.getConnection();
+			String sql = "SELECT * FROM member WHERE id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				m.setId(rs.getString("id"));
+				m.setPasswd(rs.getString("passwd"));
+				m.setName(rs.getString("name"));
+				m.setEmail(rs.getString("email"));
+				m.setPhone(rs.getString("phone"));
+				m.setJoinDate(rs.getTimestamp("joindate"));
+				m.setZip_code(rs.getString("zip_code"));
+				m.setAddress(rs.getString("address"));
+				m.setDetailaddress(rs.getString("detailaddress"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

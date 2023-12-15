@@ -10,11 +10,13 @@ public class ReviewVO implements Serializable{
 	private int rno;
 	private String rtype;
 	private String rtitle;
-	private Timestamp rDate;
+	private Timestamp rdate;
 	private String rcontent;
+	private String rfilename;
 	private int rrate; //별점
 	private int likes;  //좋아요
 	private String receipt;
+	
 	
 	public int getRno() {
 		return rno;
@@ -34,17 +36,23 @@ public class ReviewVO implements Serializable{
 	public void setRtitle(String rtitle) {
 		this.rtitle = rtitle;
 	}
-	public Timestamp getrDate() {
-		return rDate;
+	public Timestamp getRdate() {
+		return rdate;
 	}
-	public void setrDate(Timestamp rDate) {
-		this.rDate = rDate;
+	public void setRdate(Timestamp rdate) {
+		this.rdate = rdate;
 	}
 	public String getRcontent() {
 		return rcontent;
 	}
 	public void setRcontent(String rcontent) {
 		this.rcontent = rcontent;
+	}
+	public String getRfilename() {
+		return rfilename;
+	}
+	public void setRfilename(String rfilename) {
+		this.rfilename = rfilename;
 	}
 	public int getRrate() {
 		return rrate;

@@ -77,31 +77,3 @@ CREATE TABLE notice (
    ndate    TIMESTAMP,
    nhit     NUMBER
 );
-
-CREATE TABLE category (
-    cnum          NUMBER        PRIMARY KEY,
-    categoryname  VARCHAR2(20)  NOT NULL,
-    cnum2         NUMBER        NOT NULL,
-    pno           NUMBER        NOT NULL,
-    FOREIGN KEY(pno) REFERENCES product,
-    FOREIGN KEY(cnum2) REFERENCES category
-);
-
-CREATE TABLE coupon (
-    cno         NUMBER                  PRIMARY KEY,
-    cid         VARCHAR2(40)            NOT NULL,
-    validity    DATE DEFAULT SYSDATE,
-    id            VARCHAR2(20)            NOT NULL,
-    FOREIGN KEY(id) REFERENCES member
-);
-
-CREATE TABLE delivery (
-   dno              NUMBER            PRIMARY KEY,
-   name             VARCHAR2(30)      NOT NULL,
-   zip_code         VARCHAR2(40),
-   address          VARCHAR2(40)      NOT NULL,
-   detailaddress    VARCHAR2(40)      NOT NULL,
-   request          VARCHAR2(200),
-   orderno          NUMBER            NOT NULL,
-   FOREIGN KEY(orderno) REFERENCES orders
-);
