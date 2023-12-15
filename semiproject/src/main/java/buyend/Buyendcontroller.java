@@ -18,6 +18,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import orders.OrderDAO;
 import orders.OrdersVO;
+import product.ProductVO;
 
 @WebServlet("*.do")
 public class Buyendcontroller extends HttpServlet {
@@ -114,7 +115,9 @@ public class Buyendcontroller extends HttpServlet {
 			nextPage="/petshop/orders.jsp";
 		
 		}
-		}else {}
+		}
+		
+		else {}
 		
 		RequestDispatcher ds= request.getRequestDispatcher(nextPage);
 		ds.forward(request, response);

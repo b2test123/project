@@ -21,3 +21,40 @@
                 </a> 
 </body>
 </html>
+
+/*else if(command.equals("/pinput.do")) {
+			
+			String cart = request.getParameter("cc");
+			
+			session.setAttribute("sessionId", cart);
+			ProductVO pv = new ProductVO();
+			String pname=	request.getParameter("pname");
+			int price = Integer.parseInt(request.getParameter("price"));
+			String pfilename =	request.getParameter("pfilename");
+			ArrayList<ProductVO> cart1 = new ArrayList<>();
+		    
+			pv.setPname(pname);
+			pv.setPrice(price);
+			pv.setPfilename(pfilename);
+			 cart1.add(pv);
+			nextPage="/petshop/productform.jsp";	
+		}
+		
+		else if(command.equals("/cart.do")){
+		session.getAttribute("sessionId");
+		
+				
+			ArrayList<ProductVO> cart = (ArrayList<ProductVO>)session.getAttribute("sessionId");
+		     
+		      for(int i=0; i<cart.size(); i++) {
+		    	  
+		    	  out.println(cart.get(i));
+		    	 request.setAttribute("cart", cart.get(i));
+		    	  
+		      }
+		     
+			
+			
+			
+			nextPage="/petshop/cart.jsp";	
+		}*/

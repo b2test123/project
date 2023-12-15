@@ -1,3 +1,4 @@
+package delivery;
 import java.io.Serializable;
 
 public class DeliveryVO implements Serializable{
