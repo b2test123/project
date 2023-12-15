@@ -1,3 +1,4 @@
+
 CREATE TABLE member (
    id               VARCHAR2(20)  PRIMARY KEY,
    passwd           VARCHAR2(25)   NOT NULL,
@@ -13,9 +14,30 @@ CREATE TABLE member (
 INSERT INTO member (id, passwd, name, email, phone, zip_code, address, detailaddress)
 VALUES ('khit', 'm1234567', '윤석민', 'dbstjrals130@naver.com', '010-8398-1739', '5412', '서울시 강서구', '래미안아파트');
 
+
 SELECT * FROM member;
 
+DROP TABLE member;
+
 COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE TABLE product (
    pno          NUMBER          PRIMARY KEY,
