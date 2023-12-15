@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* #mid */
+#mid {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid_h3 {
+    height: 150px;
+    width: 100%;
+    background: #edfed6;
+    display: flex;
+    align-items: center;
+}
+
+#login {
+    margin-top: 50px;
+    padding: 50px 100px;
+    width: 100%;
+}
+
+.login_tb {
+    border-collapse: collapse;
+    padding: 40px;
+}
+
+.login_btn {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    padding: 35px 35px;
+    margin-left: 30px;
+    border: none;
+    border-radius: 10px;
+    background: #edfed6;
+    box-shadow: 0px 2px 5px #efffec;
+}
+
+
+.td_text {
+    border: 1px solid #aa1;
+    border-right: none;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #aaa;
+    background: #efffec;
+}
+.td_input {
+    border: 1px solid #aa1;
+    border-left: none;
+}
+
+.login_input {
+    width: 200px;
+    height: 40px;
+    border: none;
+}
+
+#find_account {
+    margin: 20px 0px 70px 300px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#find_account p a {
+    color: #aaa;
+}
+
+.join_account {
+    width: 500px;
+    border-top: 1px solid #eca;
+    padding: 40px 50px;
+    margin: 10px auto 300px;
+    text-align: center;
+}
+
+.join_account p {
+    float: left;
+}
+
+.join_account a {
+    float: right;
+}
+
+.join_account_btn {
+    padding: 10px 30px;
+    border: 1px solid #B1CE57;
+    background: #edfed6;
+    box-shadow: 0 -5px 10px #efffec;
+}
