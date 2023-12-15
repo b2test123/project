@@ -23,8 +23,17 @@ CREATE TABLE product (
    price        NUMBER          NOT NULL,
    p_score      NUMBER,
    sal_num      NUMBER,
-   pcontent     VARCHAR2(200)
+   pcontent     VARCHAR2(200),
+   category		VARCHAR2(40),
+   p_filename   VARCHAR2(40)
 );
+
+
+
+
+
+
+
 
 
 
