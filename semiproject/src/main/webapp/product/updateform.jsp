@@ -11,7 +11,7 @@
 	<div id="container">
 		<section id="">
 		<h2>상품 수정</h2>
-		<form action="/update.do" method="post">
+		<form action="/update.do" method="post" enctype="multipart/form-data">
 			<!-- hidden은 UI를 만들지 않고 데이터를 숨겨서 보낼때 사용 -->
 			<input type="hidden" name="pno" value="${product.pno}">
 			<table>
@@ -29,9 +29,12 @@
 						<td><textarea rows="7" cols="100" name="pcontent">${product.pcontent}</textarea></td>
 					</tr>
 					<tr>
+					  	<td><input type="file" name="pfilename"></td>
+				  	</tr>
+					<tr>
 						<td>
 							<button type="submit">저장</button>
-							<a href="/udproduct.do">
+							<a href="/productmanagement.do">
 								<button type="button">취소</button>
 							</a>
 						</td>

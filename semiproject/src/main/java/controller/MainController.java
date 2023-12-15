@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import member.MemberDAO;
 import member.MemberVO;
@@ -113,39 +117,22 @@ public class MainController extends HttpServlet {
 			List<ProductVO> productList = pDAO.getProductList();
 			request.setAttribute("productList", productList);
 			nextPage = "/product/productlist.jsp";
-		}else if(command.equals("/insertproduct.do")) {
-		        int pno = Integer.parseInt(request.getParameter("pno"));
-		        String pname = request.getParameter("pname");
-		        int price = Integer.parseInt(request.getParameter("price"));
-		        String pcontent = request.getParameter("pcontent");
-		        String category = request.getParameter("category");
-
-		        ProductVO p = new ProductVO();
-		        p.setPno(pno);
-		        p.setPname(pname);
-		        p.setPrice(price);
-		        p.setPcontent(pcontent);
-		        p.setCategory(category);
-
-		        pDAO.insertProduct(p);
-		        
-		        nextPage = "/productlist.do";
 		}else if(command.equals("/productview.do")) {
 			int pno = Integer.parseInt(request.getParameter("pno"));
 			ProductVO productList = pDAO.getProductVO(pno);
 			request.setAttribute("productlist", productList);
 			
 			nextPage = "/product/productview.jsp";
-		}else if(command.equals("/udproduct.do")) {
+		}else if(command.equals("/productmanagement.do")) {
 			List<ProductVO> productList = pDAO.getProductList();
 			request.setAttribute("productList", productList);
-			nextPage = "/product/udproduct.jsp";
+			nextPage = "/product/productmanagement.jsp";
 			
 		}else if(command.equals("/deleteproduct.do")) {
 			int pno = Integer.parseInt(request.getParameter("pno"));
 			pDAO.deleteproduct(pno);
 			
-			nextPage = "/udproduct.do";
+			nextPage = "/productmanagement.do";
 			
 		}else if(command.equals("/updateform.do")) {
 			int pno = Integer.parseInt(request.getParameter("pno"));
@@ -154,46 +141,85 @@ public class MainController extends HttpServlet {
 			
 			nextPage = "/product/updateform.jsp";
 		}else if(command.equals("/update.do")) {
-			int pno = Integer.parseInt(request.getParameter("pno"));
+			String realFolder ="C:\\jspworks\\semiproject\\src\\main\\webapp\\fileupload";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";   //파일이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+			//5가지 인자
+			MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, policy);
 			
-			String pname = request.getParameter("pname");
-			int price = Integer.parseInt(request.getParameter("price"));
-			String category = request.getParameter("category");
-			String pcontent = request.getParameter("pcontent");
-			//수정처리 매서드
+			//폼 일반 속성 데이터 받기
+			int pno = Integer.parseInt(multi.getParameter("pno"));
+			String pname = multi.getParameter("pname");
+			int price = Integer.parseInt(multi.getParameter("price"));
+			String pcontent = multi.getParameter("pcontent");
+			String category = multi.getParameter("category");
+			
+			//file 속성
+			Enumeration<?> files = multi.getFileNames();
+			String pfilename = "";
+			while(files.hasMoreElements()) { //파일이름이 있는 동안 반복
+				String userFilename = (String)files.nextElement();
+				
+				//실제 파일 이름
+				pfilename = multi.getFilesystemName(userFilename);
+			}
+			
+			//db에 저장
 			ProductVO p = new ProductVO();
-			
 			p.setPno(pno);
 			p.setPname(pname);
 			p.setPrice(price);
-			p.setCategory(category);
 			p.setPcontent(pcontent);
+			p.setCategory(category);
+			p.setPfilename(pfilename);
 			
 			pDAO.updateproduct(p);
 			
-			nextPage = "/udproduct.do";
-		}
-		
-		else if(command.equals("/doglist.do")) {
-			List<ProductVO> productList = pDAO.getProductList();
-			request.setAttribute("productList", productList);
+			nextPage = "/productmanagement.do";
+		}else if(command.equals("/categorylist.do")) {
+			System.out.println(request.getParameter("category"));
+			List<ProductVO> p = pDAO.getCategoryList(request.getParameter("category"));
 			
-			nextPage = "/product/doglist.jsp";
-		}else if(command.equals("/catlist.do")) {
-			List<ProductVO> productList = pDAO.getProductList();
-			request.setAttribute("productList", productList);
+			request.setAttribute("categoryList", p);
 			
-			nextPage = "/product/catlist.jsp";
-		}else if(command.equals("/hamlist.do")) {
-			List<ProductVO> productList = pDAO.getProductList();
-			request.setAttribute("productList", productList);
+			nextPage = "/product/categorylist.jsp";
+		}else if(command.equals("/insertproduct.do")) {
+			String realFolder ="C:\\jspworks\\semiproject\\src\\main\\webapp\\fileupload";
+			int maxSize = 10*1024*1024; //10MB
+			String encType = "utf-8";   //파일이름 한글 인코딩
+			DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
+			//5가지 인자
+			MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, policy);
 			
-			nextPage = "/product/hamlist.jsp";
-		}else if(command.equals("/eventlist.do")) {
-			List<ProductVO> productList = pDAO.getProductList();
-			request.setAttribute("productList", productList);
+			//폼 일반 속성 데이터 받기
+			String pname = multi.getParameter("pname");
+			int price = Integer.parseInt(multi.getParameter("price"));
+			String pcontent = multi.getParameter("pcontent");
+			String category = multi.getParameter("category");
 			
-			nextPage = "/product/eventlist.jsp";
+			//file 속성
+			Enumeration<?> files = multi.getFileNames();
+			String pfilename = "";
+			while(files.hasMoreElements()) { //파일이름이 있는 동안 반복
+				String userFilename = (String)files.nextElement();
+				
+				//실제 파일 이름
+				pfilename = multi.getFilesystemName(userFilename);
+			}
+			
+			//db에 저장
+			ProductVO p = new ProductVO();
+			p.setPname(pname);
+			p.setPrice(price);
+			p.setPcontent(pcontent);
+			p.setCategory(category);
+			p.setPfilename(pfilename);
+			
+			//write매서드 실행
+			pDAO.insertProduct(p);
+			
+			nextPage = "/productmanagement.do";
 		}
 		
 		
@@ -203,9 +229,15 @@ public class MainController extends HttpServlet {
 
 			nextPage = "/board/neboardlist.jsp";
 		}
-
-		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
-		dispatch.forward(request, response);
+		
+		
+		//redirect와 forward 구분하기
+		if(command.equals("/insertproduct.do") || command.equals("/deleteproduct.do") || command.equals("/update.do")){
+			response.sendRedirect("/productmanagement.do");
+		}else {
+			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
+			dispatch.forward(request, response);
+		}
 
 	}
 

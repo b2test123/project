@@ -34,12 +34,22 @@
 							<td>${product.category}</td>
 						</tr>
 						<tr>
+							<td>
+								<div>
+									<c:if test="${not empty product.pfilename}">
+										<img src="../fileupload/${product.pfilename}" alt="">
+									</c:if>
+								</div>
+							</td>
+						</tr>
+						<tr>
 							<td colspan="2">
-							<a href="/updateform.do?pno=${product.pno}"><button type="button">수정</button></a> 
-							<a href="/deleteproduct.do?pno=${product.pno}"><button type="button" onclick="return confirm('삭제하시겠습니까?')">삭제</button></a>
+								<a href="/updateform.do?pno=${product.pno}"><button type="button">수정</button></a> 
+								<a href="/deleteproduct.do?pno=${product.pno}"><button type="button" onclick="return confirm('삭제하시겠습니까?')">삭제</button></a>
 							</td>
 						</tr>
 					</c:forEach>
+					<a href="/product/insertproduct.jsp"><button type="submit">상품등록</button></a>
 					<a href="/productlist.do"><button type="submit">목록</button></a>
 				</tbody>
 			</table>

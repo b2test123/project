@@ -65,101 +65,101 @@
 								class="fa-solid fa-bars"></i>전체 메뉴</a>
 							<ul class="sub_all_menu">
 								<ul>
-									<a href="">강아지 먹거리</a>
-									<li><a href="">사료</a></li>
-									<li><a href="">간식</a></li>
-									<li><a href="">영양제</a></li>
+									<a href="/categorylist.do?category=강아지 먹거리">강아지 먹거리</a>
+									<li><a href="/categorylist.do?category=강아지 사료">사료</a></li>
+									<li><a href="/categorylist.do?category=강아지 간식">간식</a></li>
+									<li><a href="/categorylist.do?category=강아지 영양제">영양제</a></li>
 								</ul>
 								<ul>
-									<a href="">강아지 용품</a>
-									<li><a href="">강아지 집</a></li>
-									<li><a href="">강아지 옷</a></li>
-									<li><a href="">강아지 장난감</a></li>
-									<li><a href="">강아지 밥그릇</a></li>
-									<li><a href="">강아지 산책용품</a></li>
+									<a href="/categorylist.do?category=강아지 용품">강아지 용품</a>
+									<li><a href="/categorylist.do?category=강아지 집">강아지 집</a></li>
+									<li><a href="/categorylist.do?category=강아지 옷">강아지 옷</a></li>
+									<li><a href="/categorylist.do?category=강아지 장난감">강아지 장난감</a></li>
+									<li><a href="/categorylist.do?category=강아지 밥그릇">강아지 밥그릇</a></li>
+									<li><a href="/categorylist.do?category=강아지 산책용품">강아지 산책용품</a></li>
 								</ul>
 								<ul>
-									<a href="">고양이 먹거리</a>
-									<li><a href="">사료</a></li>
-									<li><a href="">간식</a></li>
-									<li><a href="">영양제</a></li>
+									<a href="/categorylist.do?category=고양이 먹거리">고양이 먹거리</a>
+									<li><a href="/categorylist.do?category=고양이 사료">사료</a></li>
+									<li><a href="/categorylist.do?category=고양이 간식">간식</a></li>
+									<li><a href="/categorylist.do?category=고양이 영양제">영양제</a></li>
 								</ul>
 								<ul>
-									<a href="">고양이 용품</a>
-									<li><a href="">고양이 집</a></li>
-									<li><a href="">고양이 옷</a></li>
-									<li><a href="">고양이 장난감</a></li>
-									<li><a href="">고양이 밥그릇</a></li>
-									<li><a href="">고양이 방콕용품</a></li>
+									<a href="/categorylist.do?category=고양이 용품">고양이 용품</a>
+									<li><a href="/categorylist.do?category=고양이 집">고양이 집</a></li>
+									<li><a href="/categorylist.do?category=고양이 옷">고양이 옷</a></li>
+									<li><a href="/categorylist.do?category=고양이 장난감">고양이 장난감</a></li>
+									<li><a href="/categorylist.do?category=고양이 밥그릇">고양이 밥그릇</a></li>
+									<li><a href="/categorylist.do?category=고양이 방콕용품">고양이 방콕용품</a></li>
 								</ul>
 								<ul>
-									<a href="">햄스터 먹거리</a>
-									<li><a href="">사료</a></li>
-									<li><a href="">간식</a></li>
-									<li><a href="">영양제</a></li>
+									<a href="/categorylist.do?category=햄스터 먹거리">햄스터 먹거리</a>
+									<li><a href="/categorylist.do?category=햄스터 사료">사료</a></li>
+									<li><a href="/categorylist.do?category=햄스터 간식">간식</a></li>
+									<li><a href="/categorylist.do?category=햄스터 영양제">영양제</a></li>
 								</ul>
 								<ul>
-									<a href="">햄스터 용품</a>
-									<li><a href="">햄스터 집</a></li>
-									<li><a href="">햄스터 장난감</a></li>
-									<li><a href="">햄스터 밥그릇</a></li>
-									<li><a href="">햄스터 챗바퀴</a></li>
-									<li><a href="">햄스터 이갈이</a></li>
+									<a href="/categorylist.do?category=햄스터 용품">햄스터 용품</a>
+									<li><a href="/categorylist.do?category=햄스터 집">햄스터 집</a></li>
+									<li><a href="/categorylist.do?category=햄스터 장난감">햄스터 장난감</a></li>
+									<li><a href="/categorylist.do?category=햄스터 밥그릇">햄스터 밥그릇</a></li>
+									<li><a href="/categorylist.do?category=햄스터 챗바퀴">햄스터 챗바퀴</a></li>
+									<li><a href="/categorylist.do?category=햄스터 이갈이">햄스터 이갈이</a></li>
 								</ul>
 								<ul>
-									<a href="">이벤트 상품</a>
-									<li><a href="">기간 할인 상품</a></li>
-									<li><a href="">신상품 할인 이벤트</a></li>
-									<li><a href="">시즌 한정 상품</a></li>
+									<a href="/categorylist.do?category=이벤트 상품">이벤트 상품</a>
+									<li><a href="/categorylist.do?category=기간 할인 상품">기간 할인 상품</a></li>
+									<li><a href="/categorylist.do?category=신상품 할인 이벤트">신상품 할인 이벤트</a></li>
+									<li><a href="/categorylist.do?category=시즌 한정 상품">시즌 한정 상품</a></li>
 								</ul>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">강아지 먹거리</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=강아지 먹거리">강아지 먹거리</a>
 							<ul class="sub_menu">
-								<li><a href="">사료</a></li>
-								<li><a href="">간식</a></li>
-								<li><a href="">영양제</a></li>
+								<li><a href="/categorylist.do?category=강아지 사료">사료</a></li>
+								<li><a href="/categorylist.do?category=강아지 간식">간식</a></li>
+								<li><a href="/categorylist.do?category=강아지 영양제">영양제</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">강아지 용품</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=강아지 용품">강아지 용품</a>
 							<ul class="sub_menu">
-								<li><a href="">강아지 집</a></li>
-								<li><a href="">강아지 옷</a></li>
-								<li><a href="">강아지 장난감</a></li>
-								<li><a href="">강아지 밥그릇</a></li>
-								<li><a href="">강아지 산책용품</a></li>
+								<li><a href="/categorylist.do?category=강아지 집">강아지 집</a></li>
+								<li><a href="/categorylist.do?category=강아지 옷">강아지 옷</a></li>
+								<li><a href="/categorylist.do?category=강아지 장난감">강아지 장난감</a></li>
+								<li><a href="/categorylist.do?category=강아지 밥그릇">강아지 밥그릇</a></li>
+								<li><a href="/categorylist.do?category=강아지 산책용품">강아지 산책용품</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">고양이 먹거리</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=고양이 먹거리">고양이 먹거리</a>
 							<ul class="sub_menu">
-								<li><a href="">사료</a></li>
-								<li><a href="">간식</a></li>
-								<li><a href="">영양제</a></li>
+								<li><a href="/categorylist.do?category=고양이 사료">사료</a></li>
+								<li><a href="/categorylist.do?category=고양이 간식">간식</a></li>
+								<li><a href="/categorylist.do?category=고양이 영양제">영양제</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">고양이 용품</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=고양이 용품">고양이 용품</a>
 							<ul class="sub_menu">
-								<li><a href="">고양이 집</a></li>
-								<li><a href="">고양이 옷</a></li>
-								<li><a href="">고양이 장난감</a></li>
-								<li><a href="">고양이 밥그릇</a></li>
-								<li><a href="">고양이 방콕용품</a></li>
+								<li><a href="/categorylist.do?category=고양이 집">고양이 집</a></li>
+								<li><a href="/categorylist.do?category=고양이 옷">고양이 옷</a></li>
+								<li><a href="/categorylist.do?category=고양이 장난감">고양이 장난감</a></li>
+								<li><a href="/categorylist.do?category=고양이 밥그릇">고양이 밥그릇</a></li>
+								<li><a href="/categorylist.do?category=고양이 방콕용품">고양이 방콕용품</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">햄스터 먹거리</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=햄스터 먹거리">햄스터 먹거리</a>
 							<ul class="sub_menu">
-								<li><a href="">사료</a></li>
-								<li><a href="">간식</a></li>
-								<li><a href="">영양제</a></li>
+								<li><a href="/categorylist.do?category=햄스터 사료">사료</a></li>
+								<li><a href="/categorylist.do?category=햄스터 간식">간식</a></li>
+								<li><a href="/categorylist.do?category=햄스터 영양제">영양제</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">햄스터 용품</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=햄스터 용품">햄스터 용품</a>
 							<ul class="sub_menu">
-								<li><a href="">햄스터 집</a></li>
-								<li><a href="">햄스터 장난감</a></li>
-								<li><a href="">햄스터 밥그릇</a></li>
-								<li><a href="">햄스터 챗바퀴</a></li>
-								<li><a href="">햄스터 이갈이</a></li>
+								<li><a href="/categorylist.do?category=햄스터 집">햄스터 집</a></li>
+								<li><a href="/categorylist.do?category=햄스터 장난감">햄스터 장난감</a></li>
+								<li><a href="/categorylist.do?category=햄스터 밥그릇">햄스터 밥그릇</a></li>
+								<li><a href="/categorylist.do?category=햄스터 챗바퀴">햄스터 챗바퀴</a></li>
+								<li><a href="/categorylist.do?category=햄스터 이갈이">햄스터 이갈이</a></li>
 							</ul></li>
-						<li class="tbm-list-li"><a href="#">이벤트 상품</a>
+						<li class="tbm-list-li"><a href="/categorylist.do?category=이벤트 상품">이벤트 상품</a>
 							<ul class="sub_menu">
-								<li><a href="">기간 할인 상품</a></li>
-								<li><a href="">신상품 할인 이벤트</a></li>
-								<li><a href="">시즌 한정 상품</a></li>
+								<li><a href="/categorylist.do?category=기간 할인 상품">기간 할인 상품</a></li>
+								<li><a href="/categorylist.do?category=신상품 할인 이벤트">신상품 할인 이벤트</a></li>
+								<li><a href="/categorylist.do?category=시즌 한정 상품">시즌 한정 상품</a></li>
 							</ul></li>
 					</ul>
 				</nav>

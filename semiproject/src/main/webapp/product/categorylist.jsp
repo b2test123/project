@@ -15,54 +15,52 @@
 		<div class="mid_container">
 			<div class="dog_tap">
 				<div class="menu_subject">
-					<a href="/doglist.do">
+					<a href="/categorylist.do?category=강아지">
 						<h3>멍뭉</h3>
 					</a>
 					<div class="sub_taps">
-						<a href="/doglist.do"><span>먹거리</span></a> | <a href="/doglist.do"><span>용품</span></a>
+						<a href="/categorylist.do?category=강아지"><span>먹거리</span></a> | <a href="/categorylist.do?category=강아지"><span>용품</span></a>
 					</div>
 				</div>
 			</div>
 			<div class="cat_tap">
 				<div class="menu_subject">
-					<a href="/catlist.do">
+					<a href="/categorylist.do?category=고양이">
 						<h3>꼬냥</h3>
 					</a>
 					<div class="sub_taps">
-						<a href="/catlist.do"><span>먹거리</span></a> | <a href="/catlist.do"><span>용품</span></a>
+						<a href="/categorylist.do?category=고양이"><span>먹거리</span></a> | <a href="/categorylist.do?category=고양이"><span>용품</span></a>
 					</div>
 				</div>
 			</div>
 			<div class="hamster_tap">
 				<div class="menu_subject">
-					<a href="/hamlist.do">
+					<a href="/categorylist.do?category=햄스터">
 						<h3>햄찌</h3>
 					</a>
 					<div class="sub_taps">
-						<a href="/hamlist.do"><span>먹거리</span></a> | <a href="/hamlist.do"><span>용품</span></a>
+						<a href="/categorylist.do?category=햄스터"><span>먹거리</span></a> | <a href="/categorylist.do?category=햄스터"><span>용품</span></a>
 					</div>
 				</div>
 			</div>
 			<div class="event_tap">
 				<div class="menu_subject">
-					<a href="/eventlist.do">
+					<a href="/categorylist.do?category=이벤트">
 						<h3>이벤트</h3>
 					</a>
 					<div class="sub_taps">
-						<a href="/eventlist.do"><span>기간 할인</span></a> | <a href="/eventlist.do"><span>신상품</span></a>
-						| <a href="/eventlist.do"><span>한정판</span></a>
+						<a href="/categorylist.do?category=이벤트"><span>기간 할인</span></a> | <a href="/categorylist.do?category=이벤트"><span>신상품</span></a>
+						| <a href="/categorylist.do?category=이벤트"><span>한정판</span></a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<c:forEach items="${productList}" var="product">
-			<c:if test="${product.category eq '고양이'}">
+		<c:forEach items="${categoryList}" var="product">
 				<td><a href="/productview.do?pno=${product.pno}">${product.pno}</a></td>
 				<td>${product.pname}</td>
 				<td>${product.price}</td>
 				<td>${product.pcontent}</td>
 				<td>${product.category}</td>
-			</c:if>
 		</c:forEach>
 	</div>
 	<jsp:include page="../footer.jsp" />

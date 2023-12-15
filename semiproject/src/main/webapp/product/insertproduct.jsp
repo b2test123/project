@@ -12,16 +12,12 @@
    <jsp:include page="/header.jsp" />
    <div id="mid">
       <h3>상품 등록</h3>
-      <form action="/insertproduct.do" method="post" name="product" id="mid_form">
+      <form action="/insertproduct.do" method="post" name="product" id="mid_form"  enctype="multipart/form-data">
          <fieldset id="join_info">
             <legend>상품 입력</legend>
             <div>
                <table>
                <tbody>
-                  <tr>
-                     <th>상품번호</th>
-                     <td><input type="text" name="pno"></td>
-                  </tr>
                   <tr>
                      <th>상품명</th>
                      <td><input type="text" name="pname"></td>
@@ -38,6 +34,10 @@
                      <th>카테고리</th>
                      <td><input type="text" name="category"></td>
                   </tr>
+                  <tr>
+                  	 <th>파일첨부</th>
+				  	 <td><input type="file" name="pfilename"></td>
+				  </tr>
                </tbody>
                </table>
             </div>

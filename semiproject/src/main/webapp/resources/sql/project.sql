@@ -30,6 +30,7 @@ CREATE TABLE product (
    pcontent     VARCHAR2(200),
    category		VARCHAR2(40)
 );
+CREATE SEQUENCE seq_pno NOCACHE;
 
 CREATE TABLE qa (
    qno      NUMBER          PRIMARY KEY,
