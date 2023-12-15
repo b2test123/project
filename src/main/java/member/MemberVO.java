@@ -4,18 +4,19 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class MemberVO implements Serializable{
-	
-	private static final long serialVersionUID = 11L;
 
+	private static final long serialVersionUID = 101L;
+	
 	private String id;
 	private String passwd;
 	private String name;
 	private String email;
 	private String phone;
-	private Timestamp joindate;
+	private Timestamp joinDate;
 	private String zip_code;
 	private String address;
 	private String detailaddress;
+	
 	
 	public String getId() {
 		return id;
@@ -47,11 +48,11 @@ public class MemberVO implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public Timestamp getJoindate() {
-		return joindate;
+	public Timestamp getJoinDate() {
+		return joinDate;
 	}
-	public void setJoindate(Timestamp joindate) {
-		this.joindate = joindate;
+	public void setJoinDate(Timestamp joinDate) {
+		this.joinDate = joinDate;
 	}
 	public String getZip_code() {
 		return zip_code;
@@ -71,9 +72,6 @@ public class MemberVO implements Serializable{
 	public void setDetailaddress(String detailaddress) {
 		this.detailaddress = detailaddress;
 	}
-	
-	
-
 	
 	
 }
