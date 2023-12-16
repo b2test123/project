@@ -45,14 +45,14 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<a href="main.do">
+							<a href="memberlist.do">
 								<button>목록</button>
 							</a>
-							<a href="main.do">
-								<button>수정</button>
-							</a>
-							<a href="main.do">
-								<button>탈퇴</button>
+							<a href="/updatemember.do?id=${member.id}">
+								<button type="button">수정</button>
+							</a> 
+							<a href="/deletemember.do?id=${member.id}">
+								<button type="button" onclick="return confirm('삭제하시겠습니까?')">삭제</button>
 							</a>
 						</td>
 					</tr>

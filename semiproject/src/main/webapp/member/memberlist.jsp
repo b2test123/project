@@ -13,6 +13,9 @@
 	<jsp:include page="../header.jsp" />
 	<div id="container">
 		<section id="memberlist">
+			<div id="logout">
+				<p><a href="/logout.do">[관리자 로그아웃]</a><p>
+			</div>
 			<table>
 				<thead>
 					<tr>

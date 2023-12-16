@@ -10,12 +10,13 @@ public class OrdersVO implements Serializable{
 	private int orderNo;
 	private Timestamp orderDate;
 	private int orderPrice; //주문금액
-	private int totalPrice; //총결제금액
 	private String cardCompany; //결제카드 회사
 	private int count; //주문상품개수
-	private String orderStatus; //주문현황
-	private int pno;
+	private String pname;
 	private String id;
+	private int totalprice;
+	private String filename;
+	
 	
 	public int getOrderNo() {
 		return orderNo;
@@ -35,12 +36,6 @@ public class OrdersVO implements Serializable{
 	public void setOrderPrice(int orderPrice) {
 		this.orderPrice = orderPrice;
 	}
-	public int getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
-	}
 	public String getCardCompany() {
 		return cardCompany;
 	}
@@ -53,17 +48,11 @@ public class OrdersVO implements Serializable{
 	public void setCount(int count) {
 		this.count = count;
 	}
-	public String getOrderStatus() {
-		return orderStatus;
+	public String getPname() {
+		return pname;
 	}
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
-	public int getPno() {
-		return pno;
-	}
-	public void setPno(int pno) {
-		this.pno = pno;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
 	public String getId() {
 		return id;
@@ -71,6 +60,19 @@ public class OrdersVO implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
+	public int getTotalprice() {
+		return totalprice;
+	}
+	public void setTotalprice(int totalprice) {
+		this.totalprice = totalprice;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	
 	
 	
 }

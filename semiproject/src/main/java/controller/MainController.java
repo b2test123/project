@@ -125,6 +125,11 @@ public class MainController extends HttpServlet {
 			request.setAttribute("memberList", memberList);
 
 			nextPage = "/member/memberlist.jsp";
+		}else if (command.equals("/deletemember.do")) {
+			String id = request.getParameter("id");
+			mDAO.deletemember(id);
+			
+			nextPage = "/main.jsp";
 		}
 
 		//상품
@@ -235,6 +240,14 @@ public class MainController extends HttpServlet {
 			pDAO.insertProduct(p);
 			
 			nextPage = "/productmanagement.do";
+		}
+		
+		//주문
+		else if(command.equals("/orders.do")) {
+			request.setAttribute("member", mDAO.getMember(String.valueOf(session.getAttribute("sessionId"))));
+			request.setAttribute("product", pDAO.getProductVO(Integer.parseInt(request.getParameter("pno"))));
+			
+			nextPage = "/orders/orders.jsp";
 		}
 		
 		

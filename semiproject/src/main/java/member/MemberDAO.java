@@ -129,4 +129,23 @@ public class MemberDAO {
 		}
 		return m;
 	}
+	
+	
+	//회원 탈퇴
+	public void deletemember(String id) {
+		try {
+			conn = JDBCUtil.getConnection();
+			String sql = "delete from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
 }
