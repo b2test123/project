@@ -13,7 +13,7 @@
 		<div id="top">
 			<div class="join_header_wrap">
 				<div class="join_header_inner">
-					<a href="" title="홈으로"><img class="logo"
+					<a href="/main.do" title="홈으로"><img class="logo"
 						src="../resources/img/logo/로고_01_logo2.2.jpg"></a>
 					<ol>
 						<li class="page_on"><span>01</span> 가입방법 <i
@@ -40,7 +40,7 @@
 					</div>
 					<div class="member_guide_txt">
 						<p>
-							이미 멍뭉꼬냥 회원이신가요? <a href="#" id="btnLoginMember"><b>로그인</b></a>
+							이미 멍뭉꼬냥 회원이신가요? <a href="/login.do" id="btnLoginMember"><b>로그인</b></a>
 						</p>
 					</div>
 				</div>

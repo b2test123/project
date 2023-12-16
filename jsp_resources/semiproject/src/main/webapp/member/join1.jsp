@@ -14,7 +14,7 @@
         <div id="top">
             <div class="join_header_wrap">
                 <div class="join_header_inner">
-                    <a href="" title="홈으로"><img class="logo" src="../resources/img/logo/로고_01_logo2.2.jpg"></a>
+                    <a href="/main.do" title="홈으로"><img class="logo" src="../resources/img/logo/로고_01_logo2.2.jpg"></a>
                     <ol>
                         <li><span>01</span> 가입방법 <i class="fa-solid fa-caret-right"></i></li>
                         <li class="page_on"><span>02</span> 약관동의 <i class="fa-solid fa-caret-right"></i></li>

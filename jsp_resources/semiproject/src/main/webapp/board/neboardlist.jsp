@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 목록</title>
+<title>공지사항 게시판</title>
 <link rel="stylesheet" href="../resources/css/boardlist.css">
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
 	<div id="container">
 		<div id="mid">
-			<h3>Notice / Event</h3>
+			<h3>Notice</h3>
 			<div class="Board">
 				<table id="board_tb">
 					<thead>
@@ -26,52 +26,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>notice</td>
-							<td><a href="/boardview.do">Notice 1 첫번째 공지사항입니다</a></td>
-							<td>Notice team</td>
-							<td>2023-11-01</td>
-							<td>12</td>
-						</tr>
-						<tr>
-							<td>notice</td>
-							<td>Notice2 두번째 공지사항입니다</td>
-							<td>Notice team</td>
-							<td>2023-11-23</td>
-							<td>9</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Event3 리뷰 작성 이벤트!! 리뷰 작성 횟수에 따라 포인트 획득!!</td>
-							<td>Event team</td>
-							<td>2023-11-30</td>
-							<td>21</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Event2 첫 구매고객 이벤트!! 첫 구매시라면~</td>
-							<td>Event team</td>
-							<td>2023-11-16</td>
-							<td>26</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>Event1 회원가입 이벤트!!</td>
-							<td>Event team</td>
-							<td>2023-11-02</td>
-							<td>32</td>
-						</tr>
+						<c:forEach items="${NboardList}" var="nb">
+							<tr>
+								<td class="board_no">${nb.bno}</td>
+								<td class="board_title"><a href="/boardview.do">${nb.btitle}</a></td>
+								<td class="board_writer">${nb.nname}</td>
+								<td class="board_date"><fmt:formatDate value="${nb.nDate}"
+									 pattern="yyyy-MM-dd HH:mm:ss"/> </td>
+								<%-- <td class="board_hit">${nb.hit}</td> --%>
+							</tr>
+						</c:forEach>
 					</tbody>
-
 				</table>
 			</div>
-			<div id="page">
-				<a href=""><button class="arrow"></button></a> 
-				<a href=""><button>1</button></a>
-				<a href=""><button>2</button></a> 
-				<a href=""><button>3</button></a>
-				<a href=""><button>4</button></a> 
-				<a href=""><button class="arrow">></button></a>
+			<div class="write">
+				<a href="nwriteform.do">
+					<button type="button">글쓰기</button>
+				</a>
 			</div>
 		</div>
 	</div>

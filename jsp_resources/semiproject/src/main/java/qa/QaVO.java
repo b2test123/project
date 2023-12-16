@@ -9,10 +9,13 @@ public class QaVO implements Serializable{
 	
 	private int qno;
 	private String qtitle;
+	private String qcontent;
 	private String qname;
-	private Timestamp qDate;
+	private String qfilename;
+	private Timestamp qdate;
 	private int qhit;
 	private String id;
+	
 	
 	public int getQno() {
 		return qno;
@@ -26,17 +29,29 @@ public class QaVO implements Serializable{
 	public void setQtitle(String qtitle) {
 		this.qtitle = qtitle;
 	}
+	public String getQcontent() {
+		return qcontent;
+	}
+	public void setQcontent(String qcontent) {
+		this.qcontent = qcontent;
+	}
 	public String getQname() {
 		return qname;
 	}
 	public void setQname(String qname) {
 		this.qname = qname;
 	}
-	public Timestamp getqDate() {
-		return qDate;
+	public String getQfilename() {
+		return qfilename;
 	}
-	public void setqDate(Timestamp qDate) {
-		this.qDate = qDate;
+	public void setQfilename(String qfilename) {
+		this.qfilename = qfilename;
+	}
+	public Timestamp getQdate() {
+		return qdate;
+	}
+	public void setQdate(Timestamp qdate) {
+		this.qdate = qdate;
 	}
 	public int getQhit() {
 		return qhit;
@@ -50,5 +65,7 @@ public class QaVO implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	
 
 }

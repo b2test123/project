@@ -119,6 +119,21 @@ public class MainController extends HttpServlet {
 		}else if(command.equals("/logout.do")) {
 			session.invalidate(); //세션삭제
 			nextPage = "/main.jsp";
+		}else if (command.equals("/memberview.do")) {
+			String id =request.getParameter("id");
+
+			MemberVO member = mDAO.getMember(id);
+
+			request.setAttribute("member", member);
+
+			nextPage = "/member/memberview.jsp";
+		}else if (command.equals("/memberlist.do")) {
+
+			List<MemberVO> memberList = mDAO.getMemberList();
+
+			request.setAttribute("memberList", memberList);
+
+			nextPage = "/member/memberlist.jsp";
 		}
 
 		//상품

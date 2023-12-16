@@ -8,52 +8,35 @@
 <link rel="stylesheet" href="../resources/css/login.css">
 </head>
 <body>
-	<jsp:include page="../header.jsp" />
-	<div id="container">
-		<div id="mid">
-			<div class="mid_h3">
-				<h3>LOG IN</h3>
-			</div>
-			<div id="login">
-				<form action="/login.do" id="mid_form" method="post">
-					<table class="login_tb">
-						<tr class="login_tr">
-							<td class="td_text">
-								<span onclick="">ID</span>
-							</td>
-							<td class="td_input">
-								<input type="text" name="id" class="login_input">
-							</td>
-							<td rowspan="2" class="td_btn">
-								<button type="submit" class="login_btn">Log In</button>
-							</td>
-						</tr>
-						<tr class="login_tr">
-							<td class="td_text">
-								<span>PW</span>
-							</td>
-							<td class="td_input">
-								<input type="password" name="passwd" class="login_input">
-							</td>
-						</tr>
-						<div class="error">${error}</div>
-					</table>
-				</form>
-				<div id="find_account">
-					<p>
-						<a href="#" class="find_id">Find ID</a> | <a href="#"
-							class="find_pw">Find PW</a>
-					</p>
-				</div>
-				<div class="join_account">
-					<p>
-						💌 Become a member <br> and Enjoy the benefits!
-					</p>
-					<a href="#"><button class="join_account_btn">JOIN!</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<jsp:include page="../footer.jsp" />
+    <div class="member_warp">
+        <div class="member_tit">
+            <a href=""><img class="logo" src="../resources/img/logo/로고_01_logo2.2.jpg"></a>
+        </div>
+        <div>
+		    <form action="/login.do" method="post">
+		        <div>
+		            <input type="text" id="id" name="id" placeholder="아이디">
+		            <input type="password" id="passwd" name="passwd" placeholder="비밀번호">
+		        </div>
+		        <button type="submit">로그인</button>
+		    </form>
+        </div>
+        <p class="agree_box">
+            <input type="checkbox" name="saveId" id="saveId">
+            <label for="saveId"> 아이디 저장</label>
+        </p>
+        <div class="btn_login_box">
+            <div class="error">${error}</div>
+            <ul>
+                <li>
+                    <button id="btnJoinMember" class="btn_member_join">회원가입</button>
+                    <p>💌 Become a member <br> and Enjoy the benefits!</p>
+                </li>
+                <li><button id="btnFindId" class="btn_member_white">아이디 찾기</button></li>
+                <li><button id="btnFindPwd" class="btn_member_white">비밀번호 찾기</button></li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
