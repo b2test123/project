@@ -192,9 +192,10 @@ button {
 }
 
 .join_btn {
-  background: #eee;
+  background: #779c4b;
+  color: #fff;
 }
 
 .reset_btn {
-  background: #799c4b;
+  background: #eee;
 }

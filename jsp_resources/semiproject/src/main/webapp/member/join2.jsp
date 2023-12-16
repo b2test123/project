@@ -45,11 +45,17 @@
 							</tr>
 							<tr>
 								<th>Confirm PW</th>
-								<td><input type="password" name="passwd2" id="passwd2"></td>
+								<td>
+									<input type="password" name="passwd2" id="passwd2">
+									<span>(입력하신 비밀번호와 동일하게 입력해주세요)</span>
+								</td>
 							</tr>
 							<tr>
 								<th>Name</th>
-								<td><input type="text" name="name" id="name"></td>
+								<td>
+									<input type="text" name="name" id="name">
+									<span>(이름은 한글로만 입력해주세요)</span>
+								</td>
 							</tr>
 							<tr>
 								<th>Phone</th>
@@ -70,8 +76,8 @@
 					</div>
 				</fieldset>
 				<div class="btnbox">
-					<button type="reset" class="join_btn">취소</button>
-					<button type="button" class="reset_btn" onclick="registerUser()">회원가입</button>
+					<button type="button" class="reset_btn" onclick="goBack()">이전 단계</button>
+					<button type="button" class="join_btn" onclick="registerUser()">회원가입</button>
 				</div>
 			</form>
 		</div>

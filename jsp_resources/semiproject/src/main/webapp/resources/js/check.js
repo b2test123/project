@@ -47,3 +47,7 @@ function registerUser() {
         document.getElementById('mid_form').submit();
     }
 }
+
+function goBack() {
+    history.back();
+}

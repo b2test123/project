@@ -16,7 +16,7 @@ public class MemberDAO {
 
 	//회원 목록
 	public List<MemberVO> getMemberList(){
-		List<MemberVO> memberList = new ArrayList();
+		List<MemberVO> memberList = new ArrayList<>();
 		try {
 			//db연결
 			conn = JDBCUtil.getConnection();

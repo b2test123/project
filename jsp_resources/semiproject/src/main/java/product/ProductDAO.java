@@ -18,7 +18,7 @@ public class ProductDAO {
 
 	//상품 전체 목록보기
 	public List<ProductVO> getProductList() {
-		List<ProductVO> productList = new ArrayList();
+		List<ProductVO> productList = new ArrayList<>();
 		try {
 			conn = JDBCUtil.getConnection();
 			String sql = "select * from product";
@@ -34,7 +34,7 @@ public class ProductDAO {
 				p.setSal_num(rs.getInt("sal_num"));
 				p.setPcontent(rs.getString("pcontent"));
 				p.setCategory(rs.getString("category"));
-				p.setPfilename("pfilename");
+				p.setPfilename(rs.getString("pfilename"));
 
 				productList.add(p);
 			}

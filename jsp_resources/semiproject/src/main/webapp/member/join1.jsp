@@ -119,7 +119,7 @@
                     </div>
                 </fieldset>
                 <div class="btnbox">
-                    <button type="reset" class="reset_btn" >이전단계</button>
+                    <button type="button" class="reset_btn" onclick="goBack()">이전단계</button>
                     <button type="button" class="join_btn" onclick="goToJoin2()">다음단계</button>
                 </div>
             </form>
