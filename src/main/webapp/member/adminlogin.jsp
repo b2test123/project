@@ -15,14 +15,14 @@
 				<h3>LOG IN</h3>
 			</div>
 			<div id="login">
-				<form action="/login.do" id="mid_form" method="post">
+				<form action="/j_security_check" id="mid_form" method="post">
 					<table class="login_tb">
 						<tr class="login_tr">
 							<td class="td_text">
 								<span onclick="">ID</span>
 							</td>
 							<td class="td_input">
-								<input type="text" name="id" class="login_input">
+								<input type="text" name="j_username" class="login_input">
 							</td>
 							<td rowspan="2" class="td_btn">
 								<button type="submit" class="login_btn">Log In</button>
@@ -33,7 +33,7 @@
 								<span>PW</span>
 							</td>
 							<td class="td_input">
-								<input type="password" name="passwd" class="login_input">
+								<input type="password" name="j_password" class="login_input">
 							</td>
 						</tr>
 						<div class="error">${error}</div>

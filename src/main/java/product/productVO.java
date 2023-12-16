@@ -2,16 +2,18 @@ package product;
 
 import java.io.Serializable;
 
-public class productVO implements Serializable{
+public class ProductVO implements Serializable{
 	
-	private static final long serialVersionUID = 11L;
+	private static final long serialVersionUID = 103L;
 	
 	private int pno;
 	private String pname;
 	private int price;
-	private int p_score;
-	private int sal_num;
+	private int p_score; //평점
+	private int sal_num; //판매량
 	private String pcontent;
+	private String pfilename;
+	private String category;
 	
 	public int getPno() {
 		return pno;
@@ -49,8 +51,17 @@ public class productVO implements Serializable{
 	public void setPcontent(String pcontent) {
 		this.pcontent = pcontent;
 	}
-	
-	
-	
+	public String getPfilename() {
+		return pfilename;
+	}
+	public void setPfilename(String pfilename) {
+		this.pfilename = pfilename;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 }
