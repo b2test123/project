@@ -188,8 +188,8 @@ function moveNav() {
 function changeAd() {
     let nav = document.querySelector("#scroll_left");
     let addList = [
-        { id: "ad1", link: "/ad1.do", class: "advertisement", src: "resources/img/ad/광고_02_advertisement1.jpg" },
-        { id: "ad2", link: "/ad2.do", class: "advertisement", src: "resources/img/ad/광고_02_advertisement2.jpg" }
+        { id: "ad1", link: "/ad1.do", class: "advertisement", src: "../resources/img/ad/광고_02_advertisement1.jpg" },
+        { id: "ad2", link: "/ad2.do", class: "advertisement", src: "../resources/img/ad/광고_02_advertisement2.jpg" }
     ]
 
     addList.forEach(function (element) {

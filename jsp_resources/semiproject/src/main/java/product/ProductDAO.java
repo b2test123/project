@@ -89,7 +89,7 @@ public class ProductDAO {
 				p.setSal_num(rs.getInt("sal_num"));
 				p.setPcontent(rs.getString("pcontent"));
 				p.setCategory(rs.getString("category"));
-				p.setPfilename("pfilename");
+				p.setPfilename(rs.getString("pfilename"));
 			}
 
 		} catch (SQLException e) {

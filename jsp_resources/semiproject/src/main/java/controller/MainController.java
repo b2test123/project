@@ -86,8 +86,6 @@ public class MainController extends HttpServlet {
 			m.setDetailaddress(detailaddress);
 			mDAO.insertMember(m);
 
-			session.setAttribute("sessionId", m.getId());     // 아이디를 가져와서 sessionId(세션이름) 발급
-			session.setAttribute("sessionName", m.getName()); // 이름을 가져와서 sessionName(세션이름) 발급
 			
 			nextPage = "/member/join3.jsp";
 		}else if(command.equals("/main.do")){
@@ -134,7 +132,14 @@ public class MainController extends HttpServlet {
 			request.setAttribute("memberList", memberList);
 
 			nextPage = "/member/memberlist.jsp";
+		}else if (command.equals("/cart.do")) {
+			nextPage = "/member/cart.jsp";
+		}else if (command.equals("/deletemember.do")) {
+			String id = request.getParameter("id");
+			mDAO.deletemember(id);
+			nextPage = "/main.jsp";
 		}
+
 
 		//상품
 		else if(command.equals("/productlist.do")) {

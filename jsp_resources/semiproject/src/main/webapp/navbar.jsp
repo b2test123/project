@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="resources/css/navbar.css">
+<link rel="stylesheet" href="../resources/css/navbar.css">
 <div id="sideNav">
     <div class="lr_nav">
         <nav id="scroll_left">
@@ -21,9 +21,9 @@
                 상품이<br>
                 없습니다.
                 </li> -->
-                <div class="justview"><img class="justview_pic" src="resources/img/products/food1.jpg" alt=""></div>
-                <div class="justview"><img class="justview_pic" src="resources/img/products/house1.jpg" alt=""></div>
-                <div class="justview"><img class="justview_pic" src="resources/img/products/toy1.jpg" alt=""></div>
+                <div class="justview"><img class="justview_pic" src="../resources/img/products/food1.jpg" alt=""></div>
+                <div class="justview"><img class="justview_pic" src="../resources/img/products/house1.jpg" alt=""></div>
+                <div class="justview"><img class="justview_pic" src="../resources/img/products/toy1.jpg" alt=""></div>
             </div>
             <div class="go_QnA">
                 <a>문의 게시판</a>

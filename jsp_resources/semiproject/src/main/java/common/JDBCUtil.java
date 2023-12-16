@@ -22,11 +22,12 @@ public class JDBCUtil {
 	public static Connection getConnection() {
 		try {
 			Class.forName(driverClass);
+			
 			return DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
-		return null;
 	}
 	
 	//종료매서드(추가, 수정, 삭제)

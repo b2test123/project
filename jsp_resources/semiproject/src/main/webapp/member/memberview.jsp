@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../resources/css/mypage.css">
 </head>
 <body>
+ <c:set var="member" value="${request.member}" />
 	<jsp:include page="../header.jsp" />
 	<jsp:include page="../navbar.jsp"/>
 	<div id="mid">
@@ -17,7 +18,7 @@
             <div class="mid-top">
                 <div class="member_info">
                     <img src="#" alt="">
-                    <p>${sessionName}님! 저희 쇼핑몰을 이용해 주셔서 감사합니다. </p>
+                    <p>${member.name}님! 저희 쇼핑몰을 이용해 주셔서 감사합니다. </p>
                 </div>
             </div>
             <div class="mid-mid">
@@ -43,7 +44,7 @@
                                 </tr>
                                 <tr>
                                     <th>이름 <span class="required">*</span></th>
-                                    <td><input type="text" size="10" readonly placeholder="${mamber.name }"></td>
+                                    <td><input type="text" size="10" readonly placeholder="${member.name }"></td>
                                 </tr>
                                 <tr>
                                     <th>주소 <span class="required">*</span></th>
@@ -86,11 +87,16 @@
                         </table>
                         <div class="basic_info_btn">
                             <div class="info_edit">
-                                <button type="button" onclick=updatememberChekc()>회원정보 수정</button>
+                            	<a href="/updatemember.do?id=${member.id}">
+                                	<button type="button">회원정보 수정</button>
+                                </a> 
                                 <button type="reset">취소</button>
+                                
                             </div>
                             <div class="member_quit">
-                                <button>회원탈퇴</button>
+	                            <a href="/deletemember.do?id=${member.id}">
+									<button type="button" onclick="return confirm('삭제하시겠습니까?')">회원탈퇴</button>
+								</a>
                             </div>
                         </div>
                     </form>

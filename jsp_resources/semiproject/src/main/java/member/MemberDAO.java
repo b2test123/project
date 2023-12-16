@@ -16,7 +16,7 @@ public class MemberDAO {
 
 	//회원 목록
 	public List<MemberVO> getMemberList(){
-		List<MemberVO> memberList = new ArrayList<>();
+		List<MemberVO> memberList = new ArrayList();
 		try {
 			//db연결
 			conn = JDBCUtil.getConnection();
@@ -128,5 +128,24 @@ public class MemberDAO {
 			JDBCUtil.close(conn, pstmt, rs);
 		}
 		return m;
+	}
+	
+	
+	//회원 탈퇴
+	public void deletemember(String id) {
+		try {
+			conn = JDBCUtil.getConnection();
+			String sql = "delete from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
 	}
 }

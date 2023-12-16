@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <script src="https://kit.fontawesome.com/bf7b37fa88.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="resources/css/header.css">
+<link rel="stylesheet" href="../resources/css/header.css">
 <div id=container>
 	<div id="top">
 		<div class="top-top">
@@ -22,7 +22,7 @@
 								<li><a href="/joinform.do">JOIN</a></li>
 								<li><a href="/loginform.do">LOG-IN</a></li>
 								<li><a href="/memberview.do">MY-PAGE</a></li>
-								<li><a href="#">BASKET</a></li>
+								<li><a href="/cart.do">BASKET</a></li>
 								<li><a href="#">ORDER-INQUIRY</a></li>
 								<li><a href="/boardlist.do">BOARD</a></li>
 								<li><input type="text" id="search"> 🔍</li>
@@ -49,7 +49,7 @@
 		<div class="top-mid">
 			<!-- 메인 로고, 사진 -->
 			<a href="/main.jsp"> <img class="logo-pic"
-				src="resources/img/logo/01_logo2.2.jpg" alt="">
+				src="../resources/img/logo/01_logo2.2.jpg" alt="">
 			</a>
 		</div>
 
