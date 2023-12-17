@@ -49,21 +49,22 @@
 						<tr>
 							<td><input type="checkbox"></td>
 							<td><a href="#"><img src="#" alt=""></a></td>
-							<td>이츠독 플로라 가든 프레임 하우스 옐로우
+							<td>${product.name}
 								<p class="new_icon">NEW</p>
 							</td>
-							<td>119,000원</td>
+							<td> <span class="product_price">${product.price}</span>원</td>
 							<td>
 								<div class="num">
-									<span class="count"> <a href="#" class="minus">-</a> <span
-										id="result">1</span> <a href="#">+</a>
+									<span class="count"> <a class="minus"
+										onclick="decrease()"> - </a> <span id="result">1</span> <a
+										class="plus" onclick="increase()"> + </a>
 									</span>
 								</div>
 							</td>
 							<td>No</td>
 							<td>기본배송</td>
 							<td>3,000원</td>
-							<td>122,000원</td>
+							<td class="mid_sub_price"></td>
 							<td>
 								<p>
 									<button>주문하기 ></button>
@@ -75,18 +76,24 @@
 						</tr>
 						<tr>
 							<td colspan="10"><span class="order_config_small_text">상품구매금액
-									119,000원 + 배송비 3,000원 = 합계 : </span><span
-								class="order_config_big_text">122,000</span> <span
+									${product.price}원 + 배송비 3,000원 = 합계 : </span><span
+								class="order_config_big_text"></span> <span
 								class="order_config_small_text">원</span></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class="order_change_decrip">! 상품의 옵션 및 수량 변경은 상품상세 또는
 					장바구니에서 가능합니다.</div>
-				<div class="select_order_cancel">
-					<span>선택한 상품 : </span>
-					<button>X 삭제하기</button>
-					<button class="delete_all_cart">장바구니비우기</button>
+				<div class="go_orders_btn">
+					<div class="all_orders">
+						<button>모든상품 주문하기</button>
+					</div>
+					<div class="select_order_cancel">
+						<span>선택한 상품 : </span>
+						<button class="select_order_delete">X 삭제하기</button>
+						<a href="/orders.do"><button class="order_btn">주문하기 ></button></a>
+						<button class="delete_all_cart">장바구니비우기</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -105,10 +112,10 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><span>122,000 </span> 원</td>
+							<td><span class="mid_sub_price"> </span> 원</td>
 							<td>- <span>0 </span> 원
 							</td>
-							<td>= <span>122,000 </span> 원
+							<td>= <span class="mid_sub_price"> </span> 원
 							</td>
 						</tr>
 					</tbody>
@@ -136,5 +143,34 @@
 		</div>
 	</div>
 	<jsp:include page="../footer.jsp" />
+	<script>
+		function updateTotalPrice() {
+		    var productPrice = parseInt(document.querySelector(".product_price").innerText);
+		    var currentResult = parseInt(document.getElementById('result').innerText);
+		    var totalPrice = currentResult * productPrice + 3000;
+	
+	        var midSubPriceElements = document.querySelectorAll('.mid_sub_price');
+	        midSubPriceElements.forEach(function(element) {
+	            element.innerText = totalPrice;
+	        });
+
+	        document.querySelector('.order_config_big_text').innerText = totalPrice;
+		}
+	
+		function increase() {
+		    var currentResult = parseInt(document.getElementById('result').innerText);
+		    document.getElementById('result').innerText = currentResult + 1;
+			updateTotalPrice();
+		}
+	
+		function decrease() {
+		    var currentResult = parseInt(document.getElementById('result').innerText);
+		    if (currentResult > 1) {
+		        document.getElementById('result').innerText = currentResult - 1;
+				updateTotalPrice();
+		    }
+		}
+		updateTotalPrice();
+	</script>
 </body>
 </html>

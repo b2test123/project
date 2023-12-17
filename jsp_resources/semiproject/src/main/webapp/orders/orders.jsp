@@ -52,8 +52,8 @@
                                 <td><a href="#"><img src="../fileupload/${product.pfilename}" alt=""></a></td>
                                 <td>${product.pname} <p class="new_icon">NEW</p>
                                 </td>
-                                <td><span id="p_price">129000</span></td>
-                                <td><span id="p_count">1</span></td>
+                                <td><span id="p_price">${product.price}</span></td>
+                                <td><span id="p_count">${product.cnt}</span></td>
                                 <td>No</td>
                                 <td>기본배송</td>
                                 <td>3,000원</td>

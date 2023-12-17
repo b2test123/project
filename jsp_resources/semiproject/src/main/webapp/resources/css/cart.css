@@ -166,11 +166,33 @@
     font-size: 0.8rem;
 }
 
-.select_order_cancel button {
+.select_order_delete,
+.delete_all_cart{
     border: none;
     border-radius: 5px;
     background: #BEDAA4;
     padding: 5px 10px;
+}
+
+.order_btn {
+    border: none;
+    border-radius: 5px;
+	background: #edfed6;
+    padding: 5px 10px;
+}
+
+.all_orders {
+    margin: 15px 10px 50px;
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+.all_orders button {
+	font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #edfed6;
+    padding: 20px 25px;
 }
 
 .delete_all_cart {
@@ -240,4 +262,10 @@
 
 .using_info table {
     width: 100%;
+}
+
+.go_orders_btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
