@@ -40,8 +40,12 @@
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
-    background: #fff;
     z-index: 5;
+    background: #fff;
+}
+
+.pic1 {
+	background: #B1CE57;
 }
 
 
@@ -115,3 +119,4 @@
     width: 250px;
     height: 250px;
 }
+

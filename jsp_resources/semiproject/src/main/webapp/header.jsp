@@ -25,7 +25,7 @@
 								<li><a href="/cart.do">BASKET</a></li>
 								<li><a href="#">ORDER-INQUIRY</a></li>
 								<li><a href="/boardlist.do">BOARD</a></li>
-								<li><input type="text" id="search"> 🔍</li>
+								<li><input type="text" id="search" size="5"> 🔍</li>
 								<!-- 상단 검색창 -->
 							</ul>
 						</c:when>

@@ -23,17 +23,20 @@ function addMsShortcut() {
 
     // 배열사용 목록 정의
     let itemList = [
-        { text: "youtube", link: "https://www.youtube.com", target: "_black" },
-        { text: "instagram", link: "https://www.instagram.com", target: "_black" },
-        { text: "twitter", link: "https://www.twitter.com", target: "_black" }
+        { text: "youtube", link: "https://www.youtube.com", target: "_black", src: "../resources/img/icon/youtube.png"},
+        { text: "instagram", link: "https://www.instagram.com", target: "_black", src: "../resources/img/icon/insta.png" },
+        { text: "twitter", link: "https://www.twitter.com", target: "_black", src: "../resources/img/icon/twitter.png" }
     ];
     // 각 항목 목록에 추가
     itemList.forEach(function (item) {
         let addLi = document.createElement("li");
         let addA = document.createElement("a");
+        let img = document.createElement("img");
         addA.href = item.link;
         addA.textContent = item.text;
         addA.target = item.target;
+        img.src = item.src;
+        addA.appendChild(img);
         addLi.appendChild(addA);
         addUl.appendChild(addLi);
     })
@@ -292,61 +295,6 @@ window.addEventListener("scroll", removeBtn);
 //     }
 // });
 
-function mainProdPicChange() {
-    let pic1 = document.querySelector("#main-prod-pic1");
-    let pic2 = document.querySelector("#main-prod-pic2");
-    let pic3 = document.querySelector("#main-prod-pic3");
-    let pic4 = document.querySelector("#main-prod-pic4");
-    let pic5 = document.querySelector("#main-prod-pic5");
-    let pics = [pic1, pic2, pic3, pic4, pic5];
-
-    pics.forEach((pic, index) => {
-        if (index === 0) {
-            pic.style.opacity = 1;
-        } else {
-            pic.style.opacity = 0;
-        }
-    });
-
-    pics.forEach(pic => {
-        pic.style.transition = "opacity 1s ease-in-out";
-    });
-
-    let currentIndex = 1;
-    setInterval(() => {
-        pics[currentIndex].style.opacity = 1;
-
-        for (let i = 0; i < pics.length; i++) {
-            if (i !== currentIndex) {
-                pics[i].style.opacity = 0;
-            }
-        }
-
-        currentIndex = (currentIndex + 1) % pics.length;
-    }, 3000);
-}
-
-function selectPic(index) {
-    let pic1 = document.querySelector("#main-prod-pic1");
-    let pic2 = document.querySelector("#main-prod-pic2");
-    let pic3 = document.querySelector("#main-prod-pic3");
-    let pic4 = document.querySelector("#main-prod-pic4");
-    let pic5 = document.querySelector("#main-prod-pic5");
-    let pics = [pic1, pic2, pic3, pic4, pic5];
-
-    pics.forEach((pic, i) => {
-        if (i === index) {
-            pic.style.opacity = 1;
-        } else {
-            pic.style.opacity = 0;
-        }
-    });
-    pic1.style.transition = "opacity 0.5s ease-in-out";
-    pic2.style.transition = "opacity 0.5s ease-in-out";
-    pic3.style.transition = "opacity 0.5s ease-in-out";
-    pic4.style.transition = "opacity 0.5s ease-in-out";
-    pic5.style.transition = "opacity 0.5s ease-in-out";
-}
 
 function checkMember(){
 	let form = document.member;
@@ -382,3 +330,79 @@ function checkMember(){
 		form.submit();
 	}
 }
+
+
+function mainProdPicChange() {
+    let pic1 = document.querySelector("#main-prod-pic1");
+    let pic2 = document.querySelector("#main-prod-pic2");
+    let pic3 = document.querySelector("#main-prod-pic3");
+    let pic4 = document.querySelector("#main-prod-pic4");
+    let pic5 = document.querySelector("#main-prod-pic5");
+    let pics = [pic1, pic2, pic3, pic4, pic5];
+
+    pics.forEach((pic, index) => {
+        if (index === 0) {
+            pic.style.opacity = 1;
+        } else {
+            pic.style.opacity = 0;
+        }
+    });
+
+    pics.forEach(pic => {
+        pic.style.transition = "opacity 1s ease-in-out";
+    });
+
+    let currentIndex = 1;
+
+	
+
+    setInterval(() => {
+        pics[currentIndex].style.opacity = 1;
+
+        for (let i = 0; i < pics.length; i++) {
+            if (i !== currentIndex) {
+                pics[i].style.opacity = 0;
+            }
+        }
+        updateButtonColors(currentIndex);
+        currentIndex = (currentIndex + 1) % pics.length;
+    }, 3000);
+}
+
+function selectPic(index) {
+    let pic1 = document.querySelector("#main-prod-pic1");
+    let pic2 = document.querySelector("#main-prod-pic2");
+    let pic3 = document.querySelector("#main-prod-pic3");
+    let pic4 = document.querySelector("#main-prod-pic4");
+    let pic5 = document.querySelector("#main-prod-pic5");
+    let pics = [pic1, pic2, pic3, pic4, pic5];
+
+    pics.forEach((pic, i) => {
+        if (i === index) {
+            pic.style.opacity = 1;
+        } else {
+            pic.style.opacity = 0;
+        }
+    });
+    pic1.style.transition = "opacity 0.5s ease-in-out";
+    pic2.style.transition = "opacity 0.5s ease-in-out";
+    pic3.style.transition = "opacity 0.5s ease-in-out";
+    pic4.style.transition = "opacity 0.5s ease-in-out";
+    pic5.style.transition = "opacity 0.5s ease-in-out";
+
+    updateButtonColors(index);
+}
+
+function updateButtonColors(selectedIndex) {
+    let buttons = document.querySelectorAll(".main-pic-button button");;
+	
+    buttons.forEach((button, i) => {
+        if (i === selectedIndex) {
+            button.style.background = "#B1CE57";
+        } else {
+            button.style.background = "#fff";
+        }
+    });
+}
+
+updateButtonColors(0);

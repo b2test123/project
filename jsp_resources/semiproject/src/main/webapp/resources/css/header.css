@@ -56,6 +56,12 @@ button:hover {
   margin-left: 50px;
 }
 
+.mini-shortcut img {
+	width: 10px;
+	height: 10px;
+	background: #fff;
+}
+
 .ms-list li {
   padding: 5px;
   float: left;
