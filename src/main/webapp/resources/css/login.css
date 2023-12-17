@@ -2,16 +2,21 @@
 
 /* #mid */
 #mid {
-    background-color: #fff;
-    margin: 30px;
-    margin-bottom: 0;
-    padding-bottom: 50px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-#mid h3 {
-    padding: 50px;
-    text-align: center;
-    background-color: #ffa;    
+.mid_h3 {
+    height: 150px;
+    width: 100%;
+    background: #edfed6;
+    display: flex;
+    align-items: center;
 }
 
 #login {
@@ -33,8 +38,8 @@
     margin-left: 30px;
     border: none;
     border-radius: 10px;
-    background: #ffa;
-    box-shadow: 0px 2px 5px #ee1;
+    background: #edfed6;
+    box-shadow: 0px 2px 5px #efffec;
 }
 
 
@@ -44,7 +49,7 @@
     padding: 10px;
     font-size: 0.8rem;
     color: #aaa;
-    background: #ffe;
+    background: #efffec;
 }
 .td_input {
     border: 1px solid #aa1;
@@ -85,7 +90,7 @@
 
 .join_account_btn {
     padding: 10px 30px;
-    box-shadow: 0 -5px 10px #fe2;
-    border: 1px solid #fe1;
-    background: #ffa;
+    border: 1px solid #B1CE57;
+    background: #edfed6;
+    box-shadow: 0 -5px 10px #efffec;
 }

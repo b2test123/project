@@ -135,7 +135,7 @@
 				</div>
 			</fieldset>
 			<div class="btnbox">
-				<button type="submit" class="join_btn" onclick="checkForm()">JOIN!</button>
+				<button type="button" class="join_btn" onclick="checkMember()">JOIN!</button>
 				<button type="reset" class="reset_btn">Cancel</button>
 			</div>
 		</form>

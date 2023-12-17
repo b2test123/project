@@ -36,7 +36,7 @@
 				<div class="board">
 					<div class="notice-board">
 						<h3 class="title-notice">
-							<a href="#">Notice / Event</a>
+							<a href="/boardlist.do">Notice / Event</a>
 						</h3>
 						<ul class="notice-list">
 							<li><a href="#">Notice 1</a></li>

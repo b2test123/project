@@ -32,6 +32,7 @@ public class MemberDAO {
 				m.setName(rs.getString("name"));
 				m.setEmail(rs.getString("email"));
 				m.setPhone(rs.getString("phone"));
+				m.setJoinDate(rs.getTimestamp("joindate"));
 				m.setZip_code(rs.getString("zip_code"));
 				m.setAddress(rs.getString("address"));
 				m.setDetailaddress(rs.getString("detailaddress"));
@@ -107,7 +108,7 @@ public class MemberDAO {
 			conn = JDBCUtil.getConnection();
 			String sql = "SELECT * FROM member WHERE id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(0, id);
+			pstmt.setString(1, id);
 			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -128,27 +129,66 @@ public class MemberDAO {
 		}
 		return m;
 	}
-
 	
-	//회원 삭제
+	
+	//회원 탈퇴
 	public void deletemember(String id) {
 		try {
-			//db 연결
 			conn = JDBCUtil.getConnection();
-			//sql 처리
-			String sql = "DELETE FROM member WHERE id = ?";
+			String sql = "delete from member where id = ?";
 			pstmt = conn.prepareStatement(sql);
+
 			pstmt.setString(1, id);
-			//sql 실행
+
 			pstmt.executeUpdate();
 
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			JDBCUtil.close(conn, pstmt);
 		}
 	}
 	
+	//회원 정보 수정 DAO 메서드
+	public void updateMember(String id, MemberVO m) {
+		
+			try {
+				conn = JDBCUtil.getConnection();
+				String sql = "update member set name = ? , email = ?, phone = ? , zip_code = ? , address = ? , detailaddress = ? "
+						+ "  where id = ?           ";
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, m.getName());
+				pstmt.setString(2, m.getEmail());
+				pstmt.setString(3, m.getPhone());
+				pstmt.setString(4, m.getZip_code());
+				pstmt.setString(5, m.getAddress());
+				pstmt.setString(6, m.getDetailaddress());
+				pstmt.setString(7, id);
+				
+				pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				JDBCUtil.close(conn, pstmt);
+			}
+		}
 	
+	//회원 정보 삭제 DAO메서드
+	public void deleteMember(String id) {
+		
+			try {
+				conn = JDBCUtil.getConnection();
+				String sql = "delete from member where id = ? ";
+				pstmt = conn.prepareStatement(sql);		
+				pstmt.setString(1, id);
+				
+				pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				JDBCUtil.close(conn, pstmt);
+			}
+		}	
 	
 }
