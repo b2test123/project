@@ -11,6 +11,7 @@ public class NBoard implements Serializable{
 	   private String ncontent;
 	   private String nfilename;
 	   private Timestamp ndate;
+	   private Timestamp nupdate;
 	   private int nhit;
 	   private String id;
 	   
@@ -55,5 +56,11 @@ public class NBoard implements Serializable{
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public Timestamp getNupdate() {
+		return nupdate;
+	}
+	public void setNupdate(Timestamp nupdate) {
+		this.nupdate = nupdate;
 	}
 }

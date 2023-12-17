@@ -12,8 +12,10 @@ public class RBoard implements Serializable{
 	private Timestamp rdate;
 	private String rcontent;
 	private String rfilename;
+	private Timestamp rupdate;
 	private int rrate;
 	private int likes;
+	private int rhit;
 	private String id;
 	
 	public int getRno() {
@@ -63,5 +65,17 @@ public class RBoard implements Serializable{
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public Timestamp getRupdate() {
+		return rupdate;
+	}
+	public void setRupdate(Timestamp rupdate) {
+		this.rupdate = rupdate;
+	}
+	public int getRhit() {
+		return rhit;
+	}
+	public void setRhit(int rhit) {
+		this.rhit = rhit;
 	}
 }

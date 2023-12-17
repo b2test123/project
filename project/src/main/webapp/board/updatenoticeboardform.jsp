@@ -6,12 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Q&A 글보기</title>
+<title>공지사항 글 수정</title>
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
 	<div id="container">
-		<h2>Q&A 글보기</h2>
+		<h2>공지사항 게시글 수정</h2>
+		<form action="/updateqaboard.do" method="post">
 			<!-- ui를 만들지않고 데이터를 숨겨서 보낼때 사용 -->
 			<input type="hidden" name="qno" value="${qab.qno}">
 			<table>
@@ -39,30 +40,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<!-- 댓글 -->
-			<h3>댓글</h3>
-			<c:forEach items="${qareplyList}" var="qrl">
-			<div class="reply">
-				<p>${qrl.recontent}</p>
-				<p>작성자: ${qrl.replyer} (작성일 : ${qrl.redate})</p>
-				<p>
-					<c:if test="${sessionId eq qrl.replyer}">
-					<a href="/updateqareplyform.do?qno=${qab.qno}&qreno=${qrl.qreno}">수정</a>
-					| <a href="/deleteqareply.do?qno=${qab.qno}&qreno=${qrl.qreno}"
-						onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
-					</c:if>
-				</p>
-			</div>
-			</c:forEach>
-			<!-- 댓글 등록 -->
-			<form action="/insertqareply.do" method="post" id="qareplyform">
-				<input type="hidden" name="qno" value="${qab.qno}"> <input
-					type="hidden" name="replyer" value="${sessionId}">
-				<p>
-					<textarea rows="4" cols="50" name="recontent" placeholder="댓글입력"></textarea>
-				</p>
-				<button type="submit">등록</button>
-			</form>
+		</form>
 	</div>
 	<jsp:include page="../footer.jsp" />
 </body>

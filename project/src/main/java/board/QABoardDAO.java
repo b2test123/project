@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class QABoardDAO {
 				qab.setQcontent(rs.getString("qcontent"));
 				qab.setQfilename(rs.getString("qfilename"));
 				qab.setQdate(rs.getTimestamp("qdate"));
+				qab.setQupdate(rs.getTimestamp("qupdate"));
 				qab.setQhit(rs.getInt("qhit"));
 				qab.setId(rs.getString("id"));
 				
@@ -70,7 +72,7 @@ public class QABoardDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			String sql = "SELECT * FROM qa WHERE qno = ?";
-			pstmt= conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, qno);
 			
 			rs = pstmt.executeQuery();
@@ -80,8 +82,16 @@ public class QABoardDAO {
 				qab.setQcontent(rs.getString("qcontent"));
 				qab.setQfilename(rs.getString("qfilename"));
 				qab.setQdate(rs.getTimestamp("qdate"));
+				qab.setQupdate(rs.getTimestamp("qupdate"));
 				qab.setQhit(rs.getInt("qhit"));
 				qab.setId(rs.getString("id"));
+				
+				//int qhit = rs.getInt() + 1;
+				sql = "UPDATE qa SET qhit = qhit + 1 WHERE qno = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, qno);
+				
+				pstmt.executeUpdate();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,6 +108,27 @@ public class QABoardDAO {
 			String sql = "delete from qa where qno = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, qno);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
+	
+	public void updateQABoard(QABoard qab) {
+		Timestamp now = new Timestamp(System.currentTimeMillis());
+		try {
+			conn = JDBCUtil.getConnection();
+			//수정일 처리는 현재 날짜와 시간으로 입력
+			String sql = "UPDATE qa SET qtitle = ?, qcontent = ?, qupdate = ? "
+					+ "WHERE qno = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, qab.getQtitle());
+			pstmt.setString(2, qab.getQcontent());
+			pstmt.setTimestamp(3, now);
+			pstmt.setInt(4, qab.getQno());
 			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {

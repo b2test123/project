@@ -32,6 +32,7 @@ public class NoticeBoardDAO {
 				nb.setNcontent(rs.getString("ncontent"));
 				nb.setNfilename(rs.getString("nfilename"));
 				nb.setNdate(rs.getTimestamp("ndate"));
+				nb.setNupdate(rs.getTimestamp("nupdate"));
 				nb.setNhit(rs.getInt("nhit"));
 				
 				nboardList.add(nb);
@@ -79,6 +80,7 @@ public class NoticeBoardDAO {
 				nb.setNcontent(rs.getString("ncontent"));
 				nb.setNfilename(rs.getString("nfilename"));
 				nb.setNdate(rs.getTimestamp("ndate"));
+				nb.setNupdate(rs.getTimestamp("nupdate"));
 				nb.setNhit(rs.getInt("nhit"));
 				nb.setId(rs.getString("id"));
 			}

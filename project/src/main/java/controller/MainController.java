@@ -21,6 +21,8 @@ import member.Member;
 import member.MemberDAO;
 import product.ProductDAO;
 import product.ProductVO;
+import reply.QAReply;
+import reply.QAReplyDAO;
 
 @WebServlet("*.do")
 public class MainController extends HttpServlet {
@@ -28,6 +30,7 @@ public class MainController extends HttpServlet {
 	MemberDAO mDAO;
 	NoticeBoardDAO nDAO;
 	QABoardDAO qDAO;
+	QAReplyDAO qrDAO;
 	ReviewBoardDAO rDAO;
 	ProductDAO pDAO;
 
@@ -35,6 +38,7 @@ public class MainController extends HttpServlet {
 		mDAO = new MemberDAO();
 		nDAO = new NoticeBoardDAO();
 		qDAO = new QABoardDAO();
+		qrDAO = new QAReplyDAO();
 		rDAO = new ReviewBoardDAO();
 		pDAO = new ProductDAO();
 		
@@ -59,6 +63,27 @@ public class MainController extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		if(command.equals("/main.do")) {	//메인 페이지 경로
+			List<NBoard> nb = nDAO.getNBoardList();
+			List<QABoard> qab = qDAO.getQABoardList();
+			List<RBoard> rb = rDAO.getRBoardList();
+			
+			request.setAttribute("nboardList", nb);
+			request.setAttribute("qabboardList", qab);
+			request.setAttribute("rboardList", rb);
+			
+			if(nb.size() >= 4) {
+				NBoard[] newNBoard = {nb.get(0), nb.get(1), nb.get(2), nb.get(3)};
+				request.setAttribute("nboardList", newNBoard);
+			}
+			if(qab.size() >= 4) {
+				QABoard[] newQABoard = {qab.get(0), qab.get(1), qab.get(2), qab.get(3)};
+				request.setAttribute("qaboardList", newQABoard);
+			}
+			if(rb.size() >= 4) {
+				RBoard[] newRBoard = {rb.get(0), rb.get(1), rb.get(2), rb.get(3)};
+				request.setAttribute("rboardList", newRBoard);
+			}
+			
 			nextPage = "/main.jsp";
 		}else if(command.equals("/joinform.do")) {	//회원가입 페이지 경로
 			nextPage = "/member/joinform.jsp";
@@ -131,23 +156,52 @@ public class MainController extends HttpServlet {
 		
 		//게시판
 		if(command.equals("/boardlist.do")) {				//전체 게시판 페이지
-
+			List<NBoard> nb = nDAO.getNBoardList();
+			List<QABoard> qab = qDAO.getQABoardList();
+			List<RBoard> rb = rDAO.getRBoardList();
+			
+			request.setAttribute("nboardList", nb);
+			request.setAttribute("qaboardList", qab);
+			request.setAttribute("rboardList", rb);
+			
 			nextPage = "/board/boardlist.jsp";
 		}else if(command.equals("/noticeboardlist.do")) {	//공지사항 게시판 목록
+			
+			
 			List<NBoard> nb = nDAO.getNBoardList();
+			
 			
 			request.setAttribute("nboardList", nb);
 			nextPage = "/board/noticeboardlist.jsp";
 		}else if(command.equals("/qaboardlist.do")) {		//Q&A 게시판 목록
+			
+			
 			List<QABoard> qab = qDAO.getQABoardList();
 			
 			request.setAttribute("qaboardList", qab);
 			
 			nextPage = "/board/qaboardlist.jsp";
 		}else if(command.equals("/reviewboardlist.do")) {	//리뷰 게시판 목록
-			List<RBoard> rb = rDAO.getRBoardList();
+			String pageNum = request.getParameter("pageNum");
+			if(pageNum == null) {
+				pageNum = "1";
+			}
+			
+			int currentPage = Integer.parseInt(pageNum);
+			int pageSize = 20;
+			int startRow = (currentPage - 1) * pageSize + 1;
+			System.out.println(startRow);
+			
+			int totalRow = rDAO.getBoardCount();
+			int endPage = totalRow / pageSize;
+			
+			endPage = (totalRow % pageSize == 0) ? endPage : endPage + 1;
+			
+			//페이지 처리 메서드 호출
+			List<RBoard> rb = rDAO.getRBoardList(currentPage);
 			
 			request.setAttribute("rboardList", rb);
+			request.setAttribute("endPage", endPage);
 			
 			nextPage = "/board/reviewboardlist.jsp";
 		}else if(command.equals("/noticewriteform.do")) {	//공지사항 글쓰기 페이지
@@ -198,8 +252,12 @@ public class MainController extends HttpServlet {
 			int qno = Integer.parseInt(request.getParameter("qno"));
 			//글 상세보기 처리
 			QABoard qab = qDAO.getQABoard(qno);
+			
+			List<QAReply> qareplyList = qrDAO.getQAReplyList(qno);
+			
 			//모델 생성후 뷰페이지로 보내기
 			request.setAttribute("qab", qab);
+			request.setAttribute("qareplyList", qareplyList);
 			
 			nextPage = "/board/qaboardview.jsp";
 		}else if(command.equals("/deleteqaboard.do")) {
@@ -210,11 +268,26 @@ public class MainController extends HttpServlet {
 			
 			nextPage = "/qaboardlist.do";
 		}else if(command.equals("/updateqaboardform.do")) {
+			int qno = Integer.parseInt(request.getParameter("qno"));
+			//글 상세보기 처리
+			QABoard qab = qDAO.getQABoard(qno);
+			//모델 생성후 뷰페이지로 보내기
+			request.setAttribute("qab", qab);
 			
-			nextPage = "/board/qaupdateboardform.jsp";
+			nextPage = "/board/updateqaboardform.jsp";
 		}else if(command.equals("/updateqaboard.do")) {
+			String qtitle = request.getParameter("qtitle");
+			String qcontent = request.getParameter("qcontent");
+			int qno = Integer.parseInt(request.getParameter("qno"));
 			
-			nextPage = "/qaboardlist.do";
+			QABoard qab = new QABoard();
+			qab.setQtitle(qtitle);
+			qab.setQcontent(qcontent);
+			qab.setQno(qno);
+			
+			qDAO.updateQABoard(qab);
+			
+			//nextPage = "/qaboardlist.do";
 		}else if(command.equals("/reviewwriteform.do")) {
 			
 			nextPage = "/board/reviewwriteform.jsp";
@@ -240,8 +313,25 @@ public class MainController extends HttpServlet {
 			
 			nextPage = "/board/reviewboardview.jsp";
 		}else if(command.equals("/updatereviewboardform.do")) {
+			int rno = Integer.parseInt(request.getParameter("rno"));
+			RBoard rb = rDAO.getRBoard(rno);
+			
+			request.setAttribute("rboardList", rb);
 			
 			nextPage = "/board/updatereviewboardform.jsp";
+		}else if(command.equals("/updatereviewboard.do")) {
+			String rtitle = request.getParameter("rtitle");
+			String rcontent = request.getParameter("rcontent");
+			int rno = Integer.parseInt(request.getParameter("rno"));
+			
+			RBoard rb = new RBoard();
+			rb.setRtitle(rtitle);
+			rb.setRcontent(rcontent);
+			rb.setRno(rno);
+			
+			rDAO.updateRBoard(rb);
+			
+			//nextPage = "/reviewboardlist.do";
 		}else if(command.equals("/deletereviewboard.do")) {
 			
 			int rno = Integer.parseInt(request.getParameter("rno"));
@@ -249,6 +339,24 @@ public class MainController extends HttpServlet {
 			rDAO.deleteRBoard(rno);
 			
 			nextPage = "/reviewboardlist.do";
+		}
+		
+		//댓글
+		if(command.equals("/insertqareply.do")) {
+			int qno = Integer.parseInt(request.getParameter("qno"));
+			String recontent = request.getParameter("recontent");
+			String replyer = request.getParameter("replyer");
+			
+			QAReply qr = new QAReply();
+			qr.setQno(qno);
+			qr.setRecontent(recontent);
+			qr.setReplyer(replyer);
+			
+			qrDAO.insertQAReply(qr);
+		}else if(command.equals("/deleteqareply.do")) {
+			int qreno = Integer.parseInt(request.getParameter("qreno"));
+			
+			qrDAO.deleteQAReply(qreno);
 		}
 		
 		//상품
@@ -286,13 +394,17 @@ public class MainController extends HttpServlet {
 
 			nextPage = "/product/productlist.jsp";
 		}
-
+		
+		//게시글 댓글 중복 해결
 		if(command.equals("/noticewrite.do")) {
 			response.sendRedirect("/noticeboardlist.do");
-		}else if(command.equals("/qaboardwrite.do")) {
+		}else if(command.equals("/qaboardwrite.do") || command.equals("/updateqaboard.do")) {
 			response.sendRedirect("qaboardlist.do");
-		}else if(command.equals("/reviewwrite.do")) {
+		}else if(command.equals("/reviewwrite.do") || command.equals("/updatereviewboard.do")) {
 			response.sendRedirect("/reviewboardlist.do");
+		}else if(command.equals("/insertqareply.do") || command.equals("/deleteqareply.do")) {
+			int qno = Integer.parseInt(request.getParameter("qno"));
+			response.sendRedirect("/qaboardview.do?qno=" + qno);
 		}else {
 			RequestDispatcher dpc = request.getRequestDispatcher(nextPage);
 			dpc.forward(request, response);

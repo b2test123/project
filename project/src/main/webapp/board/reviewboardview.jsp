@@ -38,6 +38,20 @@
 				</tr>
 			</tbody>
 		</table>
+		<!-- 댓글 -->
+		<h3>댓글</h3>
+		<div>
+			<p>댓글 내용</p>
+			<p>작성자(작성일 : )</p>
+		</div>
+		<!-- 댓글 등록 -->
+		<form action="/insertreply.do" method="post" id="replyform">
+			<p>
+				<textarea rows="4" cols="50" name="recontent"
+					placeholder="댓글입력"></textarea>
+			</p>
+			<button type="submit">등록</button>
+		</form>
 	</div>
 	<jsp:include page="../footer.jsp" />
 </body>

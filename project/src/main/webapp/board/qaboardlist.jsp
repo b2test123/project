@@ -31,9 +31,19 @@
 								<td class="board_no">${qab.qno}</td>
 								<td class="board_title"><a href="/qaboardview.do?qno=${qab.qno}">${qab.qtitle}</a></td>
 								<td class="board_writer">${qab.id}</td>
-								<td class="board_date"><fmt:formatDate value="${qab.qdate}"
-									 pattern="yyyy-MM-dd HH:mm:ss"/>	</td>
-								<%-- <td class="board_hit">${nb.hit}</td> --%>
+								<td class="board_date">
+									<c:choose>
+										<c:when test="${not empty qab.qupdate}">
+													<fmt:formatDate value="${qab.qupdate}"
+													pattern="yyyy-MM-dd HH:mm:ss"/>
+										</c:when>
+										<c:otherwise>
+											<fmt:formatDate value="${qab.qdate}"
+										 pattern="yyyy-MM-dd HH:mm:ss"/>
+										</c:otherwise>
+									</c:choose>
+								</td>
+								<td class="board_hit">${qab.qhit}</td>
 							</tr>
 						</c:forEach>
 					</tbody>

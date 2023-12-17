@@ -31,13 +31,28 @@
 								<td class="board_no">${rb.rno}</td>
 								<td class="board_title"><a href="/reviewboardview.do?rno=${rb.rno}">${rb.rtitle}</a></td>
 								<td class="board_writer">${rb.id}</td>
-								<td class="board_date"><fmt:formatDate value="${rb.rdate}"
-									 pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-								<%-- <td class="board_hit">${nb.hit}</td> --%>
+								<td class="board_date">
+									<c:choose>
+										<c:when test="${not empty rb.rupdate}">
+													<fmt:formatDate value="${rb.rupdate}"
+													pattern="yyyy-MM-dd HH:mm:ss"/>
+										</c:when>
+										<c:otherwise>
+											<fmt:formatDate value="${rb.rdate}"
+										 pattern="yyyy-MM-dd HH:mm:ss"/>
+										</c:otherwise>
+									</c:choose>
+								</td>	 
+								<td class="board_hit">${rb.rhit}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+			</div>
+			<div class="pagenation">
+				<c:forEach var="i" begin="1" end="${endPage}">
+					<a href="/reviewboardlist.do?pageNum=${i}">${i}</a>
+				</c:forEach>
 			</div>
 			<div class="write">
 				<a href="/reviewwriteform.do">

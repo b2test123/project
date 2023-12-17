@@ -33,7 +33,7 @@
 								<td class="board_writer">notice team</td>
 								<td class="board_date"><fmt:formatDate value="${nb.ndate}"
 									 pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-								<%-- <td class="board_hit">${nb.hit}</td> --%>
+								<td class="board_hit">${nb.nhit}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
