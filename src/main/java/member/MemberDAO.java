@@ -107,7 +107,7 @@ public class MemberDAO {
 			conn = JDBCUtil.getConnection();
 			String sql = "SELECT * FROM member WHERE id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(0, id);
 			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -128,4 +128,27 @@ public class MemberDAO {
 		}
 		return m;
 	}
+
+	
+	//회원 삭제
+	public void deletemember(String id) {
+		try {
+			//db 연결
+			conn = JDBCUtil.getConnection();
+			//sql 처리
+			String sql = "DELETE FROM member WHERE id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			//sql 실행
+			pstmt.executeUpdate();
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
+	
+	
+	
 }

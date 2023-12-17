@@ -1,4 +1,3 @@
-
 CREATE TABLE member (
    id               VARCHAR2(20)  PRIMARY KEY,
    passwd           VARCHAR2(25)   NOT NULL,
@@ -7,7 +6,7 @@ CREATE TABLE member (
    phone            VARCHAR2(20)  NOT NULL,
    joindate         TIMESTAMP     DEFAULT SYSTIMESTAMP,
    zip_code         VARCHAR2(10),
-   address          VARCHAR2(40),
+   address          VARCHAR2(200),
    detailaddress    VARCHAR2(40)
 );
 

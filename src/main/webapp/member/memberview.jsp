@@ -51,7 +51,8 @@
 							<a href="main.do">
 								<button>수정</button>
 							</a>
-							<a href="main.do">
+			    			<a href="/deletemember.do?id=${member.id}"
+			    			   onclick="return confirm('정말로 삭제하시겠습니까?')">
 								<button>탈퇴</button>
 							</a>
 						</td>
