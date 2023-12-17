@@ -3,19 +3,18 @@ package review;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class ReviewVO implements Serializable{
+public class RBoard implements Serializable{
 
 	private static final long serialVersionUID = 105L;
 	
 	private int rno;
-	private String rtype;
 	private String rtitle;
 	private Timestamp rdate;
 	private String rcontent;
 	private String rfilename;
 	private int rrate; //별점
 	private int likes;  //좋아요
-	private String receipt;
+	private String id;
 	
 	
 	public int getRno() {
@@ -23,12 +22,6 @@ public class ReviewVO implements Serializable{
 	}
 	public void setRno(int rno) {
 		this.rno = rno;
-	}
-	public String getRtype() {
-		return rtype;
-	}
-	public void setRtype(String rtype) {
-		this.rtype = rtype;
 	}
 	public String getRtitle() {
 		return rtitle;
@@ -66,13 +59,12 @@ public class ReviewVO implements Serializable{
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
-	public String getReceipt() {
-		return receipt;
+	public String getId() {
+		return id;
 	}
-	public void setReceipt(String receipt) {
-		this.receipt = receipt;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	
-
 }

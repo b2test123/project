@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,25 +45,49 @@
                         <td>배송비</td>
                         <td>합계</td>
                     </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td><img src="../fileupload/${product.pfilename}" alt=""></td>
-                        <td>${product.pname} <p class="new_icon">NEW</p>
-                        </td>
-                        <td>${product.price}</td>
-                        <td>1</td> <!-- orders 테이블에 수량  -->
-                        <td>No</td>
-                        <td>기본배송</td>
-                        <td>3,000원</td>
-                        <td>${product.price + 3000}</td> 
-                    </tr>
-                    <tr>
-                        <td colspan="9">
-                            <span class="order_config_small_text">상품구매금액 ${product.price}원 + 배송비 3,000원 = 합계 :
-                            </span><span class="order_config_big_text">${product.price + 3000}</span>
-                            <span class="order_config_small_text">원</span>
-                        </td>
-                    </tr>
+					<c:choose>
+						<c:when test="${!empty product }">
+							<tr>
+								<td><input type="checkbox"></td>
+								<td><img src="../fileupload/${product.pfilename}" alt=""></td>
+								<td>${product.pname}
+									<p class="new_icon">NEW</p>
+								</td>
+								<td>${product.price}</td>
+								<td>1</td>
+								<!-- orders 테이블에 수량  -->
+								<td>No</td>
+								<td>기본배송</td>
+								<td>3,000원</td>
+								<td>${product.price + 3000}</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${cartlist }" var="cart">
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><img src="../fileupload/${cart.pfilename}" alt=""></td>
+									<td>${cart.pname}
+										<p class="new_icon">NEW</p>
+									</td>
+									<td>${cart.price}</td>
+									<td>1</td>
+									<!-- orders 테이블에 수량  -->
+									<td>No</td>
+									<td>기본배송</td>
+									<td>3,000원</td>
+									<td>${cart.price + 3000}</td>
+								</tr>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
+					
+					<tr>
+						<td colspan="9"><span class="order_config_small_text">상품구매금액
+								(가격)원 + 배송비 3,000원 = 합계 : </span><span
+							class="order_config_big_text">(가격+배송비)</span>
+							<span class="order_config_small_text">원</span></td>
+					</tr>
                 </tbody>
             </table>
             <div class="order_change_decrip"> ! 상품의 옵션 및 수량 변경은 상품상세 또는 장바구니에서 가능합니다.</div>
@@ -215,9 +240,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span>122,000 </span> 원</td>
+                        <td><span>${product.price + 3000}</span> 원</td>
                         <td> - <span>0 </span> 원</td>
-                        <td> = <span>122,000 </span> 원</td>
+                        <td> = <span>${product.price + 3000} </span> 원</td>
                     </tr>
                 </tbody>
             </table>
@@ -309,10 +334,17 @@
                 <div class="final_config">
                     <div class="final_config_price">    
                         <p>최종결제 금액</p>
-                        <p><span>122,000</span>원</p>
+                        <p><span>${product.price + 3000}</span>원</p>
                     </div>
                     <p><input type="checkbox"> 결제정보를 확인하였으며, <br> 구매진행에 동의합니다.</p>
-                    <button>결제하기</button>
+                    <c:choose>
+                   		<c:when test="${!empty product }">
+                   			<a href="/purchaseconfirm.do?pno=${product.pno }"><button type="button" onclick="return confirm('결제하시겠습니까?')">결제하기</button></a>
+                   		</c:when>
+                   		<c:otherwise>
+                   			<a href="/purchaseconfirm.do"><button type="button" onclick="return confirm('결제하시겠습니까?')">결제하기</button></a>
+                   		</c:otherwise>
+                    </c:choose>
                 </div>
             </div>
             <div class="info_desk_box">

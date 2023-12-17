@@ -3,17 +3,18 @@ package notice;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class NoticeVO implements Serializable{
+public class NBoard implements Serializable{
 
 	private static final long serialVersionUID = 107L;
 	
 	private int nno;
 	private String ntitle;
-	private String nname;
-	private Timestamp ndate;
-	private int nhit;
 	private String ncontent;
 	private String nfilename;
+	private Timestamp ndate;
+	private int nhit;
+	private String id;
+	
 	
 	public int getNno() {
 		return nno;
@@ -26,18 +27,6 @@ public class NoticeVO implements Serializable{
 	}
 	public void setNtitle(String ntitle) {
 		this.ntitle = ntitle;
-	}
-	public String getNname() {
-		return nname;
-	}
-	public void setNname(String nname) {
-		this.nname = nname;
-	}
-	public int getNhit() {
-		return nhit;
-	}
-	public void setNhit(int nhit) {
-		this.nhit = nhit;
 	}
 	public String getNcontent() {
 		return ncontent;
@@ -57,5 +46,19 @@ public class NoticeVO implements Serializable{
 	public void setNdate(Timestamp ndate) {
 		this.ndate = ndate;
 	}
+	public int getNhit() {
+		return nhit;
+	}
+	public void setNhit(int nhit) {
+		this.nhit = nhit;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 	
 }

@@ -68,7 +68,7 @@
 						<span class="count">(1개)</span>
 					</div>
 					<div class="select_buy">
-						<a href="/basket.do"><button type="button">장바구니 담기</button></a>
+						<a href="/cart.do?pno=${productlist.pno}&cnt=1"><button type="button">장바구니 담기</button></a>
 						<a href="/orders.do?pno=${productlist.pno}"><button type="button">바로구매</button></a>
 					</div>
 				</div>

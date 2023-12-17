@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 목록</title>
-<link rel="stylesheet" href="../resources/css/boardlist.css">
+<title>공지사항 목록</title>
+<link rel="stylesheet" href="../resources/css/boardlist2.css">
 </head>
 <body>
 	<jsp:include page="../header.jsp" />

@@ -27,7 +27,7 @@
 									<li><a href="/loginform.do">LOG-IN</a></li>
 									<li><a href="/memberview.do">MY-PAGE</a></li>
 									<li><a href="/basket.do">BASKET</a></li>
-									<li><a href="#">ORDER-INQUIRY</a></li>
+									<li><a href="/purchasehistory.do">ORDER-INQUIRY</a></li>
 									<li><a href="/boardlist.do">BOARD</a></li>
 									<li><input type="text" id="search"> 🔍</li>
 									<!-- 상단 검색창 -->
@@ -39,7 +39,7 @@
 									<li><a href="/logout.do">LOG-OUT</a></li>
 									<li><a href="/memberview.do">MY-PAGE</a></li>
 									<li><a href="/basket.do">BASKET</a></li>
-									<li><a href="#">ORDER-INQUIRY</a></li>
+									<li><a href="/purchasehistory.do">ORDER-INQUIRY</a></li>
 									<li><a href="/boardlist.do">BOARD</a></li>
 									<li><input type="text" id="search"> 🔍</li>
 									<!-- 상단 검색창 -->

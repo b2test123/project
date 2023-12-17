@@ -3,7 +3,7 @@ package qa;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class QaVO implements Serializable{
+public class QABoard implements Serializable{
 
 	private static final long serialVersionUID = 104L;
 	
