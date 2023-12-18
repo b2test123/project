@@ -189,8 +189,8 @@ body {
 }
 
 #mid {
+  width: 1100px;
   margin: 20px auto;
-  max-width: 800px;
 }
 
 .board_zone_sec {
@@ -201,7 +201,8 @@ body {
 }
 
 .board_zone_tit h2 {
-  color: #3498db;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .board_write_table {
@@ -216,7 +217,7 @@ body {
   border: 1px solid #ddd;
 }
 
-.btn_goods_select btn_open_layer {
+.btn_goods_select .btn_open_layer {
   background: #b4b4b4;
 }
 
@@ -224,71 +225,8 @@ body {
   background-color: #f9f9f9;
 }
 
-.rating_star_list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  margin-top: 10px;
-}
-
-.rating_star_list li {
-  margin-right: 10px;
-}
-
-.rating_star {
-  display: flex;
-  background-color: #f1c40f;
-  overflow: hidden;
-  border-radius: 5px;
-  width: 100px;
-}
-
-.rating_star span {
-  flex: 1;
-  display: flex;
-  height: 100%;
-  background-color: #e67e22;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
-}
-
 .write_editor {
   margin-top: 20px;
-}
-
-.file_upload_sec {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.file_text {
-  flex: 1;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.btn_upload_box {
-  margin-left: auto;
-}
-
-.btn_upload,
-.btn_gray_big {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn_gray_list {
-  margin-left: 5px;
 }
 
 .btn_center_box {
@@ -296,20 +234,44 @@ body {
   text-align: center;
 }
 
-.btn_before,
-.btn_write_ok {
-  background-color: #2ecc71;
+.btnbox {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  padding: 10px;
+  margin: 5px 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+  border: 1px solid #eee;
+  color: #333;
+  letter-spacing: -0.35px !important;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px #ccc;
+}
+
+.reset_btn {
+  width: 150px;
+  height: 45px;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+  color: #333;
+  background: #fff;
+  font-weight: 13px;
+  font-weight: bold;
+}
+
+.join_btn {
+  width: 150px;
+  height: 45px;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
   color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background: #799c4b;
+  font-weight: 13px;
+  font-weight: bold;
 }
-
-.btn_before {
-  margin-right: 10px;
-}
-
 
  /* ==============================================bottom================================== */
 
