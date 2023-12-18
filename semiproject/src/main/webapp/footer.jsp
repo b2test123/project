@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="resources/css/footer.css">
+<link rel="stylesheet" href="../resources/css/footer.css">
 <div id="bottom">
 	<div class="btm-box">
 		<div class="cst-center">
@@ -22,11 +22,11 @@
 		</div>
 		<div class="btm-icon">
 			<ul class="btm-icon-list">
-				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick1.png" alt=""></a></li>
-				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick2.png" alt=""></a></li>
-				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick3.png" alt=""></a></li>
-				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick4.png" alt=""></a></li>
-				<li><a href=""><img class="icon" src="resources/images/footer/icon_quick5.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/img/icon/icon_quick1.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/img/icon/icon_quick2.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/img/icon/icon_quick3.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/img/icon/icon_quick4.png" alt=""></a></li>
+				<li><a href=""><img class="icon" src="resources/img/icon/icon_quick5.png" alt=""></a></li>
 			</ul>
 		</div>
 	</div>
@@ -47,3 +47,4 @@
 		</div>
 	</footer>
 </div>
+<script src="../resources/js/script.js"></script>

@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /* #mid */
 #mid {
     width: 100%;
@@ -98,27 +96,27 @@
     font-size: 0.8rem;
 }
 
-.prod_order_confirm_table table tr:nth-child(1) {
+.table_td_head {
     background: #f1f1f1;
 }
 
-.prod_order_confirm_table table tr:nth-child(2) {
+.tr2 {
     background: #fefefe;
 }
 
-.prod_order_confirm_table table tr td:nth-child(n+5) {
+.td5, .td6, .td7, .td8 {
     width: 7%;
 }
 
-.prod_order_confirm_table table tr:nth-child(3) td:nth-child(n+5) {
+.tr2 .td5 {
     font-size: 0.8rem;
 }
 
-.prod_order_confirm_table table tr td:nth-child(9) {
+.td9 {
     width: 10%;
 }
 
-.prod_order_confirm_table table tr:nth-child(3) td:nth-child(n+8) {
+.tr2 .td8 {
     font-size: 1rem;
 }
 
@@ -136,7 +134,7 @@
     font-weight: 600;
 }
 
-.prod_order_confirm_table table tr:nth-child(4) {
+.tr3 {
     line-height: 4;
     background: #fafafa;
 }

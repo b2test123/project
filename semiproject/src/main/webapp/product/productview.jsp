@@ -11,6 +11,7 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
+	<jsp:include page="../navbar.jsp" />
 	<div id="container">
 		<div id="mid">
 			<div class="mid-top">

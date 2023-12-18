@@ -6,35 +6,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 수정</title>
+<title>리뷰 게시글 수정</title>
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
 	<div id="container">
-		<h2>게시글 수정</h2>
+		<h2>리뷰 게시글 수정</h2>
 		<form action="/updatereviewboard.do" method="post">
+			<!-- ui를 만들지않고 데이터를 숨겨서 보낼때 사용 -->
+			<input type="hidden" name="rno" value="${rboardList.rno}">
 			<table>
 				<tbody>
 					<tr>
 						<td><input type="text" name="rtitle"
-							value="${rboardList.rtitle}" readonly></td>
+							value="${rboardList.rtitle}"></td>
 					</tr>
 					<tr>
 						<td><textarea rows="7" cols="100" name="rcontent"
-								placeholder="글내용" readonly>${rboardList.rcontent}</textarea></td>
+								placeholder="글내용">${rboardList.rcontent}</textarea></td>
 					</tr>
 					<tr>
-						<td><c:if test="${sessionId eq rboardList.id}">
-								<a href="/updatereviewboardform.do?rno=${rboardList.rno}">
-									<button type="button">수정</button>
-								</a>
-								<a href="/deletereviewboard.do?rno=${rboardList.rno}"
-									onclick="return confirm('정말로 삭제하시겠습니까?')">
-									<button type="button">삭제</button>
-								</a>
-							</c:if> <a href="/reviewboardlist.do">
-								<button type="button">목록</button>
-						</a></td>
+						<td>
+							<button type="submit">저장</button>
+							<a href="/reviewboardlist.do">
+								<button type="button">취소</button>
+							</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>

@@ -5,17 +5,17 @@ import java.sql.Timestamp;
 
 public class QABoard implements Serializable{
 
-	private static final long serialVersionUID = 104L;
-	
+	private static final long serialVersionUID = 124L;
+
 	private int qno;
 	private String qtitle;
 	private String qcontent;
 	private String qname;
 	private String qfilename;
 	private Timestamp qdate;
+	private Timestamp qupdate;
 	private int qhit;
 	private String id;
-	
 	
 	public int getQno() {
 		return qno;
@@ -65,7 +65,10 @@ public class QABoard implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
-
+	public Timestamp getQupdate() {
+		return qupdate;
+	}
+	public void setQupdate(Timestamp qupdate) {
+		this.qupdate = qupdate;
+	}
 }

@@ -11,6 +11,7 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	<div id="container">
+		<input type="hidden" name="nno" value="${nboard.nno}">
 		<table>
 			<tbody>
 				<tr>

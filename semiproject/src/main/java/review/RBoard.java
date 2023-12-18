@@ -5,17 +5,18 @@ import java.sql.Timestamp;
 
 public class RBoard implements Serializable{
 
-	private static final long serialVersionUID = 105L;
-	
+	private static final long serialVersionUID = 125L;
+
 	private int rno;
 	private String rtitle;
 	private Timestamp rdate;
 	private String rcontent;
 	private String rfilename;
-	private int rrate; //별점
-	private int likes;  //좋아요
+	private Timestamp rupdate;
+	private int rrate;
+	private int likes;
+	private int rhit;
 	private String id;
-	
 	
 	public int getRno() {
 		return rno;
@@ -65,6 +66,16 @@ public class RBoard implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
+	public Timestamp getRupdate() {
+		return rupdate;
+	}
+	public void setRupdate(Timestamp rupdate) {
+		this.rupdate = rupdate;
+	}
+	public int getRhit() {
+		return rhit;
+	}
+	public void setRhit(int rhit) {
+		this.rhit = rhit;
+	}
 }

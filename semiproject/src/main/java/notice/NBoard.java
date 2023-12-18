@@ -1,21 +1,20 @@
 package notice;
-
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class NBoard implements Serializable{
 
-	private static final long serialVersionUID = 107L;
+	private static final long serialVersionUID = 123L;
 	
-	private int nno;
-	private String ntitle;
-	private String ncontent;
-	private String nfilename;
-	private Timestamp ndate;
-	private int nhit;
-	private String id;
-	
-	
+	   private int nno;
+	   private String ntitle;
+	   private String ncontent;
+	   private String nfilename;
+	   private Timestamp ndate;
+	   private Timestamp nupdate;
+	   private int nhit;
+	   private String id;
+	   
 	public int getNno() {
 		return nno;
 	}
@@ -58,7 +57,10 @@ public class NBoard implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
-	
+	public Timestamp getNupdate() {
+		return nupdate;
+	}
+	public void setNupdate(Timestamp nupdate) {
+		this.nupdate = nupdate;
+	}
 }

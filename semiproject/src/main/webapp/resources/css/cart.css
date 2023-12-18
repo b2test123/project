@@ -97,31 +97,38 @@
     font-size: 0.8rem;
 }
 
-.prod_order_confirm_table table tr:nth-child(1) {
+.prod_order_confirm_table table .tr1 {
     background: #f1f1f1;
 }
 
-.prod_order_confirm_table table tr:nth-child(2) {
+.prod_order_confirm_table table .table_td_head {
     background: #fefefe;
 }
 
-.prod_order_confirm_table table tr td:nth-child(n+5) {
+.prod_order_confirm_table table tr .td5,
+.prod_order_confirm_table table tr .td6,
+.prod_order_confirm_table table tr .td7,
+.prod_order_confirm_table table tr .td8,
+.prod_order_confirm_table table tr .td9,
+.prod_order_confirm_table table tr .td0 {
     width: 7%;
 }
 
-.prod_order_confirm_table table tr:nth-child(3) td:nth-child(n+5) {
+.prod_order_confirm_table table .tr2 td:nth-child(n+5) {
     font-size: 0.8rem;
 }
 
-.prod_order_confirm_table table tr td:nth-child(9) {
+.prod_order_confirm_table table tr .td9 {
     width: 10%;
 }
 
-.prod_order_confirm_table table tr td:nth-child(10) {
+.prod_order_confirm_table table tr .td0 {
     width: 10%;
 }
 
-.prod_order_confirm_table table tr:nth-child(3) td:nth-child(n+8) {
+.prod_order_confirm_table table .tr2 .td8,
+.prod_order_confirm_table table .tr2 .mid_sub_price,
+.prod_order_confirm_table table .tr2 .td0 {
     font-size: 1rem;
 }
 
@@ -166,11 +173,33 @@
     font-size: 0.8rem;
 }
 
-.select_order_cancel button {
+.select_order_delete,
+.delete_all_cart{
     border: none;
     border-radius: 5px;
     background: #BEDAA4;
     padding: 5px 10px;
+}
+
+.order_btn {
+    border: none;
+    border-radius: 5px;
+	background: #edfed6;
+    padding: 5px 10px;
+}
+
+.all_orders {
+    margin: 15px 10px 50px;
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+.all_orders button {
+	font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #edfed6;
+    padding: 20px 25px;
 }
 
 .delete_all_cart {
@@ -240,4 +269,10 @@
 
 .using_info table {
     width: 100%;
+}
+
+.go_orders_btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

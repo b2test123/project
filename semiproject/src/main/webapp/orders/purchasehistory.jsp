@@ -11,6 +11,7 @@
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
+	<jsp:include page="../navbar.jsp" />
 	<%-- <jsp:include page="../navbar.jsp" /> --%>
 	<div id="mid">
 		<h3>구매내역</h3>

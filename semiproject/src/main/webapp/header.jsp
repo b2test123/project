@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="resources/css/header.css">
+<link rel="stylesheet" href="../resources/css/header.css">
 <header>
 	<div id=container>
 		<div id="top">
@@ -11,11 +11,6 @@
 				<div class="tt-box">
 					<div class="mini-shortcut">
 						<!-- 상단 좌측 링크 아이콘 -->
-						<ul class="ms-list">
-							<li><a href="https://www.youtube.com" target="_blank">youtube</a></li>
-							<li><a href="https://www.instagram.com/" targer="_blank">instagram</a></li>
-							<li><a href="https://www.twitter.com/" targer="_blank">twitter</a></li>
-						</ul>
 					</div>
 
 					<div class="top-top-menu">
@@ -37,7 +32,7 @@
 								<ul class="ttm-list">
 									<li><a href="#">${sessionId}</a></li>
 									<li><a href="/logout.do">LOG-OUT</a></li>
-									<li><a href="/memberview.do">MY-PAGE</a></li>
+									<li><a href="/memberview.do?id=${sessionId}">MY-PAGE</a></li>
 									<li><a href="/basket.do">BASKET</a></li>
 									<li><a href="/purchasehistory.do">ORDER-INQUIRY</a></li>
 									<li><a href="/boardlist.do">BOARD</a></li>
@@ -53,7 +48,7 @@
 			<div class="top-mid">
 				<!-- 메인 로고, 사진 -->
 				<a href="/main.jsp"> <img class="logo-pic"
-					src="resources/images/header/01_logo2.2.jpg" alt="">
+					src="../resources/img/logo/01_logo2.2.jpg" alt="">
 				</a>
 			</div>
 

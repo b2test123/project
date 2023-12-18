@@ -19,40 +19,39 @@
 						<div class="boardkind">
 							<div class="notice-board">
 								<h3 class="title-notice">
-									<a href="/noticeboardlist.do">Notice / Event</a>
+									<a href="/noticeboardlist.do">Notice</a>
 								</h3>
-								<ul class="notice-list">
-									<li><a href="#">Notice 1</a></li>
-									<li><a href="#">Notice 2</a></li>
-									<li><a href="#">Event 2</a></li>
-									<li><a href="#">Event 1</a></li>
-								</ul>
+								<c:forEach items="${nboardList}" var="nb">
+									<ul class="notice-list">
+										<li><a href="/noticeboardview.do?nno=${nb.nno}">${nb.ntitle}</a></li>
+									</ul>
+								</c:forEach>
 							</div>
 
 							<div class="review-board">
 								<h3 class="title-review">
 									<a href="/reviewboardlist.do">Review Board</a>
 								</h3>
-								<ul class="review-list">
-									<li><a href="#">Review 4</a></li>
-									<li><a href="#">Review 3</a></li>
-									<li><a href="#">Review 2</a></li>
-									<li><a href="#">Review 1</a></li>
-								</ul>
+								<c:forEach items="${rboardList}" var="rb">
+									<ul class="review-list">
+										<li><a href="/reviewboardview.do?rno=${rb.rno}">${rb.rtitle}
+												조회수: ${rb.rhit}</a></li>
+									</ul>
+								</c:forEach>
 							</div>
 
 							<div class="QnA-board">
 								<h3 class="title-QnA">
 									<a href="/qaboardlist.do">Q/A Board</a>
 								</h3>
-								<ul class="QnA-list">
-									<li><a href="#">Q/A 4</a></li>
-									<li><a href="#">Q/A 3</a></li>
-									<li><a href="#">Q/A 2</a></li>
-									<li><a href="#">Q/A 1</a></li>
-								</ul>
+								<c:forEach items="${qaboardList}" var="qab">
+									<ul class="QnA-list">
+										<li><a href="/qaboardview.do?qno=${qab.qno}">${qab.qtitle}
+												조회수: ${qab.qhit}</a></li>
+									</ul>
+								</c:forEach>
 							</div>
-
+						 </div>
 						</div>
 					</tbody>
 				</table>
