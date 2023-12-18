@@ -208,8 +208,8 @@
   margin: 40px auto;
   padding: 0 5px 20px 5px;
   line-height: 2.5;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-collapse: collapse;
   text-align: center;
   font-size: 0.8rem;
@@ -231,8 +231,8 @@ table a{
 }
 
 #board_tb thead {
-  background: #edfed6;
-  border-bottom: 2px solid #ccc;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ccc;
   line-height: 3;
   font-size: 0.8rem;
 }
